@@ -1,0 +1,1638 @@
+// Test commit to verify push access
+(function () {
+  const site = window.SITE_DATA;
+  const app = document.getElementById("app");
+  if (!site || !app) return;
+
+  const media = Object.fromEntries(
+    site.gallery.map((item) => [item.usageRole, item])
+  );
+  const storyCarouselItems = [
+    media["story-nmims-felicitation"],
+    media["story-py-with-badshah"],
+    media["story-performing-badshah-concert"],
+    media["story-performing-nmims"],
+    media["story-trophy-badshah-concert"],
+    media["story-st-marys-felicitation"],
+    media["story-vidyajyothi-felicitation"],
+    media["story-incois-felicitation"],
+    media["story-with-sudha"],
+    media["story-fullsizerender-2"],
+    media["story-fullsizerender"],
+  ].filter(Boolean);
+  const storyCarouselTuning = {
+    desktopHeight: 420,
+    mobileHeight: 280,
+    values: {
+      "story-nmims-felicitation": { fit: "cover", x: 50, y: 50 },
+      "story-py-with-badshah": { fit: "cover", x: 64, y: 12 },
+      "story-performing-badshah-concert": { fit: "cover", x: 50, y: 50 },
+      "story-performing-nmims": { fit: "cover", x: 50, y: 50 },
+      "story-trophy-badshah-concert": { fit: "contain", x: 50, y: 38 },
+      "story-st-marys-felicitation": { fit: "cover", x: 50, y: 38 },
+      "story-vidyajyothi-felicitation": { fit: "cover", x: 50, y: 45 },
+      "story-incois-felicitation": { fit: "contain", x: 50, y: 50 },
+      "story-with-sudha": { fit: "cover", x: 33, y: 0, scale: 1 },
+      "story-fullsizerender-2": { fit: "cover", x: 50, y: 0, scale: 1 },
+      "story-fullsizerender": { fit: "cover", x: 50, y: 0, scale: 1 },
+    },
+  };
+  const photoCarouselItems = [
+    { type: "image", path: "assets/media/photo-1.webp" },
+    { type: "image", path: "assets/media/photo-2.webp" },
+    { type: "image", path: "assets/media/photo-3.webp" },
+    { type: "image", path: "assets/media/photo-4.webp" },
+    { type: "image", path: "assets/media/photo-5.webp" },
+    { type: "image", path: "assets/media/photo-6.webp" },
+    { type: "image", path: "assets/media/photo-7.webp" },
+    { type: "image", path: "assets/media/photo-8.webp" },
+    { type: "image", path: "assets/media/photo-9.webp" },
+  ];
+  const listeningRoom = site.listeningRoom || null;
+  const musicFeature = site.musicFeature || null;
+  const featuredRelease = site.featuredRelease || null;
+  const playbackFeatures =
+    Array.isArray(site.playbackFeatures) && site.playbackFeatures.length
+      ? site.playbackFeatures
+      : [musicFeature, featuredRelease].filter(Boolean);
+  const activeMusicLinks = site.musicLinks.filter((item) => item.active);
+  const voiceoversAdsTitles = [
+    "Theatre play: Salar Jung iii (Directed by Padmashri Mohammad Ali Baig)",
+    "Voice artist: Movie - \"Gedelaraju Kakinada Taluka (2026)\"",
+    "Voice artist : Web Series - \"Avida ma Avide\"",
+    "Actor - Apple Ad",
+    "Actor - LRSA Battery Ad",
+  ];
+  const musicSubsections = [
+    { label: "Playback", href: "#playback", section: "music" },
+    { label: "Vocals", href: "#vocals", section: "music" },
+    {
+      label: "Covers & special performances",
+      href: "#covers-special-performances",
+      section: "music",
+    },
+    { label: "Voice artist, Ads, Theatre", href: "#voiceovers-ads", section: "voiceovers-ads" },
+  ];
+  const desktopNav = [
+    { label: "HOME", href: "#home", section: "home" },
+    { label: "MUSIC", href: "#music", section: "music", children: musicSubsections },
+    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">PHOTO<br>PORTFOLIO</span>", href: "#photo-portfolio", section: "photo-portfolio" },
+    { label: "STORY", href: "#story", section: "story" },
+  ];
+  const consentStorageKey = "preethi-cookie-consent";
+  let hashScrollCorrectionTimer = null;
+
+  const mobileNav = [
+    { label: "Home", href: "#home", section: "home" },
+    { label: "Music", href: "#music", section: "music", children: musicSubsections },
+    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Photo<br>Portfolio</span>", href: "#photo-portfolio", section: "photo-portfolio" },
+    { label: "Story", href: "#story", section: "story" },
+    { label: "Highlights", href: "#highlights", section: "highlights" },
+    { label: "Contact", href: "#contact", section: "contact" },
+  ];
+  const platformOrder = [
+    "instagram",
+    "youtube",
+    "facebook",
+    "spotify",
+    "amazon-music",
+    "jiosaavn",
+  ];
+
+  function getPlatformKey(item = {}) {
+    const label = String(item.label || "").toLowerCase();
+    const iconPath = String(item.iconPath || "").toLowerCase();
+
+    if (label.includes("instagram") || iconPath.includes("instagram")) return "instagram";
+    if (label.includes("youtube") || iconPath.includes("youtube")) return "youtube";
+    if (label.includes("facebook") || iconPath.includes("facebook")) return "facebook";
+    if (label.includes("spotify") || iconPath.includes("spotify")) return "spotify";
+    if (
+      label.includes("amazon") ||
+      iconPath.includes("amazon-music") ||
+      iconPath.includes("amazon")
+    ) {
+      return "amazon-music";
+    }
+    if (
+      label.includes("jiosaavn") ||
+      label.includes("jio saavn") ||
+      iconPath.includes("jiosaavn")
+    ) {
+      return "jiosaavn";
+    }
+
+    return "other";
+  }
+
+  function sortPlatformLinks(items = []) {
+    return [...items].sort(function (left, right) {
+      const leftIndex = platformOrder.indexOf(getPlatformKey(left));
+      const rightIndex = platformOrder.indexOf(getPlatformKey(right));
+      const normalizedLeft = leftIndex === -1 ? Number.MAX_SAFE_INTEGER : leftIndex;
+      const normalizedRight = rightIndex === -1 ? Number.MAX_SAFE_INTEGER : rightIndex;
+
+      if (normalizedLeft !== normalizedRight) return normalizedLeft - normalizedRight;
+      return String(left.label || "").localeCompare(String(right.label || ""), undefined, {
+        sensitivity: "base",
+      });
+    });
+  }
+
+  function renderSocialDots() {
+    return sortPlatformLinks(site.socialLinks)
+      .map((link) => {
+        return `
+          <a class="social-dot" href="${link.url}" target="_blank" rel="noopener" aria-label="${link.label}">
+            ${
+              link.iconPath
+                ? `<img class="social-dot__image" src="${link.iconPath}" alt="" aria-hidden="true">`
+                : `<span class="social-dot__fallback">${link.label.slice(0, 2).toUpperCase()}</span>`
+            }
+          </a>
+        `;
+      })
+      .join("");
+  }
+
+  function renderMusicLinks(links = activeMusicLinks) {
+    return sortPlatformLinks(links)
+      .map(
+        (link) => `
+          <a class="music-pill music-pill--icon" href="${link.url}" target="_blank" rel="noopener" aria-label="${link.label}" title="${link.label}">
+            ${
+              link.iconPath
+                ? `<img class="music-pill__icon" src="${link.iconPath}" alt="" aria-hidden="true">`
+                : `<span class="music-pill__fallback" aria-hidden="true">${link.label.slice(0, 2).toUpperCase()}</span>`
+            }
+          </a>
+        `
+      )
+      .join("");
+  }
+
+  function getHighlightSortValue(item, index) {
+    const months = {
+      jan: 0,
+      feb: 1,
+      mar: 2,
+      apr: 3,
+      may: 4,
+      jun: 5,
+      jul: 6,
+      aug: 7,
+      sep: 8,
+      oct: 9,
+      nov: 10,
+      dec: 11,
+    };
+
+    const value = String(item.year || "").trim();
+    if (/age/i.test(value)) return { score: 0, index };
+
+    const directDate = Date.parse(value);
+    if (!Number.isNaN(directDate)) return { score: directDate, index };
+
+    const monthYear = value.match(/^([A-Za-z]{3})\s+(\d{4})$/);
+    if (monthYear) {
+      const month = months[monthYear[1].toLowerCase()] ?? 0;
+      return { score: new Date(Number(monthYear[2]), month, 1).getTime(), index };
+    }
+
+    const yearOnly = value.match(/(\d{4})/);
+    if (yearOnly) {
+      return { score: new Date(Number(yearOnly[1]), 0, 1).getTime(), index };
+    }
+
+    return { score: 0, index };
+  }
+
+  function sortHighlightsDescending(items) {
+    return [...items]
+      .map((item, index) => ({ item, order: getHighlightSortValue(item, index) }))
+      .sort((left, right) => {
+        if (right.order.score !== left.order.score) return right.order.score - left.order.score;
+        return left.order.index - right.order.index;
+      })
+      .map((entry) => entry.item);
+  }
+
+  function getVoiceoversAdsItems() {
+    return voiceoversAdsTitles
+      .map((title) => (site.highlights || []).find((item) => item.title === title))
+      .filter(Boolean);
+  }
+
+  function getMilestoneItems() {
+    const excludedTitles = new Set(voiceoversAdsTitles);
+    return sortHighlightsDescending(
+      (site.highlights || []).filter((item) => !excludedTitles.has(item.title))
+    );
+  }
+
+  function renderHighlightActions(item, linkClass, actionsClass) {
+    const links = Array.isArray(item.links) && item.links.length
+      ? item.links
+      : item.url
+        ? [{ url: item.url, label: item.linkLabel || "Open link" }]
+        : [];
+
+    if (!links.length) return "";
+
+    return `
+      <div class="${actionsClass}">
+        ${links
+          .map(
+            (link) => `
+              <a class="${linkClass} button button--ghost" href="${link.url}" target="_blank" rel="noopener">${link.label || "Open link"}</a>
+            `
+          )
+          .join("")}
+      </div>
+    `;
+  }
+
+  function renderHighlightCarouselCard(label, items, key) {
+    if (!Array.isArray(items) || !items.length) return "";
+
+    return `
+      <article class="highlight-carousel-card" data-highlight-carousel="${key}">
+        <div class="highlight-carousel-card__head">
+          <p class="section-micro">${label}</p>
+        </div>
+        <div class="highlight-carousel-card__viewport">
+          <div class="highlight-carousel-card__track">
+            ${items
+              .map(
+                (item) => `
+                  <article class="highlight-carousel-card__slide">
+                    <h3>${item.title}</h3>
+                    ${
+                      item.imagePath
+                        ? `<img src="${item.imagePath}" alt="${item.title}" style="${item.imageStyle || 'max-width: 100%; height: auto; margin-top: 1rem; border-radius: 4px;'}" loading="lazy">`
+                        : ""
+                    }
+                    ${item.description ? `<p class="highlight-carousel-card__desc">${item.description}</p>` : ""}
+                    ${renderHighlightActions(
+                      item,
+                      "highlight-carousel-card__link",
+                      "highlight-carousel-card__actions"
+                    )}
+                  </article>
+                `
+              )
+              .join("")}
+          </div>
+        </div>
+        ${
+          items.length > 1
+            ? `
+              <div class="highlight-carousel-card__controls">
+                <button
+                  class="highlight-carousel-card__arrow"
+                  type="button"
+                  aria-label="Previous ${label} item"
+                  data-highlight-prev
+                >
+                  <span aria-hidden="true">‹</span>
+                </button>
+                <div class="highlight-carousel-card__dots" aria-label="${label} navigation">
+                  ${items
+                    .map(
+                      (_, index) => `
+                        <button
+                          class="highlight-carousel-card__dot${index === 0 ? " is-active" : ""}"
+                          type="button"
+                          aria-label="Show ${label} item ${index + 1}"
+                          data-highlight-dot="${index}"
+                        ></button>
+                      `
+                    )
+                    .join("")}
+                </div>
+                <button
+                  class="highlight-carousel-card__arrow"
+                  type="button"
+                  aria-label="Next ${label} item"
+                  data-highlight-next
+                >
+                  <span aria-hidden="true">›</span>
+                </button>
+              </div>
+            `
+            : ""
+        }
+      </article>
+    `;
+  }
+
+  function renderHighlightListCard(item) {
+    return `
+      <article class="highlight-list-card">
+        <div class="highlight-list-card__body">
+          <h3>${item.title}</h3>
+          <p class="highlight-list-card__desc">${item.description}</p>
+          ${renderHighlightActions(
+            item,
+            "highlight-list-card__link",
+            "highlight-list-card__actions"
+          )}
+        </div>
+      </article>
+    `;
+  }
+
+  function renderVoiceoverEntry(item) {
+    let mediaMarkup = "";
+
+    if (item.mediaList && item.mediaList.length) {
+      const carouselStyle = [
+        `--story-desktop-height: 400px`,
+        `--story-mobile-height: 300px`,
+      ].join("; ");
+
+      mediaMarkup = `
+        <figure class="spotlight-card__media story-carousel" data-story-carousel data-story-no-auto aria-label="${item.title} media" style="${carouselStyle}; margin-top: 1.5rem;">
+          <div class="story-carousel__viewport">
+            <div class="story-carousel__track">
+              ${item.mediaList.map((media) => {
+                const slideStyle = [
+                  `--story-object-fit: contain`,
+                  `--story-object-position-x: 50%`,
+                  `--story-object-position-y: 50%`,
+                  `--story-scale: 1`,
+                  `background: var(--color-black-800)`
+                ].join("; ");
+
+                if (media.type === "video") {
+                  return `
+                    <div class="story-carousel__slide" style="${slideStyle}">
+                      <video class="music-video-feature__player" controls playsinline style="width:100%; height:100%; object-fit:contain;">
+                        <source src="${media.path}" type="video/mp4">
+                      </video>
+                    </div>
+                  `;
+                } else {
+                  return `
+                    <div class="story-carousel__slide" style="${slideStyle}">
+                      <img src="${media.path}" alt="" loading="lazy">
+                    </div>
+                  `;
+                }
+              }).join("")}
+            </div>
+          </div>
+          <div class="story-carousel__controls">
+            <button class="story-carousel__arrow highlight-carousel-card__arrow" type="button" aria-label="Previous" data-story-prev>
+              <span aria-hidden="true">‹</span>
+            </button>
+            <div class="story-carousel__dots" aria-label="Media navigation">
+              ${item.mediaList.map((_, index) => `
+                <button class="story-carousel__dot${index === 0 ? " is-active" : ""}" type="button" aria-label="Slide ${index + 1}" data-story-dot="${index}"></button>
+              `).join("")}
+            </div>
+            <button class="story-carousel__arrow highlight-carousel-card__arrow" type="button" aria-label="Next" data-story-next>
+              <span aria-hidden="true">›</span>
+            </button>
+          </div>
+        </figure>
+      `;
+    } else if (item.videoPath) {
+      mediaMarkup = `
+        <div class="voiceover-list__media">
+          <video
+            class="music-video-feature__player voiceover-list__video"
+            controls
+            preload="metadata"
+            playsinline
+            aria-label="${item.title}"
+          >
+            <source src="${item.videoPath}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      `;
+    }
+
+    return `
+      <article class="voiceover-list__item">
+        <div class="voiceover-list__body">
+          <h3>${item.title}</h3>
+          <p class="voiceover-list__desc">${item.description}</p>
+          ${mediaMarkup}
+          ${renderHighlightActions(item, "voiceover-list__link", "voiceover-list__actions")}
+        </div>
+      </article>
+    `;
+  }
+
+  function renderVoiceoversAdsPanels() {
+    const items = getVoiceoversAdsItems();
+    if (!items.length) return "";
+
+    return `
+      <article class="music-topic-card music-topic-card--voiceovers">
+        <div class="music-topic-card__head">
+          <p class="section-micro">Voice artist, Ads, Theatre</p>
+        </div>
+        <div class="music-topic-card__body">
+          <div class="voiceover-list">
+            ${items.map((item) => renderVoiceoverEntry(item)).join("")}
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  function renderHighlightsPanels() {
+    const milestoneItems = getMilestoneItems();
+    const upcomingItems = Array.isArray(site.upcomingHighlights) ? site.upcomingHighlights : [];
+
+    return `
+      <div class="highlight-carousel-stack">
+        ${renderHighlightCarouselCard("Milestones so far", milestoneItems, "milestones")}
+        ${renderHighlightCarouselCard("Upcoming", upcomingItems, "upcoming")}
+      </div>
+    `;
+  }
+
+  function renderListeningFolderLinks(items) {
+    if (!Array.isArray(items) || !items.length) return "";
+
+    const sortedItems = [...items].sort(function (left, right) {
+      return left.title.localeCompare(right.title, undefined, { sensitivity: "base" });
+    });
+
+    return `
+      <ul class="listening-folder-list">
+        ${sortedItems
+          .map(
+            (item) => `
+              <li class="listening-folder-list__item">
+                <a class="listening-folder-link" href="${item.url}" target="_blank" rel="noopener">
+                  <span class="listening-folder-link__lead">
+                    <span class="listening-folder-link__play" aria-hidden="true"></span>
+                    <span class="listening-folder-link__title">${item.title}</span>
+                  </span>
+                </a>
+                ${item.description ? `<p>${item.description}</p>` : ""}
+              </li>
+            `
+          )
+          .join("")}
+      </ul>
+    `;
+  }
+
+  function getListeningRoomParts() {
+    if (!listeningRoom || !Array.isArray(listeningRoom.recordingCards) || !listeningRoom.recordingCards.length) {
+      return {
+        primaryFolder: null,
+        voiceOnlyFolders: [],
+        previewItems: [],
+      };
+    }
+
+    return {
+      primaryFolder: listeningRoom.recordingCards[0] || null,
+      voiceOnlyFolders: listeningRoom.recordingCards.filter((item) => item.type === "voice-only"),
+      previewItems: Array.isArray(listeningRoom.previewItems) ? listeningRoom.previewItems : [],
+    };
+  }
+
+  function renderPlaybackFeature(feature) {
+    if (!feature) return "";
+
+    const mediaMarkup =
+      feature.mediaType === "audio" || feature.audioPath
+        ? `
+          <div class="music-video-feature__media music-video-feature__media--audio">
+            <img
+              class="music-audio-feature__poster"
+              src="${feature.posterPath}"
+              alt="${feature.posterAlt || feature.title}"
+              loading="lazy"
+            >
+            <audio class="music-audio-feature__player" controls preload="metadata">
+              <source src="${feature.audioPath}" type="audio/mp4">
+              Your browser does not support the audio tag.
+            </audio>
+          </div>
+        `
+        : feature.embedUrl
+          ? `
+            <div class="music-video-feature__media">
+              <iframe
+                class="music-video-feature__frame"
+                src="${feature.embedUrl}"
+                title="${feature.embedTitle || feature.title}"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          `
+        : `
+          <div class="music-video-feature__media">
+            <video
+              class="music-video-feature__player"
+              controls
+              preload="metadata"
+              playsinline
+              ${feature.posterPath ? `poster="${feature.posterPath}"` : ""}
+              data-reset-poster
+              ${feature.videoStartTime ? `data-start-time="${feature.videoStartTime}"` : ""}
+              aria-label="${feature.title}"
+            >
+              <source src="${feature.videoPath}${feature.videoStartTime ? '#t=' + feature.videoStartTime : ''}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        `;
+
+    const featureLinks = Array.isArray(feature.musicLinks) && feature.musicLinks.length
+      ? feature.musicLinks
+      : feature.showMusicLinks
+        ? activeMusicLinks.filter((link) => link.linkContext !== "artist")
+        : [];
+
+    const linkMarkup = featureLinks.length
+      ? `
+        <div class="music-video-feature__links">
+          <div class="music-pills music-pills--release">
+            ${renderMusicLinks(featureLinks)}
+          </div>
+        </div>
+      `
+      : "";
+
+    return `
+      <article class="music-video-feature">
+        <div class="music-video-feature__art">
+          <h3>${feature.title}</h3>
+          <p class="music-video-feature__meta">${feature.description}</p>
+          ${linkMarkup}
+        </div>
+
+        ${mediaMarkup}
+      </article>
+    `;
+  }
+
+  function renderPlaybackArchive() {
+    const { primaryFolder, previewItems } = getListeningRoomParts();
+    if (!primaryFolder) return "";
+
+    return `
+      <article class="listening-room-feature listening-room-feature--topic">
+        <div class="listening-room-feature__copy">
+          <h3>${primaryFolder.title}</h3>
+          ${primaryFolder.description ? `<p>${primaryFolder.description}</p>` : ""}
+          <div class="music-subsection__actions">
+            <a class="button button--ghost" href="${primaryFolder.url}" target="_blank" rel="noopener">Open full folder</a>
+          </div>
+        </div>
+
+        <div class="listening-room-feature__media music-raw-vocals">
+          ${renderListeningFolderLinks(previewItems)}
+        </div>
+      </article>
+    `;
+  }
+
+  function renderPlaybackSection() {
+    return `
+      <article id="playback" class="music-topic-card music-topic-card--playback">
+        <div class="music-topic-card__head">
+          <p class="section-micro">Playback Feature</p>
+        </div>
+        <div class="music-topic-card__body">
+          ${playbackFeatures.map(renderPlaybackFeature).join("")}
+        </div>
+      </article>
+    `;
+  }
+
+  function renderCoverSongsSection() {
+    if (!site.coverSongs || !site.coverSongs.length) return "";
+
+    return `
+      <article id="cover-songs" class="music-topic-card music-topic-card--cover-songs">
+        <div class="music-topic-card__head">
+          <p class="section-micro">Cover songs</p>
+        </div>
+        <div class="music-topic-card__body">
+          ${site.coverSongs.map(renderPlaybackFeature).join("")}
+        </div>
+      </article>
+    `;
+  }
+
+  function renderRawVocalsSection() {
+    const { voiceOnlyFolders } = getListeningRoomParts();
+    if (!voiceOnlyFolders.length) return "";
+
+    return `
+      <article id="vocals" class="music-topic-card music-topic-card--raw-vocals">
+        <div class="music-topic-card__head">
+          <p class="section-micro">Vocals</p>
+        </div>
+        <div class="music-topic-card__body">
+          <article class="listening-room-feature listening-room-feature--topic">
+            <div class="listening-room-feature__copy">
+              <h3>Voice-only selections.</h3>
+            </div>
+
+            <div class="listening-room-feature__media music-raw-vocals">
+              ${renderListeningFolderLinks(voiceOnlyFolders)}
+            </div>
+          </article>
+        </div>
+      </article>
+    `;
+  }
+
+  function renderOtherWorksSection() {
+    const archiveMarkup = renderPlaybackArchive();
+    if (!archiveMarkup) return "";
+
+    return `
+      <article id="covers-special-performances" class="music-topic-card music-topic-card--other-works">
+        <div class="music-topic-card__head">
+          <p class="section-micro">Other works</p>
+        </div>
+        <div class="music-topic-card__body">
+          ${archiveMarkup}
+        </div>
+      </article>
+    `;
+  }
+
+  function renderDesktopNav() {
+    const logoMarkup =
+      site.branding && site.branding.primaryLogoPath
+        ? `<img class="mast-nav__brand-image" src="${site.branding.primaryLogoPath}" alt="${site.artist.name}">`
+        : `<span class="mast-nav__brand-text">${site.artist.name}</span>`;
+
+    return `
+      <a class="mast-nav__brand" href="#home" aria-label="${site.artist.name}">
+        ${logoMarkup}
+      </a>
+      <nav class="mast-nav__desktop-links" aria-label="Primary site navigation">
+        ${desktopNav
+          .map(
+            (item) => `
+              <div class="mast-nav__item${item.children ? " mast-nav__item--with-submenu" : ""}">
+                <a class="mast-nav__link${item.children ? " mast-nav__link--has-submenu" : ""}" href="${item.href}" data-section="${item.section}">
+                  ${item.label}
+                </a>
+                ${
+                  item.children
+                    ? `
+                      <div class="mast-nav__submenu" aria-label="${item.label} subsections">
+                        ${item.children
+                          .map(
+                            (child) => `
+                              <a class="mast-nav__submenu-link" href="${child.href}" data-section="${child.section}">
+                                ${child.label}
+                              </a>
+                            `
+                          )
+                          .join("")}
+                      </div>
+                    `
+                    : ""
+                }
+              </div>
+            `
+          )
+          .join("")}
+      </nav>
+    `;
+  }
+
+  function renderMobileNav() {
+    return mobileNav
+      .map(
+        (item) => `
+          <div class="drawer-group${item.children ? " drawer-group--with-submenu" : ""}">
+            <a class="drawer-link" href="${item.href}" data-section="${item.section}">
+              ${item.label}
+            </a>
+            ${
+              item.children
+                ? `
+                  <div class="drawer-submenu">
+                    ${item.children
+                      .map(
+                        (child) => `
+                          <a class="drawer-sublink" href="${child.href}" data-section="${child.section}">
+                            ${child.label}
+                          </a>
+                        `
+                      )
+                      .join("")}
+                  </div>
+                `
+                : ""
+            }
+          </div>
+        `
+      )
+      .join("");
+  }
+
+  function renderDockNav() {
+    return [
+      { label: "Highlights", href: "#highlights" },
+      { label: "Contact", href: "#contact" },
+    ]
+      .map((item) => `<a href="${item.href}">${item.label}</a>`)
+      .join("");
+  }
+
+  function renderPhotoPortfolioCarousel() {
+    if (!photoCarouselItems.length) return "";
+
+    const carouselStyle = [
+      `--story-desktop-height: 600px`,
+      `--story-mobile-height: 400px`,
+    ].join("; ");
+
+    return `
+      <section id="photo-portfolio" class="spotlight-section">
+        <div class="section-head section-head--center">
+          <p class="section-label" style="letter-spacing: 0.08em;">Photo Portfolio</p>
+          <h2>A visual journey.</h2>
+        </div>
+        <article class="spotlight-card" style="grid-template-columns: 1fr;">
+          <figure class="spotlight-card__media story-carousel" data-story-carousel aria-label="Photo portfolio" style="${carouselStyle}">
+            <div class="story-carousel__viewport">
+              <div class="story-carousel__track">
+                ${photoCarouselItems
+                  .map((item) => {
+                    const slideStyle = [
+                      `--story-object-fit: contain`,
+                      `--story-object-position-x: 50%`,
+                      `--story-object-position-y: 50%`,
+                      `--story-scale: 1`,
+                      `background: var(--color-black-800)`
+                    ].join("; ");
+                    return `
+                      <div class="story-carousel__slide" style="${slideStyle}">
+                        <img src="${item.path}" alt="Photo portfolio image" loading="lazy">
+                      </div>
+                    `;
+                  })
+                  .join("")}
+              </div>
+            </div>
+            <div class="story-carousel__controls">
+              <button class="story-carousel__arrow highlight-carousel-card__arrow" type="button" aria-label="Previous" data-story-prev>
+                <span aria-hidden="true">‹</span>
+              </button>
+              <div class="story-carousel__dots" aria-label="Media navigation">
+                ${photoCarouselItems
+                  .map((_, index) => `
+                    <button class="story-carousel__dot${index === 0 ? " is-active" : ""}" type="button" aria-label="Slide ${index + 1}" data-story-dot="${index}"></button>
+                  `)
+                  .join("")}
+              </div>
+              <button class="story-carousel__arrow highlight-carousel-card__arrow" type="button" aria-label="Next" data-story-next>
+                <span aria-hidden="true">›</span>
+              </button>
+            </div>
+            <div style="text-align: center; margin-bottom: 2rem;">
+              <a href="https://drive.google.com/drive/folders/1MbiASdn1np4Qk_VS5ovd77NvMISdAdCe?usp=drive_link" target="_blank" rel="noopener noreferrer" class="button button--solid">View gallery</a>
+            </div>
+          </figure>
+        </article>
+      </section>
+    `;
+  }
+
+  function renderStoryCarousel() {
+    if (!storyCarouselItems.length) return "";
+
+    const carouselStyle = [
+      `--story-desktop-height: ${storyCarouselTuning.desktopHeight}px`,
+      `--story-mobile-height: ${storyCarouselTuning.mobileHeight}px`,
+    ].join("; ");
+
+    return `
+      <figure class="spotlight-card__media story-carousel" data-story-carousel aria-label="Story portraits" style="${carouselStyle}">
+        <div class="story-carousel__viewport">
+          <div class="story-carousel__track">
+            ${storyCarouselItems
+              .map((item) => {
+                const tuning = storyCarouselTuning.values[item.usageRole] || {
+                  fit: "cover",
+                  x: 50,
+                  y: 50,
+                  scale: 1,
+                };
+                const slideStyle = [
+                  `--story-object-fit: ${tuning.fit}`,
+                  `--story-object-position-x: ${tuning.x}%`,
+                  `--story-object-position-y: ${tuning.y}%`,
+                  `--story-scale: ${tuning.scale || 1}`,
+                ].join("; ");
+
+                return `
+                  <div
+                    class="story-carousel__slide"
+                    data-story-orientation="${String(item.cropPreference || "").includes("portrait") ? "portrait" : "landscape"}"
+                    style="${slideStyle}"
+                  >
+                    <img src="${item.path}" alt="${item.alt}" loading="lazy">
+                  </div>
+                `
+              })
+              .join("")}
+          </div>
+        </div>
+        ${
+          storyCarouselItems.length > 1
+            ? `
+              <div class="story-carousel__controls">
+                <button
+                  class="story-carousel__arrow highlight-carousel-card__arrow"
+                  type="button"
+                  aria-label="Previous story image"
+                  data-story-prev
+                >
+                  <span aria-hidden="true">‹</span>
+                </button>
+                <div class="story-carousel__dots" aria-label="Story image navigation">
+                  ${storyCarouselItems
+                    .map(
+                      (_, index) => `
+                        <button
+                          class="story-carousel__dot${index === 0 ? " is-active" : ""}"
+                          type="button"
+                          aria-label="Show story image ${index + 1}"
+                          data-story-dot="${index}"
+                        ></button>
+                      `
+                    )
+                    .join("")}
+                </div>
+                <button
+                  class="story-carousel__arrow highlight-carousel-card__arrow"
+                  type="button"
+                  aria-label="Next story image"
+                  data-story-next
+                >
+                  <span aria-hidden="true">›</span>
+                </button>
+              </div>
+            `
+            : ""
+        }
+      </figure>
+    `;
+  }
+
+  function renderStoryBody() {
+    const intro = Array.isArray(site.bio && site.bio.intro) ? site.bio.intro : [];
+    if (!intro.length) return "";
+
+    const bodyParagraphs = intro.slice(0, -1);
+    const tagline = intro[intro.length - 1];
+
+    return `
+      ${bodyParagraphs
+        .map(
+          (paragraph) => `
+            <p class="section-micro story-card__body">${paragraph}</p>
+          `
+        )
+        .join("")}
+      <p class="section-micro story-card__body story-card__tagline">${tagline}</p>
+    `;
+  }
+
+  app.innerHTML = `
+    <div class="site-shell">
+      <header class="mast-nav">
+        <div class="mast-nav__desktop">
+          ${renderDesktopNav()}
+        </div>
+        <div class="mast-nav__mobile">
+          <a class="mobile-brand" href="#home" aria-label="${site.artist.name}">
+            ${
+              site.branding && site.branding.primaryLogoPath
+                ? `<img class="mobile-brand__image" src="${site.branding.primaryLogoPath}" alt="${site.artist.name}">`
+                : site.artist.name
+            }
+          </a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-drawer">
+            MENU
+          </button>
+        </div>
+        <nav id="nav-drawer" class="nav-drawer" aria-label="Mobile site navigation">
+          ${renderMobileNav()}
+        </nav>
+      </header>
+
+      <main>
+        <section id="home" class="hero-panel">
+          <div class="hero-panel__bg" style="background-image:url('${media["home-hero"].path}')"></div>
+          <div class="hero-panel__content">
+            <div class="hero-copy">
+              <h1>${site.artist.name}</h1>
+              <p class="hero-copy__tagline">Multilingual | Multi-genre playback singer</p>
+              <div class="hero-copy__actions">
+                <a class="button button--solid hero-cta-button" href="#music">Listen now</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="music" class="poster-section">
+          <div class="section-head section-head--center">
+            <p class="section-label">Music</p>
+          </div>
+
+          ${renderPlaybackSection()}
+          ${renderCoverSongsSection()}
+          ${renderRawVocalsSection()}
+          ${renderOtherWorksSection()}
+        </section>
+
+        <section id="voiceovers-ads" class="voiceovers-section">
+          ${renderVoiceoversAdsPanels()}
+        </section>
+
+        ${renderPhotoPortfolioCarousel()}
+
+        <section id="story" class="spotlight-section">
+          <div class="section-head section-head--center">
+            <p class="section-label">Story</p>
+            <h2>Rooted, Expressive, Unmistakably Her Own</h2>
+          </div>
+
+          <article class="spotlight-card">
+            <div class="spotlight-card__copy">
+              ${renderStoryBody()}
+            </div>
+            ${renderStoryCarousel()}
+          </article>
+        </section>
+
+        <section id="highlights" class="awards-section">
+          <div class="section-head section-head--center">
+            <p class="section-label">Highlights</p>
+            <h2>Milestones</h2>
+          </div>
+          ${renderHighlightsPanels()}
+        </section>
+
+        <section id="contact" class="contact-section">
+          <div class="section-head section-head--center">
+            <p class="section-label">Contact</p>
+            <h2>Conversations and collaborations begin with a single note.</h2>
+          </div>
+
+          <div class="contact-layout">
+            <article class="contact-panel">
+              <p class="section-micro">${site.contactForm.eyebrow}</p>
+              <form id="contact-form" class="contact-form">
+                <label>
+                  <span>Name</span>
+                  <input type="text" name="name" placeholder="Your name" required>
+                </label>
+                <label>
+                  <span>Email</span>
+                  <input type="email" name="email" placeholder="you@example.com" required>
+                </label>
+                <label>
+                  <span>City</span>
+                  <input type="text" name="city" placeholder="Hyderabad" required>
+                </label>
+                <label>
+                  <span>Message</span>
+                  <textarea name="message" rows="3" required></textarea>
+                </label>
+                <button class="button button--solid" type="submit">${site.contactForm.submitLabel}</button>
+                <p class="contact-form__email">or e-mail us at: <a href="mailto:preethiyagna@gmail.com">preethiyagna@gmail.com</a></p>
+                <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
+              </form>
+            </article>
+          </div>
+        </section>
+
+        <section id="private" class="notes-section">
+          <div class="notes-grid">
+            <article class="note-card note-card--brand">
+              ${
+                site.branding && site.branding.primaryLogoPath
+                  ? `
+                    <div class="note-card__logo-wrap">
+                      <img class="note-card__logo" src="${site.branding.primaryLogoPath}" alt="${site.artist.name}">
+                      <span class="note-card__mark" aria-hidden="true">®</span>
+                    </div>
+                  `
+                  : ""
+              }
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <aside class="floating-dock" aria-label="Persistent site dock">
+        <nav class="floating-dock__links">
+          ${renderDockNav()}
+        </nav>
+        <div class="floating-dock__socials">
+          ${renderSocialDots()}
+        </div>
+      </aside>
+
+      <aside id="consent-banner" class="consent-banner" role="dialog" aria-live="polite" aria-label="Cookie preferences">
+        <div>
+          <p>Cookies & privacy</p>
+        </div>
+        <div class="consent-banner__actions">
+          <button id="consent-reject" class="consent-button consent-button--ghost" type="button">Reject</button>
+          <button id="consent-accept" class="consent-button consent-button--solid" type="button">Accept</button>
+        </div>
+      </aside>
+    </div>
+  `;
+
+  function updateMeta() {
+    document.title = site.pages.home.title;
+
+    const metaMap = {
+      description: site.pages.home.description,
+      "og:title": site.pages.home.title,
+      "og:description": site.pages.home.description,
+      "twitter:title": site.pages.home.title,
+      "twitter:description": site.pages.home.description,
+      "og:image": media["home-hero"].path,
+      "twitter:image": media["home-hero"].path,
+    };
+
+    Object.entries(metaMap).forEach(([name, value]) => {
+      const selector = name.startsWith("og:")
+        ? `meta[property="${name}"]`
+        : `meta[name="${name}"]`;
+      const meta = document.querySelector(selector);
+      if (meta) meta.setAttribute("content", value);
+    });
+
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute("href", new URL("index.html", window.location.href).href);
+    }
+  }
+
+  function wireForm() {
+    const form = document.getElementById("contact-form");
+    const feedback = document.getElementById("form-feedback");
+    if (!form || !feedback) return;
+
+    const sanitizeWhatsappNumber = function (value) {
+      return String(value || "").replace(/\D/g, "");
+    };
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const name = form.elements.name.value.trim();
+      const email = form.elements.email.value.trim();
+      const city = form.elements.city.value.trim();
+      const message = form.elements.message.value.trim();
+      const whatsappNumber = sanitizeWhatsappNumber(site.contactForm.whatsappNumber);
+
+      if (!whatsappNumber) {
+        feedback.textContent = "WhatsApp booking is not configured yet.";
+        return;
+      }
+
+      const whatsappMessage = [
+        `I would like to reach out to ${site.artist.name}'s Team.`,
+        "",
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `City: ${city}`,
+        "",
+        "Brief:",
+        message,
+      ].join("\n");
+
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+      feedback.innerHTML =
+        `Opening WhatsApp with your booking brief. If it doesn't open, <a href="${whatsappUrl}" target="_blank" rel="noopener">continue here</a>.`;
+      window.location.assign(whatsappUrl);
+    });
+  }
+
+  function wireConsentBanner() {
+    const banner = document.getElementById("consent-banner");
+    const accept = document.getElementById("consent-accept");
+    const reject = document.getElementById("consent-reject");
+    if (!banner || !accept || !reject) return;
+
+    const persistChoice = function (value) {
+      document.body.dataset.consent = value;
+      try {
+        window.localStorage.setItem(consentStorageKey, value);
+      } catch (error) {
+        // Ignore storage access issues and still honor the in-session choice.
+      }
+      banner.classList.add("is-hidden");
+    };
+
+    try {
+      const storedChoice = window.localStorage.getItem(consentStorageKey);
+      if (storedChoice === "accepted" || storedChoice === "rejected") {
+        document.body.dataset.consent = storedChoice;
+        banner.classList.add("is-hidden");
+        return;
+      }
+    } catch (error) {
+      // Fall through and show the banner if storage is unavailable.
+    }
+
+    accept.addEventListener("click", function () {
+      persistChoice("accepted");
+    });
+
+    reject.addEventListener("click", function () {
+      persistChoice("rejected");
+    });
+  }
+
+  function getHashScrollTop(hash = window.location.hash) {
+    if (!hash) return;
+    const target = document.querySelector(hash);
+    if (!target) return null;
+
+    if (hash === "#home") return 0;
+
+    const anchorTarget = target.querySelector(".section-head") || target;
+    const mastNav = document.querySelector(".mast-nav");
+    let restoreScrolledState = false;
+
+    if (mastNav && !mastNav.classList.contains("is-scrolled")) {
+      mastNav.classList.add("is-scrolled");
+      restoreScrolledState = true;
+    }
+
+    const mastNavHeight = mastNav ? mastNav.getBoundingClientRect().height : 0;
+
+    if (restoreScrolledState) {
+      mastNav.classList.remove("is-scrolled");
+    }
+
+    const offset = mastNavHeight + 16;
+    const targetTop =
+      anchorTarget.getBoundingClientRect().top + window.scrollY - offset;
+
+    return Math.max(0, targetTop);
+  }
+
+  function scrollToHash(hash = window.location.hash, behavior = "smooth") {
+    if (!hash) return;
+    const target = document.querySelector(hash);
+    if (!target) return;
+
+    if (hashScrollCorrectionTimer !== null) {
+      window.clearTimeout(hashScrollCorrectionTimer);
+      hashScrollCorrectionTimer = null;
+    }
+
+    window.requestAnimationFrame(function () {
+      const initialTop = getHashScrollTop(hash);
+      if (typeof initialTop !== "number") return;
+
+      window.scrollTo({
+        top: initialTop,
+        behavior,
+      });
+
+      hashScrollCorrectionTimer = window.setTimeout(function () {
+        const correctedTop = getHashScrollTop(hash);
+        if (typeof correctedTop !== "number") return;
+        if (Math.abs(window.scrollY - correctedTop) < 2) return;
+
+        window.scrollTo({
+          top: correctedTop,
+          behavior: "auto",
+        });
+      }, 420);
+    });
+  }
+
+  function wireNav() {
+    const toggle = document.querySelector(".nav-toggle");
+    const drawer = document.getElementById("nav-drawer");
+    const drawerLinks = drawer ? Array.from(drawer.querySelectorAll("a")) : [];
+    const internalHashLinks = Array.from(document.querySelectorAll('a[href^="#"]')).filter(
+      function (link) {
+        const href = link.getAttribute("href");
+        return Boolean(href && href.length > 1);
+      }
+    );
+
+    if (toggle && drawer) {
+      toggle.addEventListener("click", function () {
+        const expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!expanded));
+        drawer.classList.toggle("is-open");
+        document.body.classList.toggle("nav-open");
+      });
+    }
+
+    drawerLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        if (!toggle || !drawer) return;
+        toggle.setAttribute("aria-expanded", "false");
+        drawer.classList.remove("is-open");
+        document.body.classList.remove("nav-open");
+      });
+    });
+
+    internalHashLinks.forEach((link) => {
+      link.addEventListener("click", function (event) {
+        const hash = link.getAttribute("href");
+        if (!hash) return;
+
+        event.preventDefault();
+
+        if (toggle && drawer) {
+          toggle.setAttribute("aria-expanded", "false");
+          drawer.classList.remove("is-open");
+          document.body.classList.remove("nav-open");
+        }
+
+        if (window.location.hash === hash) {
+          window.history.replaceState(null, "", hash);
+        } else {
+          window.history.pushState(null, "", hash);
+        }
+
+        scrollToHash(hash, "smooth");
+      });
+    });
+
+    const sections = Array.from(document.querySelectorAll("section[id]"));
+    const navLinks = Array.from(document.querySelectorAll("[data-section]"));
+
+    if (!sections.length || !navLinks.length || !("IntersectionObserver" in window)) {
+      return;
+    }
+
+    const setActive = function (sectionId) {
+      navLinks.forEach((link) => {
+        link.classList.toggle("is-active", link.dataset.section === sectionId);
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  }
+
+  function wireScrollChrome() {
+    const mastNav = document.querySelector(".mast-nav");
+    if (!mastNav) return;
+    const mobileDockQuery = window.matchMedia(
+      "(max-width: 860px), (max-width: 960px) and (max-height: 520px)"
+    );
+    let lastScrollY = window.scrollY;
+    let hideDockTimer = null;
+
+    const clearHideDockTimer = function () {
+      if (hideDockTimer === null) return;
+      window.clearTimeout(hideDockTimer);
+      hideDockTimer = null;
+    };
+
+    const showDock = function () {
+      document.body.classList.add("dock-visible");
+    };
+
+    const hideDock = function () {
+      document.body.classList.remove("dock-visible");
+    };
+
+    const scheduleDockHide = function () {
+      clearHideDockTimer();
+      hideDockTimer = window.setTimeout(function () {
+        if (mobileDockQuery.matches) hideDock();
+      }, 3000);
+    };
+
+    const syncDockMode = function () {
+      clearHideDockTimer();
+      mastNav.classList.toggle("is-scrolled", window.scrollY > 36);
+      if (mobileDockQuery.matches) {
+        hideDock();
+      } else {
+        showDock();
+      }
+      lastScrollY = window.scrollY;
+    };
+
+    const syncScrollChrome = function () {
+      const currentScrollY = window.scrollY;
+      mastNav.classList.toggle("is-scrolled", currentScrollY > 36);
+
+      if (mobileDockQuery.matches) {
+        if (currentScrollY > lastScrollY + 1) {
+          showDock();
+          scheduleDockHide();
+        } else if (currentScrollY <= 0) {
+          clearHideDockTimer();
+          hideDock();
+        } else if (currentScrollY < lastScrollY - 1) {
+          showDock();
+          scheduleDockHide();
+        }
+      } else {
+        showDock();
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    syncDockMode();
+    window.addEventListener("scroll", syncScrollChrome, { passive: true });
+    window.addEventListener("resize", syncDockMode);
+    if (typeof mobileDockQuery.addEventListener === "function") {
+      mobileDockQuery.addEventListener("change", syncDockMode);
+    } else if (typeof mobileDockQuery.addListener === "function") {
+      mobileDockQuery.addListener(syncDockMode);
+    }
+  }
+
+  function wireFeaturedReleaseReveal() {
+    const section = document.querySelector("[data-featured-release-reveal]");
+    if (!section) return;
+
+    let frame = null;
+
+    const syncReveal = function () {
+      frame = null;
+      const rect = section.getBoundingClientRect();
+      const start = window.innerHeight * 0.92;
+      const end = window.innerHeight * 0.34;
+      const rawProgress = Math.max(0, Math.min(1, (start - rect.top) / Math.max(1, start - end)));
+      const easedProgress = Math.pow(rawProgress, 1.18);
+      section.style.setProperty("--featured-release-progress", easedProgress.toFixed(3));
+    };
+
+    const requestSync = function () {
+      if (frame !== null) return;
+      frame = window.requestAnimationFrame(syncReveal);
+    };
+
+    syncReveal();
+    window.addEventListener("scroll", requestSync, { passive: true });
+    window.addEventListener("resize", requestSync);
+  }
+
+  function wireVideoPosterReset() {
+    const resetVideos = Array.from(document.querySelectorAll("video[data-reset-poster]"));
+    if (!resetVideos.length) return;
+
+    resetVideos.forEach(function (video) {
+      video.addEventListener("ended", function () {
+        try {
+          video.currentTime = 0;
+        } catch (error) {
+          // Ignore seek issues and still fall back to reload.
+        }
+        video.pause();
+        video.load();
+      });
+    });
+  }
+
+  function wireExclusiveMediaPlayback() {
+    const players = Array.from(
+      document.querySelectorAll(".music-video-feature__player, .music-audio-feature__player")
+    );
+    if (players.length < 2) return;
+
+    players.forEach(function (player) {
+      player.addEventListener("play", function () {
+        players.forEach(function (otherPlayer) {
+          if (otherPlayer === player) return;
+          if (!otherPlayer.paused) otherPlayer.pause();
+        });
+      });
+    });
+  }
+
+  function wireVideoTimestamps() {
+    const players = Array.from(document.querySelectorAll("video[data-start-time]"));
+    players.forEach(function (player) {
+      const startTime = parseFloat(player.getAttribute("data-start-time"));
+      if (isNaN(startTime)) return;
+
+      const setTime = function () {
+        if (!player.hasAttribute("data-seeked") && player.currentTime < 1) {
+          player.currentTime = startTime;
+          player.setAttribute("data-seeked", "true");
+        }
+      };
+
+      // Native fallback: attempt to seek as soon as enough data is loaded
+      player.addEventListener("loadedmetadata", setTime);
+      player.addEventListener("loadeddata", setTime);
+      player.addEventListener("canplay", setTime);
+      
+      // Force seek on play if the browser ignored pre-play seeks
+      player.addEventListener("play", function() {
+        if (!player.hasAttribute("data-seeked-play") && player.currentTime < 1) {
+           setTimeout(function() {
+             if (player.currentTime < 1) {
+               player.currentTime = startTime;
+             }
+           }, 100);
+           player.setAttribute("data-seeked-play", "true");
+        }
+      });
+      
+      if (player.readyState >= 1) {
+        setTime();
+      }
+    });
+  }
+
+  function wireStoryCarousel() {
+    const carousels = Array.from(document.querySelectorAll("[data-story-carousel]"));
+    if (!carousels.length) return;
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    carousels.forEach(function (carousel) {
+      const track = carousel.querySelector(".story-carousel__track");
+      const slides = Array.from(carousel.querySelectorAll(".story-carousel__slide"));
+      const dots = Array.from(carousel.querySelectorAll("[data-story-dot]"));
+      const previous = carousel.querySelector("[data-story-prev]");
+      const next = carousel.querySelector("[data-story-next]");
+      if (!track || slides.length < 2) return;
+
+      let currentIndex = 0;
+      let intervalId = null;
+
+      const sync = function () {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach(function (dot, index) {
+          dot.classList.toggle("is-active", index === currentIndex);
+          dot.setAttribute("aria-pressed", String(index === currentIndex));
+        });
+      };
+
+      const stop = function () {
+        if (intervalId === null) return;
+        window.clearInterval(intervalId);
+        intervalId = null;
+      };
+
+      const noAuto = carousel.hasAttribute("data-story-no-auto");
+      const start = function () {
+        if (prefersReducedMotion.matches || noAuto) return;
+        stop();
+        intervalId = window.setInterval(function () {
+          currentIndex = (currentIndex + 1) % slides.length;
+          sync();
+        }, 5000);
+      };
+
+      dots.forEach(function (dot) {
+        dot.addEventListener("click", function () {
+          currentIndex = Number(dot.dataset.storyDot) || 0;
+          sync();
+          start();
+        });
+      });
+
+      if (previous) {
+        previous.addEventListener("click", function () {
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          sync();
+          start();
+        });
+      }
+
+      if (next) {
+        next.addEventListener("click", function () {
+          currentIndex = (currentIndex + 1) % slides.length;
+          sync();
+          start();
+        });
+      }
+
+      carousel.addEventListener("mouseenter", stop);
+      carousel.addEventListener("mouseleave", start);
+      carousel.addEventListener("focusin", stop);
+      carousel.addEventListener("focusout", start);
+
+      sync();
+      start();
+    });
+  }
+
+  function wireHighlightCarousels() {
+    const carousels = Array.from(document.querySelectorAll("[data-highlight-carousel]"));
+    if (!carousels.length) return;
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    carousels.forEach(function (carousel) {
+      const track = carousel.querySelector(".highlight-carousel-card__track");
+      const slides = Array.from(carousel.querySelectorAll(".highlight-carousel-card__slide"));
+      const dots = Array.from(carousel.querySelectorAll("[data-highlight-dot]"));
+      const previous = carousel.querySelector("[data-highlight-prev]");
+      const next = carousel.querySelector("[data-highlight-next]");
+      if (!track || slides.length < 2) return;
+
+      let currentIndex = 0;
+      let intervalId = null;
+
+      const sync = function () {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach(function (dot, index) {
+          dot.classList.toggle("is-active", index === currentIndex);
+          dot.setAttribute("aria-pressed", String(index === currentIndex));
+        });
+      };
+
+      const stop = function () {
+        if (intervalId === null) return;
+        window.clearInterval(intervalId);
+        intervalId = null;
+      };
+
+      const start = function () {
+        if (prefersReducedMotion.matches) return;
+        stop();
+        intervalId = window.setInterval(function () {
+          currentIndex = (currentIndex + 1) % slides.length;
+          sync();
+        }, 5000);
+      };
+
+      dots.forEach(function (dot) {
+        dot.addEventListener("click", function () {
+          currentIndex = Number(dot.dataset.highlightDot) || 0;
+          sync();
+          start();
+        });
+      });
+
+      if (previous) {
+        previous.addEventListener("click", function () {
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          sync();
+          start();
+        });
+      }
+
+      if (next) {
+        next.addEventListener("click", function () {
+          currentIndex = (currentIndex + 1) % slides.length;
+          sync();
+          start();
+        });
+      }
+
+      carousel.addEventListener("mouseenter", stop);
+      carousel.addEventListener("mouseleave", start);
+      carousel.addEventListener("focusin", stop);
+      carousel.addEventListener("focusout", start);
+
+      sync();
+      start();
+    });
+  }
+
+  updateMeta();
+  wireForm();
+  wireConsentBanner();
+  wireNav();
+  wireScrollChrome();
+  wireFeaturedReleaseReveal();
+  wireVideoPosterReset();
+  wireExclusiveMediaPlayback();
+  wireVideoTimestamps();
+  wireStoryCarousel();
+  wireHighlightCarousels();
+  scrollToHash(window.location.hash, "auto");
+  window.addEventListener("hashchange", function () {
+    scrollToHash(window.location.hash, "smooth");
+  });
+})();
