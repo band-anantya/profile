@@ -344,7 +344,7 @@ window.SITE_DATA = {
     {
       title: "ETV win Jai Ganesha",
       description:
-        "Released on: YouTube<br>Music: Gopinadh Konda<br>Label: Om Shakthi creations<br>Style: Telugu folk",
+        "Song : Kurralloi kurrallu",
       videoPath: "assets/media/ETV_Jai_Ganesha.mp4",
       isPortrait: true,
       videoStartTime: 50,
