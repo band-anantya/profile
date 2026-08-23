@@ -614,6 +614,20 @@
     `;
   }
 
+  function renderFleaMarketShowsSection() {
+    const items = site.fleaMarketShows || [];
+    return `
+      <article id="flea-market-shows" class="music-topic-card music-topic-card--flea-market">
+        <div class="music-topic-card__head">
+          <p class="section-micro">Flea market shows</p>
+        </div>
+        <div class="music-topic-card__body">
+          ${items.length ? items.map(renderPlaybackFeature).join("") : '<p class="body-copy">Coming soon.</p>'}
+        </div>
+      </article>
+    `;
+  }
+
   function renderCoverSongsSection() {
     if (!site.coverSongs || !site.coverSongs.length) return "";
 
@@ -956,6 +970,7 @@
           </div>
 
           ${renderPlaybackSection()}
+          ${renderFleaMarketShowsSection()}
           ${renderCoverSongsSection()}
           ${renderRawVocalsSection()}
           ${renderOtherWorksSection()}
