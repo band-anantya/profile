@@ -65,7 +65,7 @@
   ];
   const musicSubsections = [
     { label: "Playback", href: "#playback", section: "music" },
-    { label: "Vocals", href: "#vocals", section: "music" },
+    { label: "Pubs, restaurants & others", href: "#vocals", section: "music" },
     {
       label: "Covers & special performances",
       href: "#covers-special-performances",
@@ -605,7 +605,7 @@
     return `
       <article id="playback" class="music-topic-card music-topic-card--playback">
         <div class="music-topic-card__head">
-          <p class="section-micro">Playback Feature</p>
+          <p class="section-micro">TV show performances</p>
         </div>
         <div class="music-topic-card__body">
           ${playbackFeatures.map(renderPlaybackFeature).join("")}
@@ -620,7 +620,7 @@
     return `
       <article id="cover-songs" class="music-topic-card music-topic-card--cover-songs">
         <div class="music-topic-card__head">
-          <p class="section-micro">Cover songs</p>
+          <p class="section-micro">Private events</p>
         </div>
         <div class="music-topic-card__body">
           ${site.coverSongs.map(renderPlaybackFeature).join("")}
@@ -636,7 +636,7 @@
     return `
       <article id="vocals" class="music-topic-card music-topic-card--raw-vocals">
         <div class="music-topic-card__head">
-          <p class="section-micro">Vocals</p>
+          <p class="section-micro">Pubs, restaurants & others</p>
         </div>
         <div class="music-topic-card__body">
           <article class="listening-room-feature listening-room-feature--topic">
@@ -941,8 +941,8 @@
           <div class="hero-panel__bg" style="background-image:url('${media["home-hero"].path}')"></div>
           <div class="hero-panel__content">
             <div class="hero-copy">
-              <h1>${site.artist.name}</h1>
-              <p class="hero-copy__tagline">Multilingual | Multi-genre playback singer</p>
+              <h1>Band Anantya</h1>
+              <p class="hero-copy__tagline">Carnatic fusion | Western | Classical | Bhajans | Jamming</p>
               <div class="hero-copy__actions">
                 <a class="button button--solid hero-cta-button" href="#music">Listen now</a>
               </div>

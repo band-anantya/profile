@@ -321,7 +321,7 @@ window.SITE_DATA = {
     ],
   },
   musicFeature: {
-    eyebrow: "Playback feature",
+    eyebrow: "TV show performances",
     title: "Bhimavaram Balma (Hindi)",
     description:
       "Movie - Anaganaga Oka Raju<br>Music - Mickey J Meyer<br>Style - Dance Number",
