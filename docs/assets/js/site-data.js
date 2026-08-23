@@ -342,10 +342,10 @@ window.SITE_DATA = {
   },
   playbackFeatures: [
     {
-      title: "Bonalu 2026 telugu folk song",
+      title: "ETV win Jai Ganesha",
       description:
         "Released on: YouTube<br>Music: Gopinadh Konda<br>Label: Om Shakthi creations<br>Style: Telugu folk",
-      videoPath: "assets/media/bonalu-2026-v4.mp4",
+      videoPath: "assets/media/ETV_Jai_Ganesha.mp4",
       videoStartTime: 50,
       musicLinks: [
         {
