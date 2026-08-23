@@ -346,6 +346,7 @@ window.SITE_DATA = {
       description:
         "Released on: YouTube<br>Music: Gopinadh Konda<br>Label: Om Shakthi creations<br>Style: Telugu folk",
       videoPath: "assets/media/ETV_Jai_Ganesha.mp4",
+      isPortrait: true,
       videoStartTime: 50,
       musicLinks: [
         {

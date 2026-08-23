@@ -536,7 +536,7 @@
         : `
           <div class="music-video-feature__media">
             <video
-              class="music-video-feature__player"
+              class="music-video-feature__player ${feature.isPortrait ? 'music-video-feature__player--portrait' : ''}"
               controls
               preload="metadata"
               playsinline

@@ -1709,6 +1709,14 @@ h1 {
   background: #000;
 }
 
+.music-video-feature__player--portrait {
+  aspect-ratio: 9 / 16;
+  max-height: min(70svh, 36rem);
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 .music-video-feature__frame {
   width: 100%;
   min-height: 0;
