@@ -357,11 +357,11 @@ window.SITE_DATA = {
       ]
     },
     {
-      title: "Tabahi",
+      title: "ETV Win | Sridevi drama company",
       description:
-        "Released on: YouTube<br>Music: Adhipati<br>Label: MajorThrusts<br>Style: Break up / western pathos",
-      videoPath: "assets/media/tabahi-music-video.mp4",
-      videoStartTime: 17,
+        "Song : Ravoi chandamama",
+      videoPath: "assets/media/Ravoi_chandamama.mp4",
+      isPortrait: true,
       musicLinks: [
         {
           label: "YouTube",
