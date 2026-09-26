@@ -1005,7 +1005,7 @@
           ${renderFleaMarketShowsSection()}
           ${renderCoverSongsSection()}
           ${renderRawVocalsSection()}
-          ${renderOtherWorksSection()}
+
         </section>
 
         ${renderMultiLingualSection()}

@@ -788,6 +788,30 @@ window.SITE_DATA = {
       posterPath: "assets/media/hindi-apnabanale-poster.jpg",
       posterAlt: "Apna Bana Le singing performance",
       isPortrait: true
+    },
+    {
+      title: "Tamil",
+      description: "Coming soon",
+      videoPath: "",
+      posterPath: "",
+      posterAlt: "Tamil singing performance",
+      isPortrait: true
+    },
+    {
+      title: "Malayalam",
+      description: "Coming soon",
+      videoPath: "",
+      posterPath: "",
+      posterAlt: "Malayalam singing performance",
+      isPortrait: true
+    },
+    {
+      title: "Punjabi",
+      description: "Coming soon",
+      videoPath: "",
+      posterPath: "",
+      posterAlt: "Punjabi singing performance",
+      isPortrait: true
     }
   ]
 };
