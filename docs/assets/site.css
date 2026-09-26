@@ -410,7 +410,7 @@ main {
 
 .hero-panel__bg {
   background-size: cover;
-  background-position: 0% 3%;
+  background-position: 20% 20%;
   transform: scale(1.085);
   transform-origin: center center;
   filter: saturate(0.88);
@@ -428,7 +428,7 @@ main {
 }
 
 .hero-copy {
-  max-width: 34rem;
+  max-width: 40rem;
   position: relative;
   z-index: 2;
 }
@@ -441,8 +441,7 @@ main {
 
 .hero-copy > :nth-child(1) {
   animation:
-    hero-copy-reveal 0.9s cubic-bezier(0.2, 0.9, 0.2, 1) 2s forwards,
-    hero-heading-color-shift 6s ease-in-out 2s infinite alternate;
+    hero-copy-reveal 0.9s cubic-bezier(0.2, 0.9, 0.2, 1) 2s forwards;
 }
 
 .hero-copy > :nth-child(2) {
@@ -492,7 +491,7 @@ h1 {
 }
 
 .hero-copy h1 {
-  color: #fff8ec;
+  color: var(--gold);
 }
 
 .hero-copy__lead,

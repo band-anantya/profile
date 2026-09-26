@@ -64,18 +64,15 @@
     "Actor - LRSA Battery Ad",
   ];
   const musicSubsections = [
-    { label: "Playback", href: "#playback", section: "music" },
-    { label: "Pubs, restaurants & others", href: "#vocals", section: "music" },
-    {
-      label: "Covers & special performances",
-      href: "#covers-special-performances",
-      section: "music",
-    },
-    { label: "Voice artist, Ads, Theatre", href: "#voiceovers-ads", section: "voiceovers-ads" },
+    { label: "TV show performances", href: "#playback", section: "music" },
+    { label: "Flea market shows", href: "#flea-market-shows", section: "music" },
+    { label: "Private events", href: "#covers-special-performances", section: "music" },
+    { label: "Pubs, restaurants & others", href: "#vocals", section: "music" }
   ];
   const desktopNav = [
     { label: "HOME", href: "#home", section: "home" },
     { label: "MUSIC", href: "#music", section: "music", children: musicSubsections },
+    { label: "MULTI-LINGUAL", href: "#multi-lingual", section: "multi-lingual" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">PHOTO<br>PORTFOLIO</span>", href: "#photo-portfolio", section: "photo-portfolio" },
     { label: "STORY", href: "#story", section: "story" },
   ];
@@ -85,6 +82,7 @@
   const mobileNav = [
     { label: "Home", href: "#home", section: "home" },
     { label: "Music", href: "#music", section: "music", children: musicSubsections },
+    { label: "Multi-lingual", href: "#multi-lingual", section: "multi-lingual" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Photo<br>Portfolio</span>", href: "#photo-portfolio", section: "photo-portfolio" },
     { label: "Story", href: "#story", section: "story" },
     { label: "Highlights", href: "#highlights", section: "highlights" },
@@ -503,8 +501,27 @@
   function renderPlaybackFeature(feature) {
     if (!feature) return "";
 
-    const mediaMarkup =
-      feature.mediaType === "audio" || feature.audioPath
+    const isThreeVideos = feature.videos && feature.videos.length === 3;
+
+    const mediaMarkup = feature.isMultiVideo
+      ? `<div class="music-video-feature__multi-media" style="display: grid; gap: 1rem; width: 100%; grid-template-columns: ${isThreeVideos ? '0.8fr 1.2fr' : '1fr 1fr'}; align-items: center;">
+          ${feature.videos.map(v => `
+            <div class="music-video-feature__media" style="${isThreeVideos && v.isPortrait ? 'grid-row: span 2; height: 100%;' : ''}">
+              <video
+                class="music-video-feature__player ${v.isPortrait ? 'music-video-feature__player--portrait' : ''}"
+                style="${isThreeVideos && v.isPortrait ? 'height: 100%; object-fit: cover;' : ''}"
+                controls
+                preload="metadata"
+                playsinline
+                ${v.posterPath ? `poster="${v.posterPath}"` : ""}
+                data-reset-poster
+              >
+                <source src="${v.videoPath}" type="video/mp4">
+              </video>
+            </div>
+          `).join("")}
+         </div>`
+      : feature.mediaType === "audio" || feature.audioPath
         ? `
           <div class="music-video-feature__media music-video-feature__media--audio">
             <img
@@ -533,7 +550,8 @@
               ></iframe>
             </div>
           `
-        : `
+        : feature.videoPath
+          ? `
           <div class="music-video-feature__media">
             <video
               class="music-video-feature__player ${feature.isPortrait ? 'music-video-feature__player--portrait' : ''}"
@@ -548,6 +566,11 @@
               <source src="${feature.videoPath}${feature.videoStartTime ? '#t=' + feature.videoStartTime : ''}" type="video/mp4">
               Your browser does not support the video tag.
             </video>
+          </div>
+        `
+        : `
+          <div class="music-video-feature__media" style="display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.2); border-radius:12px; min-height:400px; aspect-ratio:9/16;">
+            <p class="body-copy" style="opacity:0.5;">Coming soon</p>
           </div>
         `;
 
@@ -628,6 +651,24 @@
     `;
   }
 
+  function renderMultiLingualSection() {
+    const items = site.multiLingual || [];
+    if (!items.length) return "";
+
+    return `
+      <section id="multi-lingual" class="poster-section" style="padding-top: 4rem;">
+        <div class="section-head section-head--center">
+          <p class="section-label">Multi-lingual</p>
+        </div>
+        <article class="music-topic-card">
+          <div class="music-topic-card__body">
+            ${items.map(renderPlaybackFeature).join("")}
+          </div>
+        </article>
+      </section>
+    `;
+  }
+
   function renderCoverSongsSection() {
     if (!site.coverSongs || !site.coverSongs.length) return "";
 
@@ -644,8 +685,7 @@
   }
 
   function renderRawVocalsSection() {
-    const { voiceOnlyFolders } = getListeningRoomParts();
-    if (!voiceOnlyFolders.length) return "";
+    if (!site.pubsAndRestaurants || !site.pubsAndRestaurants.length) return "";
 
     return `
       <article id="vocals" class="music-topic-card music-topic-card--raw-vocals">
@@ -653,15 +693,7 @@
           <p class="section-micro">Pubs, restaurants & others</p>
         </div>
         <div class="music-topic-card__body">
-          <article class="listening-room-feature listening-room-feature--topic">
-            <div class="listening-room-feature__copy">
-              <h3>Voice-only selections.</h3>
-            </div>
-
-            <div class="listening-room-feature__media music-raw-vocals">
-              ${renderListeningFolderLinks(voiceOnlyFolders)}
-            </div>
-          </article>
+          ${site.pubsAndRestaurants.map(renderPlaybackFeature).join("")}
         </div>
       </article>
     `;
@@ -976,9 +1008,7 @@
           ${renderOtherWorksSection()}
         </section>
 
-        <section id="voiceovers-ads" class="voiceovers-section">
-          ${renderVoiceoversAdsPanels()}
-        </section>
+        ${renderMultiLingualSection()}
 
         ${renderPhotoPortfolioCarousel()}
 

@@ -571,7 +571,7 @@ window.SITE_DATA = {
   ],
   gallery: [
     {
-      path: "assets/media/preethi-hero-new.webp",
+      path: "assets/media/IMG_7665.jpg?v=2",
       usageRole: "home-hero",
       caption: "Preethi holding a mic and performing",
       alt: "Preethi Yagnamurthy singing into a microphone outdoors in Hyderabad.",
@@ -712,4 +712,82 @@ window.SITE_DATA = {
       placement: "highlights",
     },
   ],
+  pubsAndRestaurants: [
+    {
+      title: "Hard Rock Cafe",
+      description: "Live performance at HRC",
+      isMultiVideo: true,
+      videos: [
+        {
+          videoPath: "assets/media/hrc-reel-1.mp4",
+          posterPath: "assets/media/hrc-reel-1-poster.jpg?v=3",
+          isPortrait: true
+        },
+        {
+          videoPath: "assets/media/hrc-reel-2.mp4",
+          posterPath: "assets/media/hrc-reel-2-poster.jpg?v=2",
+          isPortrait: true
+        }
+      ]
+    }
+  ],
+  fleaMarketShows: [
+    {
+      title: "Flea Fusion",
+      description: "Live performance at Flea Fusion",
+      videoPath: "assets/media/fleafusion.mp4",
+      posterPath: "assets/media/fleafusion-poster.jpg",
+      posterAlt: "Performance at Flea Fusion",
+      isPortrait: true
+    }
+  ],
+  multiLingual: [
+    {
+      title: "Telugu",
+      description: "Performances in Telugu",
+      isMultiVideo: true,
+      videos: [
+        {
+          videoPath: "assets/media/telugu-yamaha.mp4",
+          posterPath: "assets/media/telugu-yamaha-poster.jpg?v=1",
+          isPortrait: true
+        },
+        {
+          videoPath: "assets/media/telugu-vennalave.mp4",
+          posterPath: "assets/media/telugu-vennalave-poster.jpg",
+          isPortrait: true
+        }
+      ]
+    },
+    {
+      title: "English",
+      description: "Performances in English",
+      isMultiVideo: true,
+      videos: [
+        {
+          videoPath: "assets/media/english-love-me.mp4",
+          posterPath: "assets/media/english-love-me-poster.jpg?v=2",
+          isPortrait: true
+        },
+        {
+          videoPath: "assets/media/english-onelove.mp4",
+          posterPath: "assets/media/english-onelove-poster.jpg",
+          isPortrait: false
+        },
+        {
+          videoPath: "assets/media/english-baby.mp4",
+          posterPath: "assets/media/english-baby-poster.jpg",
+          isPortrait: false
+        }
+      ]
+    },
+    {
+      title: "Hindi",
+      description: "Apna Bana Le",
+      videoPath: "assets/media/hindi-apnabanale.mp4",
+      posterPath: "assets/media/hindi-apnabanale-poster.jpg",
+      posterAlt: "Apna Bana Le singing performance",
+      isPortrait: true
+    }
+  ]
 };
