@@ -76,6 +76,7 @@
     { label: "HOME", href: "#home", section: "home" },
     { label: "MUSIC", href: "#music", section: "music", children: musicSubsections },
     { label: "HINDI", href: "#multi-lingual", section: "multi-lingual" },
+    { label: "ENGLISH", href: "#english", section: "english" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">PHOTO<br>PORTFOLIO</span>", href: "#photo-portfolio", section: "photo-portfolio" },
     { label: "STORY", href: "#story", section: "story" },
   ];
@@ -86,6 +87,7 @@
     { label: "Home", href: "#home", section: "home" },
     { label: "Music", href: "#music", section: "music", children: musicSubsections },
     { label: "Hindi", href: "#multi-lingual", section: "multi-lingual" },
+    { label: "English", href: "#english", section: "english" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Photo<br>Portfolio</span>", href: "#photo-portfolio", section: "photo-portfolio" },
     { label: "Story", href: "#story", section: "story" },
     { label: "Highlights", href: "#highlights", section: "highlights" },
@@ -676,6 +678,34 @@
     `;
   }
 
+  function renderEnglishSection() {
+    if (!site.englishPubs || !site.englishCorporate) return "";
+
+    return `
+      <section id="english" class="poster-section" style="padding-top: 4rem;">
+        <div class="section-head section-head--center">
+          <p class="section-label">English</p>
+        </div>
+        <article class="music-topic-card">
+          <div class="music-topic-card__head" style="text-align: center;">
+            <p class="section-micro">Pubs, restaurants & others</p>
+          </div>
+          <div class="music-topic-card__body">
+            ${site.englishPubs.map(renderPlaybackFeature).join("")}
+          </div>
+        </article>
+        <article class="music-topic-card" style="margin-top: 2rem;">
+          <div class="music-topic-card__head" style="text-align: center;">
+            <p class="section-micro">Corporate events</p>
+          </div>
+          <div class="music-topic-card__body">
+            ${site.englishCorporate.map(renderPlaybackFeature).join("")}
+          </div>
+        </article>
+      </section>
+    `;
+  }
+
   function renderCoverSongsSection() {
     if (!site.coverSongs || !site.coverSongs.length) return "";
 
@@ -1015,6 +1045,7 @@
         </section>
 
         ${renderMultiLingualSection()}
+        ${renderEnglishSection()}
 
         ${renderPhotoPortfolioCarousel()}
 
