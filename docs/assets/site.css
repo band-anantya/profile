@@ -424,7 +424,7 @@ main {
   padding: 10rem 5.4vw 7.75rem;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  align-items: end;
+  align-items: start;
 }
 
 .hero-copy {
