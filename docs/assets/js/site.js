@@ -505,16 +505,18 @@
     if (!feature) return "";
 
     const isThreeVideos = feature.videos && feature.videos.length === 3;
+    const isThreeMixed = isThreeVideos && !(feature.videos.every(v => v.isPortrait));
+    const gridCols = feature.threeColumns ? '1fr 1fr 1fr' : (isThreeMixed ? '0.8fr 1.2fr' : '1fr 1fr');
 
     const mediaMarkup = feature.isMultiVideo
-      ? `<div class="music-video-feature__multi-media" style="display: grid; gap: 1rem; width: 100%; grid-template-columns: ${isThreeVideos ? '0.8fr 1.2fr' : '1fr 1fr'}; align-items: center;">
+      ? `<div class="music-video-feature__multi-media" style="display: grid; gap: 1rem; width: 100%; grid-template-columns: ${gridCols}; align-items: start;">
           ${feature.videos.map(v => `
-            <div class="music-video-feature__media" style="${isThreeVideos && v.isPortrait ? 'grid-row: span 2; height: 100%;' : ''}">
-              ${v.title ? `<p style="font-family: var(--font-primary); font-size: 1.1rem; font-weight: 500; margin-bottom: 0.25rem;">${v.title}</p>` : ''}
-              ${v.description ? `<p class="body-copy" style="opacity: 0.7; margin-bottom: 0.75rem; font-size: 0.9rem;">${v.description}</p>` : ''}
+            <div class="music-video-feature__media" style="${isThreeMixed && v.isPortrait ? 'grid-row: span 2; height: 100%;' : ''}">
+              ${v.title ? `<p style="font-family: var(--font-primary); font-size: ${feature.smallHeadings ? '0.66rem' : '1.1rem'}; font-weight: 500; margin-bottom: 0.25rem;">${v.title}</p>` : ''}
+              ${v.description ? `<p class="body-copy" style="opacity: 0.7; margin-bottom: 0.75rem; font-size: ${feature.smallHeadings ? '0.6rem' : '0.9rem'};">${v.description}</p>` : ''}
               <video
                 class="music-video-feature__player ${v.isPortrait ? 'music-video-feature__player--portrait' : ''}"
-                style="${isThreeVideos && v.isPortrait ? 'height: 100%; object-fit: cover;' : ''}"
+                style="${isThreeMixed && v.isPortrait ? 'height: 100%; object-fit: cover;' : ''}"
                 controls
                 preload="metadata"
                 playsinline
