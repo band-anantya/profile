@@ -701,25 +701,7 @@ window.SITE_DATA = {
       placement: "highlights",
     },
   ],
-  pubsAndRestaurants: [
-    {
-      title: "Hard Rock Cafe",
-      description: "Live performance at HRC",
-      isMultiVideo: true,
-      videos: [
-        {
-          videoPath: "assets/media/hrc-reel-1.mp4",
-          posterPath: "assets/media/hrc-reel-1-poster.jpg?v=3",
-          isPortrait: true
-        },
-        {
-          videoPath: "assets/media/hrc-reel-2.mp4",
-          posterPath: "assets/media/hrc-reel-2-poster.jpg?v=2",
-          isPortrait: true
-        }
-      ]
-    }
-  ],
+  pubsAndRestaurants: [],
   fleaMarketShows: [
     {
       isMultiVideo: true,
@@ -738,6 +720,23 @@ window.SITE_DATA = {
     }
   ],
   multiLingual: [
+    {
+      title: "Pubs, restaurants & others",
+      description: "Live performance at HRC",
+      isMultiVideo: true,
+      videos: [
+        {
+          videoPath: "assets/media/hrc-reel-1.mp4",
+          posterPath: "assets/media/hrc-reel-1-poster.jpg?v=3",
+          isPortrait: true
+        },
+        {
+          videoPath: "assets/media/hrc-reel-2.mp4",
+          posterPath: "assets/media/hrc-reel-2-poster.jpg?v=2",
+          isPortrait: true
+        }
+      ]
+    },
     {
       title: "Private events",
       isMultiVideo: true,

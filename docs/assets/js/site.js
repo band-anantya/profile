@@ -1009,7 +1009,6 @@
           ${renderPlaybackSection()}
           ${renderFleaMarketShowsSection()}
           ${renderCoverSongsSection()}
-          ${renderRawVocalsSection()}
 
         </section>
 
