@@ -637,7 +637,7 @@
     return `
       <article id="playback" class="music-topic-card music-topic-card--playback">
         <div class="music-topic-card__head" style="text-align: center;">
-          <p class="section-micro">TV show performances</p>
+          <p class="section-micro">TV show performances (ETV Win - Sridevi drama company, Jai Ganesha)</p>
         </div>
         <div class="music-topic-card__body">
           ${playbackFeatures.map(renderPlaybackFeature).join("")}

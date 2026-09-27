@@ -350,14 +350,12 @@ window.SITE_DATA = {
       threeColumns: true,
       videos: [
         {
-          title: "ETV win Jai Ganesha",
           description: "Song : Kurralloi kurrallu",
           videoPath: "assets/media/ETV_Jai_Ganesha.mp4",
           isPortrait: true,
           videoStartTime: 50
         },
         {
-          title: "ETV Win | Sridevi drama company",
           description: "Song : Ravoi chandamama",
           videoPath: "assets/media/Ravoi_chandamama.mp4?v=2",
           isPortrait: true
