@@ -679,7 +679,7 @@
 
     return `
       <article id="cover-songs" class="music-topic-card music-topic-card--cover-songs">
-        <div class="music-topic-card__head">
+        <div class="music-topic-card__head" style="text-align: center;">
           <p class="section-micro">Private events</p>
         </div>
         <div class="music-topic-card__body">

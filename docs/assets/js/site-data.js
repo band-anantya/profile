@@ -366,14 +366,10 @@ window.SITE_DATA = {
   ],
   coverSongs: [
     {
-      title: "Jhoom jhoom jhoom baba",
-      description: "Movie: Kasam Paida Karne Wale Ki<br>Singer: Salma Agha",
-      videoPath: "assets/media/jhoom-jhoom-cover.mp4"
-    },
-    {
-      title: "Zara zara",
-      description: "Movie: Rehna hai tere dil mei<br>Singer: Bombay Jayashree",
-      videoPath: "assets/media/zara-zara-cover.mp4"
+      title: "Kontedaani kattuko",
+      videoPath: "assets/media/Telugu_Kontedaani_kattuko.mp4",
+      posterPath: "assets/media/Telugu_Kontedaani_kattuko_poster.jpg",
+      isPortrait: true
     }
   ],
   musicLinks: [
