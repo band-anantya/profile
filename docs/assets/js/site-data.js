@@ -346,33 +346,23 @@ window.SITE_DATA = {
   },
   playbackFeatures: [
     {
-      title: "ETV win Jai Ganesha",
-      description:
-        "Song : Kurralloi kurrallu",
-      videoPath: "assets/media/ETV_Jai_Ganesha.mp4",
-      isPortrait: true,
-      videoStartTime: 50,
-      musicLinks: [
+      title: "ETV Performances",
+      isMultiVideo: true,
+      videos: [
         {
-          label: "Listen full",
-          url: "https://youtu.be/c7h_yp_4ODg?si=6T3c0Y7RzN-jR5p9",
-          icon: "assets/icons/youtube.svg"
+          title: "ETV win Jai Ganesha",
+          description: "Song : Kurralloi kurrallu",
+          videoPath: "assets/media/ETV_Jai_Ganesha.mp4",
+          isPortrait: true,
+          videoStartTime: 50
+        },
+        {
+          title: "ETV Win | Sridevi drama company",
+          description: "Song : Ravoi chandamama",
+          videoPath: "assets/media/Ravoi_chandamama.mp4",
+          isPortrait: true
         }
       ]
-    },
-    {
-      title: "ETV Win | Sridevi drama company",
-      description:
-        "Song : Ravoi chandamama",
-      videoPath: "assets/media/Ravoi_chandamama.mp4",
-      isPortrait: true,
-      musicLinks: [
-        {
-          label: "YouTube",
-          url: "https://www.youtube.com/watch?v=QyqWj85Ooko",
-          iconPath: "assets/icons/youtube.svg",
-        },
-      ],
     }
   ],
   coverSongs: [

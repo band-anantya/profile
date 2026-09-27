@@ -510,6 +510,8 @@
       ? `<div class="music-video-feature__multi-media" style="display: grid; gap: 1rem; width: 100%; grid-template-columns: ${isThreeVideos ? '0.8fr 1.2fr' : '1fr 1fr'}; align-items: center;">
           ${feature.videos.map(v => `
             <div class="music-video-feature__media" style="${isThreeVideos && v.isPortrait ? 'grid-row: span 2; height: 100%;' : ''}">
+              ${v.title ? `<p style="font-family: var(--font-primary); font-size: 1.1rem; font-weight: 500; margin-bottom: 0.25rem;">${v.title}</p>` : ''}
+              ${v.description ? `<p class="body-copy" style="opacity: 0.7; margin-bottom: 0.75rem; font-size: 0.9rem;">${v.description}</p>` : ''}
               <video
                 class="music-video-feature__player ${v.isPortrait ? 'music-video-feature__player--portrait' : ''}"
                 style="${isThreeVideos && v.isPortrait ? 'height: 100%; object-fit: cover;' : ''}"
@@ -630,7 +632,7 @@
   function renderPlaybackSection() {
     return `
       <article id="playback" class="music-topic-card music-topic-card--playback">
-        <div class="music-topic-card__head">
+        <div class="music-topic-card__head" style="text-align: center;">
           <p class="section-micro">TV show performances</p>
         </div>
         <div class="music-topic-card__body">
