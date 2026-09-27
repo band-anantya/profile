@@ -660,7 +660,7 @@
         <div class="section-head section-head--center">
           <p class="section-label">Multi-lingual</p>
         </div>
-        <article class="music-topic-card">
+        <article class="music-topic-card music-topic-card--multi-lingual">
           <div class="music-topic-card__body">
             ${items.map(renderPlaybackFeature).join("")}
           </div>

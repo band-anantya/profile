@@ -3339,3 +3339,60 @@ body.nav-open .consent-banner {
     font-size: 0.66rem;
   }
 }
+
+/* Multi-lingual Section Centered Layout */
+.music-topic-card--multi-lingual .music-video-feature {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.music-topic-card--multi-lingual .music-video-feature:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.music-topic-card--multi-lingual .music-video-feature__art {
+  width: 100%;
+  max-width: 800px;
+}
+
+.music-topic-card--multi-lingual .music-video-feature__media,
+.music-topic-card--multi-lingual .music-video-feature__multi-media {
+  width: 100%;
+}
+
+.music-topic-card--multi-lingual .music-video-feature__player {
+  max-height: none !important;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.music-topic-card--multi-lingual .music-video-feature__player--portrait {
+  max-height: clamp(400px, 80vh, 800px) !important;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .music-topic-card--multi-lingual .music-video-feature__multi-media {
+    grid-template-columns: 1fr !important;
+  }
+  .music-topic-card--multi-lingual .music-video-feature__media {
+    grid-row: auto !important;
+    height: auto !important;
+  }
+  .music-topic-card--multi-lingual .music-video-feature__player--portrait {
+    width: 100%;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+  }
+}
