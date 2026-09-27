@@ -787,11 +787,20 @@ window.SITE_DATA = {
     },
     {
       title: "Hindi",
-      description: "Apna Bana Le",
-      videoPath: "assets/media/hindi-apnabanale.mp4",
-      posterPath: "assets/media/hindi-apnabanale-poster.jpg",
-      posterAlt: "Apna Bana Le singing performance",
-      isPortrait: true
+      description: "Performances in Hindi",
+      isMultiVideo: true,
+      videos: [
+        {
+          videoPath: "assets/media/hindi-apnabanale.mp4",
+          posterPath: "assets/media/hindi-apnabanale-poster.jpg",
+          isPortrait: true
+        },
+        {
+          videoPath: "assets/media/hindi-tumhiho.mp4",
+          posterPath: "assets/media/hindi-tumhiho-poster.jpg",
+          isPortrait: true
+        }
+      ]
     },
     {
       title: "Tamil, Malayalam, Punjabi",
