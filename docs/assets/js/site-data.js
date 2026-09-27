@@ -739,30 +739,8 @@ window.SITE_DATA = {
   ],
   multiLingual: [
     {
-      title: "English",
-      description: "Performances in English",
-      isMultiVideo: true,
-      videos: [
-        {
-          videoPath: "assets/media/english-love-me.mp4",
-          posterPath: "assets/media/english-love-me-poster.jpg?v=2",
-          isPortrait: true
-        },
-        {
-          videoPath: "assets/media/english-onelove.mp4",
-          posterPath: "assets/media/english-onelove-poster.jpg",
-          isPortrait: false
-        },
-        {
-          videoPath: "assets/media/english-baby.mp4",
-          posterPath: "assets/media/english-baby-poster.jpg",
-          isPortrait: false
-        }
-      ]
-    },
-    {
-      title: "Hindi",
-      description: "Performances in Hindi",
+      title: "Private events",
+      description: "Hindi",
       isMultiVideo: true,
       videos: [
         {
@@ -784,6 +762,28 @@ window.SITE_DATA = {
           videoPath: "assets/media/hindi-iktara.mp4",
           posterPath: "assets/media/hindi-iktara-poster.jpg",
           isPortrait: true
+        }
+      ]
+    },
+    {
+      title: "English",
+      description: "Performances in English",
+      isMultiVideo: true,
+      videos: [
+        {
+          videoPath: "assets/media/english-love-me.mp4",
+          posterPath: "assets/media/english-love-me-poster.jpg?v=2",
+          isPortrait: true
+        },
+        {
+          videoPath: "assets/media/english-onelove.mp4",
+          posterPath: "assets/media/english-onelove-poster.jpg",
+          isPortrait: false
+        },
+        {
+          videoPath: "assets/media/english-baby.mp4",
+          posterPath: "assets/media/english-baby-poster.jpg",
+          isPortrait: false
         }
       ]
     },
