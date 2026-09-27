@@ -1001,7 +1001,7 @@
 
         <section id="music" class="poster-section">
           <div class="section-head section-head--center">
-            <p class="section-label">Music</p>
+            <p class="section-label">Telugu</p>
           </div>
 
           ${renderPlaybackSection()}
