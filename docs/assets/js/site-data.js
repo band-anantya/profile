@@ -361,6 +361,7 @@ window.SITE_DATA = {
           isPortrait: true
         },
         {
+          title: "Song : 176 beach house",
           videoPath: "assets/media/Telugu_176_TV_show.mp4",
           posterPath: "assets/media/Telugu_176_TV_show_poster.jpg",
           isPortrait: true
