@@ -67,7 +67,10 @@
     { label: "TV show performances", href: "#playback", section: "music" },
     { label: "Flea market shows", href: "#flea-market-shows", section: "music" },
     { label: "Private events", href: "#covers-special-performances", section: "music" },
-    { label: "Pubs, restaurants & others", href: "#vocals", section: "music" }
+    { label: "Pubs, restaurants & others", href: "#vocals", section: "music" },
+    { label: "Corporate events", href: "#corporate-events", section: "music" },
+    { label: "Jammins", href: "#jammins", section: "music" },
+    { label: "Bhajans/Devotional", href: "#bhajans", section: "music" }
   ];
   const desktopNav = [
     { label: "HOME", href: "#home", section: "home" },
