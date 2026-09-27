@@ -370,6 +370,18 @@ window.SITE_DATA = {
       videoPath: "assets/media/Telugu_Kontedaani_kattuko.mp4",
       posterPath: "assets/media/Telugu_Kontedaani_kattuko_poster.jpg",
       isPortrait: true
+    },
+    {
+      title: "Chupultho dance",
+      videoPath: "assets/media/Telugu_Chupultho_dance.mp4",
+      posterPath: "assets/media/Telugu_Chupultho_dance_poster.jpg",
+      isPortrait: true
+    },
+    {
+      title: "Monna kanipinchavu",
+      videoPath: "assets/media/Telugu_Monna_kanipinchavu.mp4",
+      posterPath: "assets/media/Telugu_Monna_kanipinchavu_poster.jpg",
+      isPortrait: true
     }
   ],
   musicLinks: [
