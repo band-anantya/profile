@@ -799,6 +799,11 @@ window.SITE_DATA = {
           videoPath: "assets/media/hindi-tumhiho.mp4",
           posterPath: "assets/media/hindi-tumhiho-poster.jpg",
           isPortrait: true
+        },
+        {
+          videoPath: "assets/media/hindi-pehlanasha.mp4",
+          posterPath: "assets/media/hindi-pehlanasha-poster.jpg",
+          isPortrait: true
         }
       ]
     },
