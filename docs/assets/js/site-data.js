@@ -346,7 +346,6 @@ window.SITE_DATA = {
   },
   playbackFeatures: [
     {
-      title: "ETV Performances",
       isMultiVideo: true,
       videos: [
         {
@@ -727,18 +726,6 @@ window.SITE_DATA = {
   ],
   fleaMarketShows: [
     {
-      title: "Flea Fusion",
-      description: "Live performance at Flea Fusion",
-      videoPath: "assets/media/fleafusion.mp4",
-      posterPath: "assets/media/fleafusion-poster.jpg",
-      posterAlt: "Performance at Flea Fusion",
-      isPortrait: true
-    }
-  ],
-  multiLingual: [
-    {
-      title: "Telugu",
-      description: "Performances in Telugu",
       isMultiVideo: true,
       videos: [
         {
@@ -752,7 +739,9 @@ window.SITE_DATA = {
           isPortrait: true
         }
       ]
-    },
+    }
+  ],
+  multiLingual: [
     {
       title: "English",
       description: "Performances in English",

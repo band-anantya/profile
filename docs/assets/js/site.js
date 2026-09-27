@@ -598,8 +598,8 @@
     return `
       <article class="music-video-feature">
         <div class="music-video-feature__art">
-          <h3>${feature.title}</h3>
-          <p class="music-video-feature__meta">${feature.description}</p>
+          ${feature.title ? `<h3>${feature.title}</h3>` : ''}
+          ${feature.description ? `<p class="music-video-feature__meta">${feature.description}</p>` : ''}
           ${linkMarkup}
         </div>
 
@@ -646,8 +646,8 @@
     const items = site.fleaMarketShows || [];
     return `
       <article id="flea-market-shows" class="music-topic-card music-topic-card--flea-market">
-        <div class="music-topic-card__head">
-          <p class="section-micro">Flea market shows</p>
+        <div class="music-topic-card__head" style="text-align: center;">
+          <p class="section-micro">Flea markets</p>
         </div>
         <div class="music-topic-card__body">
           ${items.length ? items.map(renderPlaybackFeature).join("") : '<p class="body-copy">Coming soon.</p>'}
