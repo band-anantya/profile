@@ -358,7 +358,7 @@ window.SITE_DATA = {
         {
           title: "ETV Win | Sridevi drama company",
           description: "Song : Ravoi chandamama",
-          videoPath: "assets/media/Ravoi_chandamama.mp4",
+          videoPath: "assets/media/Ravoi_chandamama.mp4?v=2",
           isPortrait: true
         }
       ]
