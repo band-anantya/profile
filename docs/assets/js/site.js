@@ -75,7 +75,7 @@
   const desktopNav = [
     { label: "HOME", href: "#home", section: "home" },
     { label: "MUSIC", href: "#music", section: "music", children: musicSubsections },
-    { label: "MULTI-LINGUAL", href: "#multi-lingual", section: "multi-lingual" },
+    { label: "HINDI", href: "#multi-lingual", section: "multi-lingual" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">PHOTO<br>PORTFOLIO</span>", href: "#photo-portfolio", section: "photo-portfolio" },
     { label: "STORY", href: "#story", section: "story" },
   ];
@@ -85,7 +85,7 @@
   const mobileNav = [
     { label: "Home", href: "#home", section: "home" },
     { label: "Music", href: "#music", section: "music", children: musicSubsections },
-    { label: "Multi-lingual", href: "#multi-lingual", section: "multi-lingual" },
+    { label: "Hindi", href: "#multi-lingual", section: "multi-lingual" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Photo<br>Portfolio</span>", href: "#photo-portfolio", section: "photo-portfolio" },
     { label: "Story", href: "#story", section: "story" },
     { label: "Highlights", href: "#highlights", section: "highlights" },
@@ -663,7 +663,7 @@
     return `
       <section id="multi-lingual" class="poster-section" style="padding-top: 4rem;">
         <div class="section-head section-head--center">
-          <p class="section-label">Multi-lingual</p>
+          <p class="section-label">Hindi</p>
         </div>
         <article class="music-topic-card music-topic-card--multi-lingual">
           <div class="music-topic-card__body">

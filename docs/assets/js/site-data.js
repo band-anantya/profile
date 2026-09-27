@@ -740,7 +740,6 @@ window.SITE_DATA = {
   multiLingual: [
     {
       title: "Private events",
-      description: "Hindi",
       isMultiVideo: true,
       videos: [
         {
