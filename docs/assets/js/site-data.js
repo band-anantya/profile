@@ -76,9 +76,14 @@ window.SITE_DATA = {
   },
   bio: {
     intro: [
-      "Preethi Yagnamurthy’s voice was shaped through early Carnatic training, where discipline, phrasing, and emotional clarity became part of its foundation. That grounding now moves through playback songs, live performances, and a growing multilingual repertoire, carrying forward an evolving artistic identity. In 2023, she also founded Band Anantya, extending that journey into a live identity of its own.",
-      "Her journey also extends into television stages, judging panels at reputed institutions, flea-market stage performances, acting in ad films, and voice works for movies and web series.",
-      "Across each space, classical roots continue to find a contemporary expression in her voice.",
+      "Pure Bollywood-Hollywood-Regional (Telugu), and mix of Punjabi+Tamil+Malayalam.",
+      "4Pc band - Lead Female Vocals + Rhythms (Drums) + Keys + Electric Guitar. Extendable to 5 or 6pc.",
+      "Genres: Telugu, Indie, Western, Bolly, Classical, Semi, Fusion",
+      "600+ shows in leading Hyderabad Clubs, and 85+ Private Events.",
+      "Preethi Yagnamurthy, Lead Vocalist (Playback Singer TFI, insta: <a href=\"https://www.instagram.com/preethiyagnamurthy_singer\" target=\"_blank\">@preethiyagnamurthy_singer</a>) - Telugu Cine Playback Singer; Classically Trained. 600+ shows personally.",
+      "Website: <a href=\"https://preethi-yagnamurthy.github.io/portfolio\" target=\"_blank\">preethi-yagnamurthy.github.io/portfolio</a>",
+      "<strong>Media:</strong><br>Instagram: <a href=\"https://www.instagram.com/bandanantya\" target=\"_blank\">@bandanantya</a> | <a href=\"https://www.instagram.com/preethiyagnamurthy_singer\" target=\"_blank\">@preethiyagnamurthy_singer</a><br>YouTube: <a href=\"https://youtube.com/@bandanantya\" target=\"_blank\">Band ANANTYA</a><br>Facebook: <a href=\"https://www.facebook.com/share/16m8NvHPA1/?mibextid=qi2Omg\" target=\"_blank\">Band ANANTYA</a>",
+      "<strong>Contact:</strong><br>Y Chandra Sekhar<br>Founder Owner, ANANTYA<br>9666289784<br><a href=\"mailto:bandanantya@gmail.com\">bandanantya@gmail.com</a>"
     ],
     roots: [
       "City: Hyderabad",
