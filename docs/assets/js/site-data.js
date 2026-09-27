@@ -82,8 +82,7 @@ window.SITE_DATA = {
       "600+ shows in leading Hyderabad Clubs, and 85+ Private Events.",
       "Preethi Yagnamurthy, Lead Vocalist (Playback Singer TFI, insta: <a href=\"https://www.instagram.com/preethiyagnamurthy_singer\" target=\"_blank\">@preethiyagnamurthy_singer</a>) - Telugu Cine Playback Singer; Classically Trained. 600+ shows personally.",
       "Website: <a href=\"https://preethi-yagnamurthy.github.io/portfolio\" target=\"_blank\">preethi-yagnamurthy.github.io/portfolio</a>",
-      "<strong>Media:</strong><br>Instagram: <a href=\"https://www.instagram.com/bandanantya\" target=\"_blank\">@bandanantya</a> | <a href=\"https://www.instagram.com/preethiyagnamurthy_singer\" target=\"_blank\">@preethiyagnamurthy_singer</a><br>YouTube: <a href=\"https://youtube.com/@bandanantya\" target=\"_blank\">Band ANANTYA</a><br>Facebook: <a href=\"https://www.facebook.com/share/16m8NvHPA1/?mibextid=qi2Omg\" target=\"_blank\">Band ANANTYA</a>",
-      "<strong>Contact:</strong><br>Y Chandra Sekhar<br>Founder Owner, ANANTYA<br>9666289784<br><a href=\"mailto:bandanantya@gmail.com\">bandanantya@gmail.com</a>"
+      "<strong>Media:</strong><br>Instagram: <a href=\"https://www.instagram.com/bandanantya\" target=\"_blank\">@bandanantya</a> | <a href=\"https://www.instagram.com/preethiyagnamurthy_singer\" target=\"_blank\">@preethiyagnamurthy_singer</a><br>YouTube: <a href=\"https://youtube.com/@bandanantya\" target=\"_blank\">Band ANANTYA</a><br>Facebook: <a href=\"https://www.facebook.com/share/16m8NvHPA1/?mibextid=qi2Omg\" target=\"_blank\">Band ANANTYA</a>"
     ],
     roots: [
       "City: Hyderabad",
