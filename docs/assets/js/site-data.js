@@ -794,27 +794,11 @@ window.SITE_DATA = {
       isPortrait: true
     },
     {
-      title: "Tamil",
+      title: "Tamil, Malayalam, Punjabi",
       description: "Coming soon",
       videoPath: "",
       posterPath: "",
-      posterAlt: "Tamil singing performance",
-      isPortrait: true
-    },
-    {
-      title: "Malayalam",
-      description: "Coming soon",
-      videoPath: "",
-      posterPath: "",
-      posterAlt: "Malayalam singing performance",
-      isPortrait: true
-    },
-    {
-      title: "Punjabi",
-      description: "Coming soon",
-      videoPath: "",
-      posterPath: "",
-      posterAlt: "Punjabi singing performance",
+      posterAlt: "Tamil, Malayalam, Punjabi singing performance",
       isPortrait: true
     }
   ]
