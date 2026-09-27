@@ -721,6 +721,34 @@
     `;
   }
 
+  function renderTeluguCorporateSection() {
+    if (!site.teluguCorporate || !site.teluguCorporate.length) return "";
+    return `
+      <article id="telugu-corporate" class="music-topic-card" style="margin-top: 2rem;">
+        <div class="music-topic-card__head" style="text-align: center;">
+          <p class="section-micro">Corporate events</p>
+        </div>
+        <div class="music-topic-card__body">
+          ${site.teluguCorporate.map(renderPlaybackFeature).join("")}
+        </div>
+      </article>
+    `;
+  }
+
+  function renderTeluguAudienceSection() {
+    if (!site.teluguAudience || !site.teluguAudience.length) return "";
+    return `
+      <article id="telugu-audience" class="music-topic-card" style="margin-top: 2rem;">
+        <div class="music-topic-card__head" style="text-align: center;">
+          <p class="section-micro">Audience interaction</p>
+        </div>
+        <div class="music-topic-card__body">
+          ${site.teluguAudience.map(renderPlaybackFeature).join("")}
+        </div>
+      </article>
+    `;
+  }
+
   function renderRawVocalsSection() {
     if (!site.pubsAndRestaurants || !site.pubsAndRestaurants.length) return "";
 
@@ -1041,6 +1069,8 @@
           ${renderPlaybackSection()}
           ${renderFleaMarketShowsSection()}
           ${renderCoverSongsSection()}
+          ${renderTeluguCorporateSection()}
+          ${renderTeluguAudienceSection()}
 
         </section>
 

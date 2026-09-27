@@ -347,6 +347,7 @@ window.SITE_DATA = {
   playbackFeatures: [
     {
       isMultiVideo: true,
+      threeColumns: true,
       videos: [
         {
           title: "ETV win Jai Ganesha",
@@ -359,6 +360,11 @@ window.SITE_DATA = {
           title: "ETV Win | Sridevi drama company",
           description: "Song : Ravoi chandamama",
           videoPath: "assets/media/Ravoi_chandamama.mp4?v=2",
+          isPortrait: true
+        },
+        {
+          videoPath: "assets/media/Telugu_176_TV_show.mp4",
+          posterPath: "assets/media/Telugu_176_TV_show_poster.jpg",
           isPortrait: true
         }
       ]
@@ -821,6 +827,30 @@ window.SITE_DATA = {
         {
           videoPath: "assets/media/English_Jingle_bells_Corporate.mp4",
           posterPath: "assets/media/English_Jingle_bells_Corporate_poster.jpg",
+          isPortrait: true
+        }
+      ]
+    }
+  ],
+  teluguCorporate: [
+    {
+      isMultiVideo: true,
+      videos: [
+        {
+          videoPath: "assets/media/Telugu_Yamaha_Corporate.mp4",
+          posterPath: "assets/media/Telugu_Yamaha_Corporate_poster.jpg",
+          isPortrait: true
+        }
+      ]
+    }
+  ],
+  teluguAudience: [
+    {
+      isMultiVideo: true,
+      videos: [
+        {
+          videoPath: "assets/media/Telugu_audience_interaction.mp4",
+          posterPath: "assets/media/Telugu_audience_interaction_poster.jpg",
           isPortrait: true
         }
       ]
