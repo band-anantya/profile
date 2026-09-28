@@ -790,11 +790,21 @@ window.SITE_DATA = {
 
     {
       title: "Tamil, Malayalam, Punjabi",
-      description: "Coming soon",
-      videoPath: "",
-      posterPath: "",
-      posterAlt: "Tamil, Malayalam, Punjabi singing performance",
-      isPortrait: true
+      isMultiVideo: true,
+      videos: [
+        {
+          title: "Malayalam",
+          videoPath: "assets/media/Malayalam_1.mp4",
+          posterPath: "assets/media/Malayalam_1_poster.jpg",
+          isPortrait: false
+        },
+        {
+          title: "Tamil",
+          videoPath: "assets/media/Tamil_1.mp4",
+          posterPath: "assets/media/Tamil_1_poster.jpg",
+          isPortrait: false
+        }
+      ]
     }
   ],
   englishPubs: [
