@@ -20,14 +20,14 @@ window.SITE_DATA = {
     home: {
       label: "Home",
       href: "index.html",
-      title: "Preethi Yagnamurthy | Playback Singer",
+      title: "Band Anantya by Preethi Yagnamurthy",
       description:
         "Rooted, Expressive, Unmistakably her Own.",
     },
     about: {
       label: "About",
       href: "About.html",
-      title: "About | Preethi Yagnamurthy",
+      title: "About | Band Anantya by Preethi Yagnamurthy",
       description:
         "Learn about Preethi Yagnamurthy's Carnatic training, Hyderabad roots, Mirchi Singistan milestone, and evolving live-performance journey.",
     },
