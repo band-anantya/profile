@@ -423,8 +423,9 @@ main {
   min-height: 100svh;
   padding: 10rem 5.4vw 7.75rem;
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 3rem;
 }
 
 .hero-copy {
@@ -456,6 +457,55 @@ main {
 .hero-copy__tagline,
 .hero-copy__lead {
   text-shadow: 0 10px 28px rgba(0, 0, 0, 0.34);
+}
+
+.hero-story-box {
+  background: rgba(10, 8, 4, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(214, 181, 106, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  max-height: 65vh;
+  overflow-y: auto;
+  color: var(--text-color);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  opacity: 0;
+  transform: translateY(1.1rem);
+  animation: hero-copy-reveal 0.9s cubic-bezier(0.2, 0.9, 0.2, 1) 1s forwards;
+}
+
+.hero-story-box::-webkit-scrollbar {
+  width: 6px;
+}
+.hero-story-box::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+.hero-story-box::-webkit-scrollbar-thumb {
+  background: rgba(214, 181, 106, 0.3);
+  border-radius: 4px;
+}
+.hero-story-box::-webkit-scrollbar-thumb:hover {
+  background: rgba(214, 181, 106, 0.6);
+}
+
+.hero-story-box__header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 300;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.hero-story-box__body p {
+  font-family: "Rothek Normal", "Helvetica Neue", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  color: rgba(238, 227, 200, 0.9);
 }
 
 .section-micro,
@@ -2786,7 +2836,8 @@ body.nav-open .consent-banner {
   .hero-panel__content {
     padding: 7rem 1.25rem 8rem;
     grid-template-columns: 1fr;
-    align-items: end;
+    align-items: start;
+    gap: 3rem;
   }
 
   .spotlight-reveal {
@@ -3143,7 +3194,8 @@ body.nav-open .consent-banner {
     min-height: 100svh;
     padding: 5.3rem 1rem 6.8rem;
     grid-template-columns: 1fr;
-    align-items: end;
+    align-items: start;
+    gap: 3rem;
   }
 
   .spotlight-reveal {

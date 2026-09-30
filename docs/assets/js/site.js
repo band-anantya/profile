@@ -1077,7 +1077,7 @@
       <main>
         <section id="home" class="hero-panel">
           <div class="hero-panel__bg" style="background-image:url('${media["home-hero"].path}')"></div>
-          <div class="hero-panel__content">
+          <div class="hero-panel__content" id="story">
             <div class="hero-copy">
               <h1>Band Anantya</h1>
               <p class="hero-copy__tagline">Carnatic fusion | Western | Classical | Bhajans | Jamming</p>
@@ -1085,6 +1085,23 @@
                 <a class="button button--solid hero-cta-button" href="#music">Listen now</a>
               </div>
             </div>
+            <aside class="hero-story-box">
+              <div class="hero-story-box__header">
+                <h2>What are we?</h2>
+              </div>
+              <div class="hero-story-box__body">
+                <p>4Pc band - Lead Female Vocals + Percussion (Drums/Drumpad/Cajon) + Keys + Electric Guitar. Extendable to 5 or 6pc.</p>
+                <p>600+ shows in leading Hyderabad Clubs, and 85+ Private Events.</p>
+                <p><strong>Languages:</strong> Bollywood-Hollywood-Regional (Telugu), with a mix of Punjabi+Tamil+Malayalam</p>
+                <p><strong>Genres:</strong> Telugu, Indie, Western, Bolly, Classical, Semi-classical, Fusion, Folk, Sufi & many more</p>
+                <p><strong>Preethi Yagnamurthy</strong>, Lead Vocalist (Playback Singer TFI, insta: <a href="https://instagram.com/preethiyagnamurthy_singer" target="_blank">@preethiyagnamurthy_singer</a>) - Telugu Cine Playback Singer; Classically Trained. 600+ shows personally.</p>
+                <p><strong>Website:</strong> <a href="https://preethi-yagnamurthy.github.io/portfolio" target="_blank">preethi-yagnamurthy.github.io/portfolio</a></p>
+                <p><strong>Media:</strong><br>
+                Instagram: <a href="https://instagram.com/bandanantya" target="_blank">@bandanantya</a> | <a href="https://instagram.com/preethiyagnamurthy_singer" target="_blank">@preethiyagnamurthy_singer</a><br>
+                YouTube: Band ANANTYA<br>
+                Facebook: Band ANANTYA</p>
+              </div>
+            </aside>
           </div>
         </section>
 
@@ -1106,20 +1123,6 @@
         ${renderAudienceInteractionSection()}
 
         ${renderPhotoPortfolioCarousel()}
-
-        <section id="story" class="spotlight-section">
-          <div class="section-head section-head--center">
-            <p class="section-label">Story</p>
-            <h2>Rooted, Expressive, Unmistakably Her Own</h2>
-          </div>
-
-          <article class="spotlight-card">
-            <div class="spotlight-card__copy">
-              ${renderStoryBody()}
-            </div>
-            ${renderStoryCarousel()}
-          </article>
-        </section>
 
         <section id="highlights" class="awards-section">
           <div class="section-head section-head--center">
