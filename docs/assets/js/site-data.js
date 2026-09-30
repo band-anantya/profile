@@ -745,6 +745,7 @@ window.SITE_DATA = {
   ],
   multiLingual: [
     {
+      id: "hindi-pubs",
       title: "Pubs, restaurants & others",
       description: "Live performance at HRC",
       isMultiVideo: true,
@@ -762,6 +763,7 @@ window.SITE_DATA = {
       ]
     },
     {
+      id: "hindi-private",
       title: "Private events",
       isMultiVideo: true,
       videos: [
@@ -787,8 +789,8 @@ window.SITE_DATA = {
         }
       ]
     },
-
     {
+      id: "hindi-tamil",
       title: "Tamil, Malayalam, Punjabi",
       isMultiVideo: true,
       videos: [
@@ -867,16 +869,21 @@ window.SITE_DATA = {
   ],
   bhajanJamming: [
     {
-      title: "Paluke bangaram",
-      videoPath: "assets/media/bhajan_paluke_bangaram.mp4",
-      posterPath: "assets/media/bhajan_paluke_bangaram_poster.jpg",
-      isPortrait: false
-    },
-    {
-      title: "Garuda Gamana",
-      videoPath: "assets/media/bhajan_garuda_gamana.mp4",
-      posterPath: "assets/media/bhajan_garuda_gamana_poster.jpg",
-      isPortrait: true
+      isMultiVideo: true,
+      videos: [
+        {
+          title: "Paluke bangaram",
+          videoPath: "assets/media/bhajan_paluke_bangaram.mp4",
+          posterPath: "assets/media/bhajan_paluke_bangaram_poster.jpg",
+          isPortrait: false
+        },
+        {
+          title: "Garuda Gamana",
+          videoPath: "assets/media/bhajan_garuda_gamana.mp4",
+          posterPath: "assets/media/bhajan_garuda_gamana_poster.jpg",
+          isPortrait: true
+        }
+      ]
     }
   ]
 };

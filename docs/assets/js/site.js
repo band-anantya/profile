@@ -63,19 +63,23 @@
     "Actor - Apple Ad",
     "Actor - LRSA Battery Ad",
   ];
-  const musicSubsections = [
+  const teluguSubsections = [
     { label: "TV show performances", href: "#playback", section: "music" },
     { label: "Flea market shows", href: "#flea-market-shows", section: "music" },
-    { label: "Private events", href: "#covers-special-performances", section: "music" },
-    { label: "Pubs, restaurants & others", href: "#vocals", section: "music" },
-    { label: "Corporate events", href: "#corporate-events", section: "music" },
-    { label: "Jammins", href: "#jammins", section: "music" },
-    { label: "Bhajans/Devotional", href: "#bhajans", section: "music" }
+    { label: "Private events", href: "#cover-songs", section: "music" },
+    { label: "Corporate events", href: "#telugu-corporate", section: "music" },
+    { label: "Audience interaction", href: "#telugu-audience", section: "music" }
+  ];
+  
+  const hindiSubsections = [
+    { label: "Pubs, restaurants & others", href: "#hindi-pubs", section: "multi-lingual" },
+    { label: "Private events", href: "#hindi-private", section: "multi-lingual" },
+    { label: "Tamil, Malayalam, Punjabi", href: "#hindi-tamil", section: "multi-lingual" }
   ];
   const desktopNav = [
     { label: "HOME", href: "#home", section: "home" },
-    { label: "MUSIC", href: "#music", section: "music", children: musicSubsections },
-    { label: "HINDI", href: "#multi-lingual", section: "multi-lingual" },
+    { label: "TELUGU", href: "#music", section: "music", children: teluguSubsections },
+    { label: "HINDI", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
     { label: "ENGLISH", href: "#english", section: "english" },
     { label: "BHAJAN JAMMING", href: "#bhajan-jamming", section: "bhajan-jamming" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">PHOTO<br>PORTFOLIO</span>", href: "#photo-portfolio", section: "photo-portfolio" },
@@ -86,8 +90,8 @@
 
   const mobileNav = [
     { label: "Home", href: "#home", section: "home" },
-    { label: "Music", href: "#music", section: "music", children: musicSubsections },
-    { label: "Hindi", href: "#multi-lingual", section: "multi-lingual" },
+    { label: "Telugu", href: "#music", section: "music", children: teluguSubsections },
+    { label: "Hindi", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
     { label: "English", href: "#english", section: "english" },
     { label: "Bhajan jamming", href: "#bhajan-jamming", section: "bhajan-jamming" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Photo<br>Portfolio</span>", href: "#photo-portfolio", section: "photo-portfolio" },
@@ -602,7 +606,7 @@
       : "";
 
     return `
-      <article class="music-video-feature">
+      <article class="music-video-feature" ${feature.id ? `id="${feature.id}"` : ''}>
         <div class="music-video-feature__art">
           ${feature.title ? `<h3>${feature.title}</h3>` : ''}
           ${feature.description ? `<p class="music-video-feature__meta">${feature.description}</p>` : ''}
