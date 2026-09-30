@@ -77,6 +77,7 @@
     { label: "MUSIC", href: "#music", section: "music", children: musicSubsections },
     { label: "HINDI", href: "#multi-lingual", section: "multi-lingual" },
     { label: "ENGLISH", href: "#english", section: "english" },
+    { label: "BHAJAN JAMMING", href: "#bhajan-jamming", section: "bhajan-jamming" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">PHOTO<br>PORTFOLIO</span>", href: "#photo-portfolio", section: "photo-portfolio" },
     { label: "STORY", href: "#story", section: "story" },
   ];
@@ -88,6 +89,7 @@
     { label: "Music", href: "#music", section: "music", children: musicSubsections },
     { label: "Hindi", href: "#multi-lingual", section: "multi-lingual" },
     { label: "English", href: "#english", section: "english" },
+    { label: "Bhajan jamming", href: "#bhajan-jamming", section: "bhajan-jamming" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Photo<br>Portfolio</span>", href: "#photo-portfolio", section: "photo-portfolio" },
     { label: "Story", href: "#story", section: "story" },
     { label: "Highlights", href: "#highlights", section: "highlights" },
@@ -706,6 +708,23 @@
     `;
   }
 
+  function renderBhajanJammingSection() {
+    if (!site.bhajanJamming || !site.bhajanJamming.length) return "";
+
+    return `
+      <section id="bhajan-jamming" class="poster-section" style="padding-top: 4rem;">
+        <div class="section-head section-head--center">
+          <p class="section-label">Bhajan jamming</p>
+        </div>
+        <article class="music-topic-card">
+          <div class="music-topic-card__body">
+            ${site.bhajanJamming.map(renderPlaybackFeature).join("")}
+          </div>
+        </article>
+      </section>
+    `;
+  }
+
   function renderCoverSongsSection() {
     if (!site.coverSongs || !site.coverSongs.length) return "";
 
@@ -1076,6 +1095,7 @@
 
         ${renderMultiLingualSection()}
         ${renderEnglishSection()}
+        ${renderBhajanJammingSection()}
 
         ${renderPhotoPortfolioCarousel()}
 

@@ -864,5 +864,19 @@ window.SITE_DATA = {
         }
       ]
     }
+  ],
+  bhajanJamming: [
+    {
+      title: "Paluke bangaram",
+      videoPath: "assets/media/bhajan_paluke_bangaram.mp4",
+      posterPath: "assets/media/bhajan_paluke_bangaram_poster.jpg",
+      isPortrait: false
+    },
+    {
+      title: "Garuda Gamana",
+      videoPath: "assets/media/bhajan_garuda_gamana.mp4",
+      posterPath: "assets/media/bhajan_garuda_gamana_poster.jpg",
+      isPortrait: true
+    }
   ]
 };
