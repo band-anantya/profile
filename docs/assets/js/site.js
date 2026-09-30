@@ -67,8 +67,7 @@
     { label: "TV show performances", href: "#playback", section: "music" },
     { label: "Flea market shows", href: "#flea-market-shows", section: "music" },
     { label: "Private events", href: "#cover-songs", section: "music" },
-    { label: "Corporate events", href: "#telugu-corporate", section: "music" },
-    { label: "Audience interaction", href: "#telugu-audience", section: "music" }
+    { label: "Corporate events", href: "#telugu-corporate", section: "music" }
   ];
   
   const hindiSubsections = [
@@ -82,6 +81,7 @@
     { label: "HINDI", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
     { label: "ENGLISH", href: "#english", section: "english" },
     { label: "BHAJAN JAMMING", href: "#bhajan-jamming", section: "bhajan-jamming" },
+    { label: "AUDIENCE INTERACTION", href: "#audience-interaction", section: "audience-interaction" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">PHOTO<br>PORTFOLIO</span>", href: "#photo-portfolio", section: "photo-portfolio" },
     { label: "STORY", href: "#story", section: "story" },
   ];
@@ -94,6 +94,7 @@
     { label: "Hindi", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
     { label: "English", href: "#english", section: "english" },
     { label: "Bhajan jamming", href: "#bhajan-jamming", section: "bhajan-jamming" },
+    { label: "Audience interaction", href: "#audience-interaction", section: "audience-interaction" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Photo<br>Portfolio</span>", href: "#photo-portfolio", section: "photo-portfolio" },
     { label: "Story", href: "#story", section: "story" },
     { label: "Highlights", href: "#highlights", section: "highlights" },
@@ -758,17 +759,20 @@
     `;
   }
 
-  function renderTeluguAudienceSection() {
-    if (!site.teluguAudience || !site.teluguAudience.length) return "";
+  function renderAudienceInteractionSection() {
+    if (!site.audienceInteraction || !site.audienceInteraction.length) return "";
+
     return `
-      <article id="telugu-audience" class="music-topic-card" style="margin-top: 2rem;">
-        <div class="music-topic-card__head" style="text-align: center;">
-          <p class="section-micro">Audience interaction</p>
+      <section id="audience-interaction" class="poster-section" style="padding-top: 4rem;">
+        <div class="section-head section-head--center">
+          <p class="section-label">Audience interaction</p>
         </div>
-        <div class="music-topic-card__body">
-          ${site.teluguAudience.map(renderPlaybackFeature).join("")}
-        </div>
-      </article>
+        <article class="music-topic-card">
+          <div class="music-topic-card__body">
+            ${site.audienceInteraction.map(renderPlaybackFeature).join("")}
+          </div>
+        </article>
+      </section>
     `;
   }
 
@@ -1093,13 +1097,13 @@
           ${renderFleaMarketShowsSection()}
           ${renderCoverSongsSection()}
           ${renderTeluguCorporateSection()}
-          ${renderTeluguAudienceSection()}
 
         </section>
 
         ${renderMultiLingualSection()}
         ${renderEnglishSection()}
         ${renderBhajanJammingSection()}
+        ${renderAudienceInteractionSection()}
 
         ${renderPhotoPortfolioCarousel()}
 

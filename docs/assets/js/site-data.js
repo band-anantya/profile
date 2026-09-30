@@ -855,13 +855,18 @@ window.SITE_DATA = {
       ]
     }
   ],
-  teluguAudience: [
+  audienceInteraction: [
     {
       isMultiVideo: true,
       videos: [
         {
           videoPath: "assets/media/Telugu_audience_interaction.mp4",
           posterPath: "assets/media/Telugu_audience_interaction_poster.jpg",
+          isPortrait: true
+        },
+        {
+          videoPath: "assets/media/audience_interaction_3.mp4",
+          posterPath: "assets/media/audience_interaction_3_poster.jpg",
           isPortrait: true
         }
       ]
@@ -872,7 +877,7 @@ window.SITE_DATA = {
       isMultiVideo: true,
       videos: [
         {
-          title: "Paluke bangaram",
+          title: "Rama kodanda rama + Paluke bangaram",
           videoPath: "assets/media/bhajan_paluke_bangaram.mp4",
           posterPath: "assets/media/bhajan_paluke_bangaram_poster.jpg",
           isPortrait: false
@@ -881,6 +886,12 @@ window.SITE_DATA = {
           title: "Garuda Gamana",
           videoPath: "assets/media/bhajan_garuda_gamana.mp4",
           posterPath: "assets/media/bhajan_garuda_gamana_poster.jpg",
+          isPortrait: true
+        },
+        {
+          title: "Om jai jagdish hare",
+          videoPath: "assets/media/bhajan_om_jai_jagdish.mp4",
+          posterPath: "assets/media/bhajan_om_jai_jagdish_poster.jpg",
           isPortrait: true
         }
       ]
