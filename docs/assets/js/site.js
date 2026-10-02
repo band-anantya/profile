@@ -1168,12 +1168,9 @@
         <section id="home" class="hero-panel">
           <div class="hero-panel__bg" style="background-image:url('${media["home-hero"].path}')"></div>
           <div class="hero-panel__content" id="story">
-            <div class="hero-copy">
+            <div class="hero-copy" style="align-self: start; padding-top: 2rem;">
               <h1>Band Anantya</h1>
               <p class="hero-copy__tagline">Carnatic fusion | Western | Classical | Bhajans | Jamming</p>
-              <div class="hero-copy__actions">
-                <a class="button button--solid hero-cta-button" href="#music">Listen now</a>
-              </div>
             </div>
             <aside class="hero-story-box">
               <div class="hero-story-box__header">
