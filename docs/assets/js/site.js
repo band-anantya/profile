@@ -64,15 +64,15 @@
     "Actor - LRSA Battery Ad",
   ];
   const teluguSubsections = [
-    { label: "TV show performances", href: "#playback", section: "music" },
-    { label: "Flea market shows", href: "#flea-market-shows", section: "music" },
-    { label: "Private events", href: "#cover-songs", section: "music" },
-    { label: "Corporate events", href: "#telugu-corporate", section: "music" }
+    { label: "TV Show Performances", href: "#playback", section: "music" },
+    { label: "Flea Market Shows", href: "#flea-market-shows", section: "music" },
+    { label: "Private Events", href: "#cover-songs", section: "music" },
+    { label: "Corporate Events", href: "#telugu-corporate", section: "music" }
   ];
   
   const hindiSubsections = [
     { label: "Pubs, restaurants & others", href: "#hindi-pubs", section: "multi-lingual" },
-    { label: "Private events", href: "#hindi-private", section: "multi-lingual" },
+    { label: "Private Events", href: "#hindi-private", section: "multi-lingual" },
     { label: "Tamil, Malayalam, Punjabi", href: "#hindi-tamil", section: "multi-lingual" }
   ];
   const desktopNav = [
@@ -94,7 +94,7 @@
     { label: "Hindi", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
     { label: "English", href: "#english", section: "english" },
     { label: "Bhajan jamming", href: "#bhajan-jamming", section: "bhajan-jamming" },
-    { label: "Audience interaction", href: "#audience-interaction", section: "audience-interaction" },
+    { label: "Audience Interaction", href: "#audience-interaction", section: "audience-interaction" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Photo<br>Portfolio</span>", href: "#photo-portfolio", section: "photo-portfolio" },
     { label: "Story", href: "#story", section: "story" },
     { label: "Highlights", href: "#highlights", section: "highlights" },
@@ -644,7 +644,7 @@
     return `
       <article id="playback" class="music-topic-card music-topic-card--playback">
         <div class="music-topic-card__head" style="text-align: center;">
-          <p class="section-micro">TV show performances (ETV Win - Sridevi drama company, Jai Ganesha)</p>
+          <p class="section-micro">TV Show Performances (ETV Win - Sridevi Drama Company, Jai Ganesha)</p>
         </div>
         <div class="music-topic-card__body">
           ${playbackFeatures.map(renderPlaybackFeature).join("")}
@@ -658,7 +658,7 @@
     return `
       <article id="flea-market-shows" class="music-topic-card music-topic-card--flea-market">
         <div class="music-topic-card__head" style="text-align: center;">
-          <p class="section-micro">Flea markets</p>
+          <p class="section-micro">Flea Markets</p>
         </div>
         <div class="music-topic-card__body">
           ${items.length ? items.map(renderPlaybackFeature).join("") : '<p class="body-copy">Coming soon.</p>'}
@@ -703,7 +703,7 @@
         </article>
         <article class="music-topic-card" style="margin-top: 2rem;">
           <div class="music-topic-card__head" style="text-align: center;">
-            <p class="section-micro">Corporate events</p>
+            <p class="section-micro">Corporate Events</p>
           </div>
           <div class="music-topic-card__body">
             ${site.englishCorporate.map(renderPlaybackFeature).join("")}
@@ -736,7 +736,7 @@
     return `
       <article id="cover-songs" class="music-topic-card music-topic-card--cover-songs">
         <div class="music-topic-card__head" style="text-align: center;">
-          <p class="section-micro">Private events</p>
+          <p class="section-micro">Private Events</p>
         </div>
         <div class="music-topic-card__body">
           ${site.coverSongs.map(renderPlaybackFeature).join("")}
@@ -750,7 +750,7 @@
     return `
       <article id="telugu-corporate" class="music-topic-card" style="margin-top: 2rem;">
         <div class="music-topic-card__head" style="text-align: center;">
-          <p class="section-micro">Corporate events</p>
+          <p class="section-micro">Corporate Events</p>
         </div>
         <div class="music-topic-card__body">
           ${site.teluguCorporate.map(renderPlaybackFeature).join("")}
@@ -765,7 +765,7 @@
     return `
       <section id="audience-interaction" class="poster-section" style="padding-top: 4rem;">
         <div class="section-head section-head--center">
-          <p class="section-label">Audience interaction</p>
+          <p class="section-label">Audience Interaction</p>
         </div>
         <article class="music-topic-card">
           <div class="music-topic-card__body">
@@ -1090,7 +1090,7 @@
                 <h2>What are we?</h2>
               </div>
               <div class="hero-story-box__body">
-                <p>4Pc band - Lead Female Vocals + Percussion (Drums/Drumpad/Cajon) + Keys + Electric Guitar. Extendable to 5 or 6pc.</p>
+                <p>4Pc band - Lead Female Vocals + Percussion (Drums/Drumpad/Cajon) + Keys + Electric Guitar. Extendable to 5pc, 6pc or more.</p>
                 <p>600+ shows in leading Hyderabad Clubs, and 85+ Private Events.</p>
                 <p><strong>Languages:</strong> Bollywood-Hollywood-Regional (Telugu), with a mix of Punjabi+Tamil+Malayalam</p>
                 <p><strong>Genres:</strong> Telugu, Indie, Western, Bolly, Classical, Semi-classical, Fusion, Folk, Sufi & many more</p>
