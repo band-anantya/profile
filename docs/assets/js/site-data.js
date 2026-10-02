@@ -942,6 +942,12 @@ window.SITE_DATA = {
           videoPath: "assets/media/telugu_jamming_manohara.mp4",
           posterPath: "assets/media/telugu_jamming_manohara_poster.jpg",
           isPortrait: false
+        },
+        {
+          title: "Janillikosam",
+          videoPath: "assets/media/telugu_jamming_janillikosam.mp4",
+          posterPath: "assets/media/telugu_jamming_janillikosam_poster.jpg",
+          isPortrait: false
         }
       ]
     }
