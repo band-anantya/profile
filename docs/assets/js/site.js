@@ -1094,7 +1094,7 @@
                 <p>600+ shows in leading Hyderabad Clubs, and 85+ Private Events.</p>
                 <p><strong>Languages:</strong> Bollywood-Hollywood-Regional (Telugu), with a mix of Punjabi+Tamil+Malayalam</p>
                 <p><strong>Genres:</strong> Telugu, Indie, Western, Bolly, Classical, Semi-classical, Fusion, Folk, Sufi & many more</p>
-                <p><strong>Preethi Yagnamurthy</strong>, Lead Vocalist (Playback Singer TFI, insta: <a href="https://instagram.com/preethiyagnamurthy_singer" target="_blank">@preethiyagnamurthy_singer</a>) - Telugu Cine Playback Singer; Classically Trained. 600+ shows personally.</p>
+                <p><strong>Preethi Yagnamurthy</strong>, Lead Vocalist, Telugu Cine Playback Singer; Classically Trained.<br>Insta: <a href="https://instagram.com/preethiyagnamurthy_singer" target="_blank">@preethiyagnamurthy_singer</a></p>
                 <p><strong>Website:</strong> <a href="https://preethi-yagnamurthy.github.io/portfolio" target="_blank">preethi-yagnamurthy.github.io/portfolio</a></p>
                 <p><strong>Media:</strong><br>
                 Instagram: <a href="https://instagram.com/bandanantya" target="_blank">@bandanantya</a> | <a href="https://instagram.com/preethiyagnamurthy_singer" target="_blank">@preethiyagnamurthy_singer</a><br>
