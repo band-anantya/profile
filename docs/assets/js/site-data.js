@@ -972,9 +972,9 @@ window.SITE_DATA = {
           isPortrait: true
         },
         {
-          videoPath: "assets/media/audience_interaction_3.mp4",
-          posterPath: "assets/media/audience_interaction_3_poster.jpg",
-          isPortrait: true
+          videoPath: "assets/media/audience_interaction_3.mp4?v=2",
+          posterPath: "assets/media/audience_interaction_3_poster.jpg?v=2",
+          isPortrait: false
         },
         {
           title: "Achyutam keshavam",
@@ -1029,15 +1029,15 @@ window.SITE_DATA = {
         },
         {
           title: "Om jai jagdish hare",
-          videoPath: "assets/media/bhajan_om_jai_jagdish.mp4",
-          posterPath: "assets/media/bhajan_om_jai_jagdish_poster.jpg",
-          isPortrait: true
+          videoPath: "assets/media/bhajan_om_jai_jagdish.mp4?v=2",
+          posterPath: "assets/media/bhajan_om_jai_jagdish_poster.jpg?v=2",
+          isPortrait: false
         },
         {
           title: "Ganga jatadhara",
-          videoPath: "assets/media/ganga_jatadhara.mp4",
-          posterPath: "assets/media/ganga_jatadhara_poster.jpg",
-          isPortrait: true
+          videoPath: "assets/media/ganga_jatadhara.mp4?v=2",
+          posterPath: "assets/media/ganga_jatadhara_poster.jpg?v=2",
+          isPortrait: false
         }
       ]
     }
