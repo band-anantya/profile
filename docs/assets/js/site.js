@@ -516,6 +516,13 @@
 
   function renderPlaybackFeature(feature) {
     if (!feature) return "";
+    if (feature.isMultiVideo && feature.videos) {
+      feature.videos.sort((a, b) => {
+        let valA = a.isPortrait ? 1 : 0;
+        let valB = b.isPortrait ? 1 : 0;
+        return valA - valB;
+      });
+    }
 
     const isThreeVideos = feature.videos && feature.videos.length === 3;
     const isThreeMixed = isThreeVideos && !(feature.videos.every(v => v.isPortrait));
