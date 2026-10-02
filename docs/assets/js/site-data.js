@@ -841,6 +841,12 @@ window.SITE_DATA = {
           isPortrait: true
         }
       ]
+    },
+    {
+      id: "hindi-jamming",
+      title: "Jamming",
+      isMultiVideo: true,
+      videos: []
     }
   ],
   teluguCorporate: [
@@ -854,6 +860,20 @@ window.SITE_DATA = {
         }
       ]
     }
+  ],
+  teluguJamming: [
+    {
+      isMultiVideo: true,
+      videos: [
+        {
+          videoPath: "assets/media/telugu_jamming_1.mp4",
+          posterPath: "assets/media/telugu_jamming_1_poster.jpg",
+          isPortrait: true
+        }
+      ]
+    }
+  ],
+  hindiJamming: [
   ],
   audienceInteraction: [
     {

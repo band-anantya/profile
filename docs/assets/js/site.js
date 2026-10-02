@@ -67,13 +67,15 @@
     { label: "TV Show Performances", href: "#playback", section: "music" },
     { label: "Flea Market Shows", href: "#flea-market-shows", section: "music" },
     { label: "Private Events", href: "#cover-songs", section: "music" },
-    { label: "Corporate Events", href: "#telugu-corporate", section: "music" }
+    { label: "Corporate Events", href: "#telugu-corporate", section: "music" },
+    { label: "Jamming", href: "#telugu-jamming", section: "music" }
   ];
   
   const hindiSubsections = [
     { label: "Pubs, restaurants & others", href: "#hindi-pubs", section: "multi-lingual" },
     { label: "Private Events", href: "#hindi-private", section: "multi-lingual" },
-    { label: "Tamil, Malayalam, Punjabi", href: "#hindi-tamil", section: "multi-lingual" }
+    { label: "Tamil, Malayalam, Punjabi", href: "#hindi-tamil", section: "multi-lingual" },
+    { label: "Jamming", href: "#hindi-jamming", section: "multi-lingual" }
   ];
   const desktopNav = [
     { label: "HOME", href: "#home", section: "home" },
@@ -759,6 +761,34 @@
     `;
   }
 
+  function renderTeluguJammingSection() {
+    if (!site.teluguJamming || !site.teluguJamming.length) return "";
+    return `
+      <article id="telugu-jamming" class="music-topic-card" style="margin-top: 2rem;">
+        <div class="music-topic-card__head" style="text-align: center;">
+          <p class="section-micro">Jamming</p>
+        </div>
+        <div class="music-topic-card__body">
+          ${site.teluguJamming.map(renderPlaybackFeature).join("")}
+        </div>
+      </article>
+    `;
+  }
+
+  function renderTeluguJammingSection() {
+    if (!site.teluguJamming || !site.teluguJamming.length) return "";
+    return `
+      <article id="telugu-jamming" class="music-topic-card" style="margin-top: 2rem;">
+        <div class="music-topic-card__head" style="text-align: center;">
+          <p class="section-micro">Jamming</p>
+        </div>
+        <div class="music-topic-card__body">
+          ${site.teluguJamming.map(renderPlaybackFeature).join("")}
+        </div>
+      </article>
+    `;
+  }
+
   function renderAudienceInteractionSection() {
     if (!site.audienceInteraction || !site.audienceInteraction.length) return "";
 
@@ -1121,6 +1151,7 @@
           ${renderFleaMarketShowsSection()}
           ${renderCoverSongsSection()}
           ${renderTeluguCorporateSection()}
+          ${renderTeluguJammingSection()}
 
         </section>
 
