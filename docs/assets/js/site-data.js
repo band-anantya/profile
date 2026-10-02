@@ -853,6 +853,11 @@ window.SITE_DATA = {
           videoPath: "assets/media/english-onelove.mp4",
           posterPath: "assets/media/english-onelove-poster.jpg",
           isPortrait: false
+        },
+        {
+          videoPath: "assets/media/english_pubs_1.mp4",
+          posterPath: "assets/media/english_pubs_1_poster.jpg",
+          isPortrait: true
         }
       ]
     }
