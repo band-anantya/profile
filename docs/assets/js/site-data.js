@@ -946,7 +946,7 @@ window.SITE_DATA = {
           isPortrait: true
         },
         {
-          title: "Janillikosam",
+          title: "Jabilli kosam",
           videoPath: "assets/media/telugu_jamming_janillikosam.mp4",
           posterPath: "assets/media/telugu_jamming_janillikosam_poster.jpg",
           isPortrait: true
