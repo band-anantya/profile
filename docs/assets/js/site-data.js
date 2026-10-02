@@ -913,6 +913,12 @@ window.SITE_DATA = {
           videoPath: "assets/media/bhajan_om_jai_jagdish.mp4",
           posterPath: "assets/media/bhajan_om_jai_jagdish_poster.jpg",
           isPortrait: true
+        },
+        {
+          title: "Ganga jatadhara",
+          videoPath: "assets/media/ganga_jatadhara.mp4",
+          posterPath: "assets/media/ganga_jatadhara_poster.jpg",
+          isPortrait: true
         }
       ]
     }
