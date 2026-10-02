@@ -202,7 +202,8 @@ main {
 .mast-nav__brand-image {
   width: 4.2rem;
   height: 4.2rem;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .mast-nav__brand-text {
@@ -326,7 +327,8 @@ main {
 .mobile-brand__image {
   width: 3.7rem;
   height: 3.7rem;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .nav-toggle {
