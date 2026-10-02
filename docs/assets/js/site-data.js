@@ -853,11 +853,6 @@ window.SITE_DATA = {
           videoPath: "assets/media/english-onelove.mp4",
           posterPath: "assets/media/english-onelove-poster.jpg",
           isPortrait: false
-        },
-        {
-          videoPath: "assets/media/english-baby.mp4",
-          posterPath: "assets/media/english-baby-poster.jpg",
-          isPortrait: false
         }
       ]
     }
@@ -953,6 +948,11 @@ window.SITE_DATA = {
           videoPath: "assets/media/audience_interaction_5.mp4",
           posterPath: "assets/media/audience_interaction_5_poster.jpg",
           isPortrait: true
+        },
+        {
+          videoPath: "assets/media/english-baby.mp4",
+          posterPath: "assets/media/english-baby-poster.jpg",
+          isPortrait: false
         }
       ]
     }
