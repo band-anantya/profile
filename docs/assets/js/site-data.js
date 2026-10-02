@@ -392,6 +392,12 @@ window.SITE_DATA = {
           videoPath: "assets/media/Telugu_Monna_kanipinchavu.mp4",
           posterPath: "assets/media/Telugu_Monna_kanipinchavu_poster.jpg",
           isPortrait: true
+        },
+        {
+          title: "Roobarooba",
+          videoPath: "assets/media/telugu_private_roobarooba.mp4",
+          posterPath: "assets/media/telugu_private_roobarooba_poster.jpg",
+          isPortrait: true
         }
       ]
     }
