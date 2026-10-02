@@ -372,7 +372,7 @@ window.SITE_DATA = {
   coverSongs: [
     {
       isMultiVideo: true,
-      threeColumns: true,
+      columns: 4,
       smallHeadings: true,
       videos: [
         {
@@ -894,6 +894,7 @@ window.SITE_DATA = {
   teluguCorporate: [
     {
       isMultiVideo: true,
+      columns: 4,
       videos: [
         {
           title: "Yamaha",
@@ -925,6 +926,7 @@ window.SITE_DATA = {
   teluguJamming: [
     {
       isMultiVideo: true,
+      columns: 'auto',
       videos: [
         {
           videoPath: "assets/media/telugu_jamming_1.mp4",

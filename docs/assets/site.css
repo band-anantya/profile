@@ -1691,6 +1691,14 @@ h1 {
   align-items: start;
 }
 
+.music-video-feature--full-width {
+  grid-template-columns: 1fr !important;
+}
+
+.music-video-feature--full-width .music-video-feature__art {
+  margin-bottom: 1rem;
+}
+
 .music-topic-card {
   width: min(calc(100% - 5rem), var(--container));
   margin: 1rem auto 0;

@@ -526,7 +526,13 @@
 
     const isThreeVideos = feature.videos && feature.videos.length === 3;
     const isThreeMixed = isThreeVideos && !(feature.videos.every(v => v.isPortrait));
-    const gridCols = feature.threeColumns ? '1fr 1fr 1fr' : (isThreeMixed ? '0.8fr 1.2fr' : '1fr 1fr');
+    let gridCols = feature.threeColumns ? '1fr 1fr 1fr' : (isThreeMixed ? '0.8fr 1.2fr' : '1fr 1fr');
+
+    if (feature.columns === 'auto') {
+      gridCols = 'repeat(auto-fit, minmax(200px, 1fr))';
+    } else if (typeof feature.columns === 'number') {
+      gridCols = `repeat(${feature.columns}, 1fr)`;
+    }
 
     const mediaMarkup = feature.isMultiVideo
       ? `<div class="music-video-feature__multi-media" style="display: grid; gap: 1rem; width: 100%; grid-template-columns: ${gridCols}; align-items: start;">
@@ -617,14 +623,20 @@
       `
       : "";
 
-    return `
-      <article class="music-video-feature" ${feature.id ? `id="${feature.id}"` : ''}>
+    const hasArt = feature.title || feature.description || linkMarkup;
+    const isFullWidth = feature.fullWidth || !hasArt;
+    
+    const artMarkup = hasArt ? `
         <div class="music-video-feature__art">
           ${feature.title ? `<h3>${feature.title}</h3>` : ''}
           ${feature.description ? `<p class="music-video-feature__meta">${feature.description}</p>` : ''}
           ${linkMarkup}
         </div>
+    ` : '';
 
+    return `
+      <article class="music-video-feature ${isFullWidth ? 'music-video-feature--full-width' : ''}" ${feature.id ? `id="${feature.id}"` : ''}>
+        ${artMarkup}
         ${mediaMarkup}
       </article>
     `;
