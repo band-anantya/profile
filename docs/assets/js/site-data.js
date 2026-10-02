@@ -12,7 +12,7 @@ window.SITE_DATA = {
       "For bookings, collaborations, and listening links, continue through the live and contact sections.",
   },
   branding: {
-    primaryLogoPath: "assets/icons/py-conjunto.png",
+    primaryLogoPath: "assets/icons/bandlogo.png",
     faviconPath: "assets/icons/py-conjunto.png",
     bandLogoPath: "assets/icons/band-anantya.jpg",
   },
