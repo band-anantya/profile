@@ -83,7 +83,7 @@
     { label: "BHAJAN JAMMING", href: "#bhajan-jamming", section: "bhajan-jamming" },
     { label: "AUDIENCE INTERACTION", href: "#audience-interaction", section: "audience-interaction" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">PHOTO<br>PORTFOLIO</span>", href: "#photo-portfolio", section: "photo-portfolio" },
-    { label: "STORY", href: "#story", section: "story" },
+    { label: "MEET THE BAND", href: "#story", section: "story" },
   ];
   const consentStorageKey = "preethi-cookie-consent";
   let hashScrollCorrectionTimer = null;
@@ -96,7 +96,7 @@
     { label: "Bhajan jamming", href: "#bhajan-jamming", section: "bhajan-jamming" },
     { label: "Audience Interaction", href: "#audience-interaction", section: "audience-interaction" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Photo<br>Portfolio</span>", href: "#photo-portfolio", section: "photo-portfolio" },
-    { label: "Story", href: "#story", section: "story" },
+    { label: "Meet the Band", href: "#story", section: "story" },
     { label: "Highlights", href: "#highlights", section: "highlights" },
     { label: "Contact", href: "#contact", section: "contact" },
   ];
@@ -1087,7 +1087,7 @@
             </div>
             <aside class="hero-story-box">
               <div class="hero-story-box__header">
-                <h2>What are we?</h2>
+                <h2>Meet the band</h2>
               </div>
               <div class="hero-story-box__body">
                 <p>4Pc band - Lead Female Vocals + Percussion (Drums/Drumpad/Cajon) + Keys + Electric Guitar. Extendable to 5pc, 6pc or more.</p>
