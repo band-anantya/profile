@@ -1094,12 +1094,23 @@
                 <p>600+ shows in leading Hyderabad Clubs, and 85+ Private Events.</p>
                 <p><strong>Languages:</strong> Bollywood-Hollywood-Regional (Telugu), with a mix of Punjabi+Tamil+Malayalam</p>
                 <p><strong>Genres:</strong> Telugu, Indie, Western, Bolly, Classical, Semi-classical, Fusion, Folk, Sufi & many more</p>
-                <p><strong>Preethi Yagnamurthy</strong>, Lead Vocalist, Telugu Cine Playback Singer; Classically Trained.<br>Insta: <a href="https://instagram.com/preethiyagnamurthy_singer" target="_blank">@preethiyagnamurthy_singer</a></p>
-                <p><strong>Website:</strong> <a href="https://preethi-yagnamurthy.github.io/portfolio" target="_blank">preethi-yagnamurthy.github.io/portfolio</a></p>
-                <p><strong>Media:</strong><br>
-                Instagram: <a href="https://instagram.com/bandanantya" target="_blank">@bandanantya</a> | <a href="https://instagram.com/preethiyagnamurthy_singer" target="_blank">@preethiyagnamurthy_singer</a><br>
-                YouTube: Band ANANTYA<br>
-                Facebook: Band ANANTYA</p>
+                <p><strong>Preethi Yagnamurthy</strong>, Lead Vocalist, Telugu Cine Playback Singer; Classically Trained.<br>
+                <div class="social-link-group" style="margin-top: 0.5rem;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16.11 7.66v.01"/><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8"/></svg>
+                  <a href="https://instagram.com/preethiyagnamurthy_singer" target="_blank" class="social-link" style="color: rgba(238, 227, 200, 0.9);">@preethiyagnamurthy_singer</a>
+                </div></p>
+                <div class="hero-story-box__socials">
+                  <a href="https://preethi-yagnamurthy.github.io/portfolio" target="_blank" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> preethi-yagnamurthy.github.io/portfolio</a>
+                  
+                  <div class="social-link-group">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16.11 7.66v.01"/><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8"/></svg>
+                    <a href="https://instagram.com/bandanantya" target="_blank" class="social-link">@bandanantya</a> <span style="color: var(--gold);">|</span> <a href="https://instagram.com/preethiyagnamurthy_singer" target="_blank" class="social-link">@preethiyagnamurthy_singer</a>
+                  </div>
+
+                  <a href="https://www.youtube.com/@bandanantya" target="_blank" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg> Band ANANTYA</a>
+
+                  <a href="https://www.facebook.com/share/16m8NvHPA1/?mibextid=qi2Omg" target="_blank" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Band ANANTYA</a>
+                </div>
               </div>
             </aside>
           </div>

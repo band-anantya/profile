@@ -510,6 +510,33 @@ main {
   color: rgba(238, 227, 200, 0.9);
 }
 
+.hero-story-box__socials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.social-link-group,
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gold);
+  text-decoration: none;
+  font-family: "Rothek Normal", "Helvetica Neue", sans-serif;
+  font-size: 1.05rem;
+  transition: opacity 0.2s ease;
+}
+
+.social-link:hover {
+  opacity: 0.8;
+}
+
+.social-link svg {
+  flex-shrink: 0;
+}
+
 .section-micro,
 .section-label {
   margin: 0 0 0.85rem;
