@@ -937,6 +937,11 @@ window.SITE_DATA = {
           videoPath: "assets/media/audience_interaction_2.mp4",
           posterPath: "assets/media/audience_interaction_2_poster.jpg",
           isPortrait: true
+        },
+        {
+          videoPath: "assets/media/audience_interaction_4.mp4",
+          posterPath: "assets/media/audience_interaction_4_poster.jpg",
+          isPortrait: true
         }
       ]
     }
