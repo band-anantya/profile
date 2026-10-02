@@ -1094,11 +1094,7 @@
                 <p>600+ shows in leading Hyderabad Clubs, and 85+ Private Events.</p>
                 <p><strong>Languages:</strong> Bollywood-Hollywood-Regional (Telugu), with a mix of Punjabi+Tamil+Malayalam</p>
                 <p><strong>Genres:</strong> Telugu, Indie, Western, Bolly, Classical, Semi-classical, Fusion, Folk, Sufi & many more</p>
-                <p><strong>Preethi Yagnamurthy</strong>, Lead Vocalist, Telugu Cine Playback Singer; Classically Trained.<br>
-                <div class="social-link-group" style="margin-top: 0.5rem;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16.11 7.66v.01"/><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8"/></svg>
-                  <a href="https://instagram.com/preethiyagnamurthy_singer" target="_blank" class="social-link" style="color: rgba(238, 227, 200, 0.9);">@preethiyagnamurthy_singer</a>
-                </div></p>
+                <p><strong>Preethi Yagnamurthy</strong>, Lead Vocalist, Telugu Cine Playback Singer; Classically Trained.</p>
                 <div class="hero-story-box__socials">
                   <a href="https://preethi-yagnamurthy.github.io/portfolio" target="_blank" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> preethi-yagnamurthy.github.io/portfolio</a>
                   
