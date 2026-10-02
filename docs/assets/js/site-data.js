@@ -936,6 +936,12 @@ window.SITE_DATA = {
           videoPath: "assets/media/telugu_jamming_ee_velalo.mp4",
           posterPath: "assets/media/telugu_jamming_ee_velalo_poster.jpg",
           isPortrait: false
+        },
+        {
+          title: "Manohara",
+          videoPath: "assets/media/telugu_jamming_manohara.mp4",
+          posterPath: "assets/media/telugu_jamming_manohara_poster.jpg",
+          isPortrait: false
         }
       ]
     }
