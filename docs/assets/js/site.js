@@ -1168,10 +1168,11 @@
         <section id="home" class="hero-panel">
           <div class="hero-panel__bg" style="background-image:url('${media["home-hero"].path}')"></div>
           <div class="hero-panel__content" id="story">
-            <div class="hero-copy" style="align-self: start; margin-top: -6rem;">
-              <h1>Band Anantya</h1>
-              <p class="hero-copy__tagline">Carnatic fusion | Western | Classical | Bhajans | Jamming</p>
-            </div>
+            <div style="grid-column: 1; display: flex; flex-direction: column; gap: 2.5rem; align-items: flex-start; justify-content: flex-start;">
+              <div class="hero-copy" style="margin-top: -6rem;">
+                <h1 style="white-space: nowrap;">Band Anantya</h1>
+                <p class="hero-copy__tagline">Carnatic fusion | Western | Classical | Bhajans | Jamming</p>
+              </div>
             <aside class="hero-story-box">
               <div class="hero-story-box__header">
                 <h2>Meet the band</h2>
@@ -1196,6 +1197,7 @@
                 </div>
               </div>
             </aside>
+          </div>
           </div>
         </section>
 
