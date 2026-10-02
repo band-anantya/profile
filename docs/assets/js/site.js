@@ -74,7 +74,6 @@
   const hindiSubsections = [
     { label: "Pubs, restaurants & others", href: "#hindi-pubs", section: "multi-lingual" },
     { label: "Private Events", href: "#hindi-private", section: "multi-lingual" },
-    { label: "Tamil, Malayalam, Punjabi", href: "#hindi-tamil", section: "multi-lingual" },
     { label: "Jamming", href: "#hindi-jamming", section: "multi-lingual" }
   ];
   const desktopNav = [
@@ -85,7 +84,8 @@
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">BHAJAN<br>JAMMING</span>", href: "#bhajan-jamming", section: "bhajan-jamming" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">AUDIENCE<br>INTERACTION</span>", href: "#audience-interaction", section: "audience-interaction" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">PHOTO<br>PORTFOLIO</span>", href: "#photo-portfolio", section: "photo-portfolio" },
-    { label: "MEET THE BAND", href: "#story", section: "story" },
+    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">OTHER<br>LANGUAGES</span>", href: "#other-languages", section: "other-languages" },
+    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">MEET THE<br>BAND</span>", href: "#story", section: "story" },
   ];
   const consentStorageKey = "preethi-cookie-consent";
   let hashScrollCorrectionTimer = null;
@@ -98,7 +98,8 @@
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Bhajan<br>Jamming</span>", href: "#bhajan-jamming", section: "bhajan-jamming" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Audience<br>Interaction</span>", href: "#audience-interaction", section: "audience-interaction" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Photo<br>Portfolio</span>", href: "#photo-portfolio", section: "photo-portfolio" },
-    { label: "Meet the Band", href: "#story", section: "story" },
+    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Other<br>Languages</span>", href: "#other-languages", section: "other-languages" },
+    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Meet the<br>Band</span>", href: "#story", section: "story" },
     { label: "Highlights", href: "#highlights", section: "highlights" },
     { label: "Contact", href: "#contact", section: "contact" },
   ];
@@ -687,6 +688,23 @@
     `;
   }
 
+  function renderOtherLanguagesSection() {
+    if (!site.otherLanguages || !site.otherLanguages.length) return "";
+
+    return `
+      <section id="other-languages" class="poster-section" style="padding-top: 4rem;">
+        <div class="section-head section-head--center">
+          <p class="section-label">Other Languages</p>
+        </div>
+        <article class="music-topic-card">
+          <div class="music-topic-card__body">
+            ${site.otherLanguages.map(renderPlaybackFeature).join("")}
+          </div>
+        </article>
+      </section>
+    `;
+  }
+
   function renderEnglishSection() {
     if (!site.englishPubs || !site.englishCorporate) return "";
 
@@ -1156,6 +1174,7 @@
         </section>
 
         ${renderMultiLingualSection()}
+        ${renderOtherLanguagesSection()}
         ${renderEnglishSection()}
         ${renderBhajanJammingSection()}
         ${renderAudienceInteractionSection()}

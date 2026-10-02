@@ -788,10 +788,10 @@ window.SITE_DATA = {
           isPortrait: true
         }
       ]
-    },
+    }
+  ],
+  otherLanguages: [
     {
-      id: "hindi-tamil",
-      title: "Tamil, Malayalam, Punjabi",
       isMultiVideo: true,
       videos: [
         {
