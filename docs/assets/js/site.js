@@ -88,10 +88,10 @@
     { label: "TELUGU", href: "#music", section: "music", children: teluguSubsections },
     { label: "HINDI", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
     { label: "ENGLISH", href: "#english", section: "english", children: englishSubsections },
+    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">OTHER<br>LANGUAGES</span>", href: "#other-languages", section: "other-languages" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">FLEA<br>MARKETS</span>", href: "#flea-markets", section: "flea-markets" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">BHAJAN<br>JAMMING</span>", href: "#bhajan-jamming", section: "bhajan-jamming" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">AUDIENCE<br>INTERACTION</span>", href: "#audience-interaction", section: "audience-interaction" },
-    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">OTHER<br>LANGUAGES</span>", href: "#other-languages", section: "other-languages" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">MEET THE<br>BAND</span>", href: "#story", section: "story" },
   ];
   const consentStorageKey = "preethi-cookie-consent";
@@ -102,10 +102,10 @@
     { label: "Telugu", href: "#music", section: "music", children: teluguSubsections },
     { label: "Hindi", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
     { label: "English", href: "#english", section: "english", children: englishSubsections },
+    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Other<br>Languages</span>", href: "#other-languages", section: "other-languages" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Flea<br>Markets</span>", href: "#flea-markets", section: "flea-markets" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Bhajan<br>Jamming</span>", href: "#bhajan-jamming", section: "bhajan-jamming" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Audience<br>Interaction</span>", href: "#audience-interaction", section: "audience-interaction" },
-    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Other<br>Languages</span>", href: "#other-languages", section: "other-languages" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Meet the<br>Band</span>", href: "#story", section: "story" },
     { label: "Contact", href: "#contact", section: "contact" },
   ];
@@ -973,7 +973,7 @@
 
   function renderDockNav() {
     return [
-      { label: "Highlights", href: "#highlights" },
+      { label: "Meet the band", href: "#story" },
       { label: "Contact", href: "#contact" },
     ]
       .map((item) => `<a href="${item.href}">${item.label}</a>`)
