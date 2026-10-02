@@ -77,15 +77,20 @@
     { label: "Corporate events", href: "#hindi-corporate", section: "multi-lingual" },
     { label: "Jamming", href: "#hindi-jamming", section: "multi-lingual" }
   ];
+
+  const englishSubsections = [
+    { label: "Pubs, restaurants & others", href: "#english-pubs", section: "english" },
+    { label: "Corporate Events", href: "#english-corporate", section: "english" }
+  ];
+
   const desktopNav = [
     { label: "HOME", href: "#home", section: "home" },
     { label: "TELUGU", href: "#music", section: "music", children: teluguSubsections },
     { label: "HINDI", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
-    { label: "ENGLISH", href: "#english", section: "english" },
+    { label: "ENGLISH", href: "#english", section: "english", children: englishSubsections },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">FLEA<br>MARKETS</span>", href: "#flea-markets", section: "flea-markets" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">BHAJAN<br>JAMMING</span>", href: "#bhajan-jamming", section: "bhajan-jamming" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">AUDIENCE<br>INTERACTION</span>", href: "#audience-interaction", section: "audience-interaction" },
-    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">PHOTO<br>PORTFOLIO</span>", href: "#photo-portfolio", section: "photo-portfolio" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">OTHER<br>LANGUAGES</span>", href: "#other-languages", section: "other-languages" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">MEET THE<br>BAND</span>", href: "#story", section: "story" },
   ];
@@ -96,14 +101,12 @@
     { label: "Home", href: "#home", section: "home" },
     { label: "Telugu", href: "#music", section: "music", children: teluguSubsections },
     { label: "Hindi", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
-    { label: "English", href: "#english", section: "english" },
+    { label: "English", href: "#english", section: "english", children: englishSubsections },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Flea<br>Markets</span>", href: "#flea-markets", section: "flea-markets" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Bhajan<br>Jamming</span>", href: "#bhajan-jamming", section: "bhajan-jamming" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Audience<br>Interaction</span>", href: "#audience-interaction", section: "audience-interaction" },
-    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Photo<br>Portfolio</span>", href: "#photo-portfolio", section: "photo-portfolio" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Other<br>Languages</span>", href: "#other-languages", section: "other-languages" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Meet the<br>Band</span>", href: "#story", section: "story" },
-    { label: "Highlights", href: "#highlights", section: "highlights" },
     { label: "Contact", href: "#contact", section: "contact" },
   ];
   const platformOrder = [
@@ -540,8 +543,8 @@
       ? `<div class="music-video-feature__multi-media" style="display: grid; gap: 1rem; width: 100%; grid-template-columns: ${gridCols}; align-items: start;">
           ${feature.videos.map(v => `
             <div class="music-video-feature__media" style="${isThreeMixed && v.isPortrait ? 'grid-row: span 2; height: 100%;' : ''}">
-              ${v.title ? `<p style="font-family: var(--font-primary); font-size: ${feature.smallHeadings ? '0.66rem' : '1.1rem'}; font-weight: 500; margin-bottom: 0.25rem;">${v.title}</p>` : ''}
-              ${v.description ? `<p class="body-copy" style="opacity: 0.7; margin-bottom: 0.75rem; font-size: ${feature.smallHeadings ? '0.6rem' : '0.9rem'};">${v.description}</p>` : ''}
+              ${v.title ? `<p style="font-family: var(--font-primary); font-size: 1.1rem; font-weight: 500; margin-bottom: 0.25rem;">${v.title}</p>` : ''}
+              ${v.description ? `<p class="body-copy" style="opacity: 0.7; margin-bottom: 0.75rem; font-size: 0.9rem;">${v.description}</p>` : ''}
               <video
                 class="music-video-feature__player ${v.isPortrait ? 'music-video-feature__player--portrait' : ''}"
                 style="${isThreeMixed && v.isPortrait ? 'height: 100%; object-fit: cover;' : ''}"
@@ -752,7 +755,7 @@
         <div class="section-head section-head--center">
           <p class="section-label">English</p>
         </div>
-        <article class="music-topic-card">
+        <article id="english-pubs" class="music-topic-card">
           <div class="music-topic-card__head" style="text-align: center;">
             <p class="section-micro">Pubs, restaurants & others</p>
           </div>
@@ -760,7 +763,7 @@
             ${site.englishPubs.map(renderPlaybackFeature).join("")}
           </div>
         </article>
-        <article class="music-topic-card" style="margin-top: 2rem;">
+        <article id="english-corporate" class="music-topic-card" style="margin-top: 2rem;">
           <div class="music-topic-card__head" style="text-align: center;">
             <p class="section-micro">Corporate Events</p>
           </div>
@@ -1218,16 +1221,6 @@
         ${renderFleaMarketsSection()}
         ${renderBhajanJammingSection()}
         ${renderAudienceInteractionSection()}
-
-        ${renderPhotoPortfolioCarousel()}
-
-        <section id="highlights" class="awards-section">
-          <div class="section-head section-head--center">
-            <p class="section-label">Highlights</p>
-            <h2>Milestones</h2>
-          </div>
-          ${renderHighlightsPanels()}
-        </section>
 
         <section id="contact" class="contact-section">
           <div class="section-head section-head--center">

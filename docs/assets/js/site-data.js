@@ -361,7 +361,7 @@ window.SITE_DATA = {
           isPortrait: true
         },
         {
-          title: "Song : 176 beach house",
+          description: "Song : 176 beach house",
           videoPath: "assets/media/Telugu_176_TV_show.mp4",
           posterPath: "assets/media/Telugu_176_TV_show_poster.jpg",
           isPortrait: true
@@ -772,6 +772,7 @@ window.SITE_DATA = {
       id: "hindi-private",
       title: "Private events",
       isMultiVideo: true,
+      columns: 'auto',
       videos: [
         {
           videoPath: "assets/media/hindi-apnabanale.mp4",
@@ -799,6 +800,7 @@ window.SITE_DATA = {
       id: "hindi-corporate",
       title: "Corporate events",
       isMultiVideo: true,
+      columns: 'auto',
       videos: [
         {
           title: "Zarazara",
@@ -823,6 +825,7 @@ window.SITE_DATA = {
   otherLanguages: [
     {
       isMultiVideo: true,
+      columns: 'auto',
       videos: [
         {
           title: "Malayalam",
@@ -834,7 +837,7 @@ window.SITE_DATA = {
           title: "Tamil",
           videoPath: "assets/media/Tamil_1.mp4",
           posterPath: "assets/media/Tamil_1_poster.jpg",
-          isPortrait: false
+          isPortrait: true
         },
         {
           title: "Malare (Malayalam)",
@@ -848,6 +851,7 @@ window.SITE_DATA = {
   englishPubs: [
     {
       isMultiVideo: true,
+      columns: 'auto',
       videos: [
         {
           videoPath: "assets/media/english-love-me.mp4",
@@ -883,12 +887,6 @@ window.SITE_DATA = {
           isPortrait: true
         }
       ]
-    },
-    {
-      id: "hindi-jamming",
-      title: "Jamming",
-      isMultiVideo: true,
-      videos: []
     }
   ],
   fleaMarkets: [
@@ -955,6 +953,7 @@ window.SITE_DATA = {
       columns: 'auto',
       videos: [
         {
+          title: "Nijamga nenena",
           videoPath: "assets/media/telugu_jamming_1.mp4",
           posterPath: "assets/media/telugu_jamming_1_poster.jpg",
           isPortrait: true
@@ -1039,7 +1038,6 @@ window.SITE_DATA = {
           isPortrait: false
         },
         {
-          title: "Bommani geeste",
           videoPath: "assets/media/audience_interaction_bommani.mp4",
           posterPath: "assets/media/audience_interaction_bommani_poster.jpg",
           isPortrait: true
