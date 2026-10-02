@@ -919,6 +919,12 @@ window.SITE_DATA = {
           videoPath: "assets/media/ganga_jatadhara.mp4",
           posterPath: "assets/media/ganga_jatadhara_poster.jpg",
           isPortrait: true
+        },
+        {
+          title: "Achyutam keshavam",
+          videoPath: "assets/media/bhajan_achyutam_keshavam.mp4",
+          posterPath: "assets/media/bhajan_achyutam_keshavam_poster.jpg",
+          isPortrait: false
         }
       ]
     }
