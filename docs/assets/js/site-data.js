@@ -935,27 +935,27 @@ window.SITE_DATA = {
         },
         {
           title: "Ee velalo",
-          videoPath: "assets/media/telugu_jamming_ee_velalo.mp4?v=2",
-          posterPath: "assets/media/telugu_jamming_ee_velalo_poster.jpg?v=2",
-          isPortrait: false
+          videoPath: "assets/media/telugu_jamming_ee_velalo.mp4",
+          posterPath: "assets/media/telugu_jamming_ee_velalo_poster.jpg",
+          isPortrait: true
         },
         {
           title: "Manohara",
-          videoPath: "assets/media/telugu_jamming_manohara.mp4?v=2",
-          posterPath: "assets/media/telugu_jamming_manohara_poster.jpg?v=2",
-          isPortrait: false
+          videoPath: "assets/media/telugu_jamming_manohara.mp4",
+          posterPath: "assets/media/telugu_jamming_manohara_poster.jpg",
+          isPortrait: true
         },
         {
           title: "Janillikosam",
-          videoPath: "assets/media/telugu_jamming_janillikosam.mp4?v=2",
-          posterPath: "assets/media/telugu_jamming_janillikosam_poster.jpg?v=2",
-          isPortrait: false
+          videoPath: "assets/media/telugu_jamming_janillikosam.mp4",
+          posterPath: "assets/media/telugu_jamming_janillikosam_poster.jpg",
+          isPortrait: true
         },
         {
           title: "Poovullodaagunna",
-          videoPath: "assets/media/telugu_jamming_poovullodaagunna.mp4?v=2",
-          posterPath: "assets/media/telugu_jamming_poovullodaagunna_poster.jpg?v=2",
-          isPortrait: false
+          videoPath: "assets/media/telugu_jamming_poovullodaagunna.mp4",
+          posterPath: "assets/media/telugu_jamming_poovullodaagunna_poster.jpg",
+          isPortrait: true
         }
       ]
     }
