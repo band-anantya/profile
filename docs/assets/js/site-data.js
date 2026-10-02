@@ -930,6 +930,12 @@ window.SITE_DATA = {
           videoPath: "assets/media/telugu_jamming_1.mp4",
           posterPath: "assets/media/telugu_jamming_1_poster.jpg",
           isPortrait: true
+        },
+        {
+          title: "Ee velalo",
+          videoPath: "assets/media/telugu_jamming_ee_velalo.mp4",
+          posterPath: "assets/media/telugu_jamming_ee_velalo_poster.jpg",
+          isPortrait: false
         }
       ]
     }
