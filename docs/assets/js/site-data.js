@@ -805,6 +805,12 @@ window.SITE_DATA = {
           videoPath: "assets/media/Tamil_1.mp4",
           posterPath: "assets/media/Tamil_1_poster.jpg",
           isPortrait: false
+        },
+        {
+          title: "Malare (Malayalam)",
+          videoPath: "assets/media/hindi_malayalam_malare.mp4",
+          posterPath: "assets/media/hindi_malayalam_malare_poster.jpg",
+          isPortrait: false
         }
       ]
     }
