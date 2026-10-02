@@ -895,6 +895,12 @@ window.SITE_DATA = {
           videoPath: "assets/media/telugu_corporate_vayyaribhama.mp4",
           posterPath: "assets/media/telugu_corporate_vayyaribhama_poster.jpg",
           isPortrait: true
+        },
+        {
+          title: "Aakasam",
+          videoPath: "assets/media/telugu_corporate_aakasam.mp4",
+          posterPath: "assets/media/telugu_corporate_aakasam_poster.jpg",
+          isPortrait: true
         }
       ]
     }
