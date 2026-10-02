@@ -811,6 +811,11 @@ window.SITE_DATA = {
           videoPath: "assets/media/hindi_corporate_kesariya.mp4",
           posterPath: "assets/media/hindi_corporate_kesariya_poster.jpg",
           isPortrait: true
+        },
+        {
+          videoPath: "assets/media/hindi_corporate_3.mp4",
+          posterPath: "assets/media/hindi_corporate_3_poster.jpg",
+          isPortrait: true
         }
       ]
     }
