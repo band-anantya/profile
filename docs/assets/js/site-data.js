@@ -891,6 +891,26 @@ window.SITE_DATA = {
       videos: []
     }
   ],
+  fleaMarkets: [
+    {
+      title: "Priyathama",
+      videoPath: "assets/media/flea_priyathama.mp4",
+      posterPath: "assets/media/flea_priyathama_poster.jpg",
+      isPortrait: false
+    },
+    {
+      title: "Naalona Pongenu",
+      videoPath: "assets/media/flea_naalona.mp4",
+      posterPath: "assets/media/flea_naalona_poster.jpg",
+      isPortrait: false
+    },
+    {
+      title: "Chaleya",
+      videoPath: "assets/media/flea_chaleya.mp4",
+      posterPath: "assets/media/flea_chaleya_poster.jpg",
+      isPortrait: false
+    }
+  ],
   teluguCorporate: [
     {
       isMultiVideo: true,

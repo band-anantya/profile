@@ -82,6 +82,7 @@
     { label: "TELUGU", href: "#music", section: "music", children: teluguSubsections },
     { label: "HINDI", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
     { label: "ENGLISH", href: "#english", section: "english" },
+    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">FLEA<br>MARKETS</span>", href: "#flea-markets", section: "flea-markets" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">BHAJAN<br>JAMMING</span>", href: "#bhajan-jamming", section: "bhajan-jamming" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">AUDIENCE<br>INTERACTION</span>", href: "#audience-interaction", section: "audience-interaction" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">PHOTO<br>PORTFOLIO</span>", href: "#photo-portfolio", section: "photo-portfolio" },
@@ -96,6 +97,7 @@
     { label: "Telugu", href: "#music", section: "music", children: teluguSubsections },
     { label: "Hindi", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
     { label: "English", href: "#english", section: "english" },
+    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Flea<br>Markets</span>", href: "#flea-markets", section: "flea-markets" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Bhajan<br>Jamming</span>", href: "#bhajan-jamming", section: "bhajan-jamming" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Audience<br>Interaction</span>", href: "#audience-interaction", section: "audience-interaction" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Photo<br>Portfolio</span>", href: "#photo-portfolio", section: "photo-portfolio" },
@@ -724,6 +726,23 @@
       </section>
     `;
   }
+  function renderFleaMarketsSection() {
+    if (!site.fleaMarkets || !site.fleaMarkets.length) return "";
+
+    return `
+      <section id="flea-markets" class="poster-section" style="padding-top: 4rem;">
+        <div class="section-head section-head--center">
+          <p class="section-label">Flea markets</p>
+        </div>
+        <article class="music-topic-card">
+          <div class="music-topic-card__body">
+            ${site.fleaMarkets.map(renderPlaybackFeature).join("")}
+          </div>
+        </article>
+      </section>
+    `;
+  }
+
 
   function renderEnglishSection() {
     if (!site.englishPubs || !site.englishCorporate) return "";
@@ -1196,6 +1215,7 @@
         ${renderMultiLingualSection()}
         ${renderOtherLanguagesSection()}
         ${renderEnglishSection()}
+        ${renderFleaMarketsSection()}
         ${renderBhajanJammingSection()}
         ${renderAudienceInteractionSection()}
 
