@@ -870,6 +870,12 @@ window.SITE_DATA = {
           videoPath: "assets/media/English_Jingle_bells_Corporate.mp4",
           posterPath: "assets/media/English_Jingle_bells_Corporate_poster.jpg",
           isPortrait: true
+        },
+        {
+          title: "Love me like you do",
+          videoPath: "assets/media/english_corporate_lovemelikeyoudo.mp4",
+          posterPath: "assets/media/english_corporate_lovemelikeyoudo_poster.jpg",
+          isPortrait: true
         }
       ]
     },
@@ -900,6 +906,12 @@ window.SITE_DATA = {
           title: "Aakasam",
           videoPath: "assets/media/telugu_corporate_aakasam.mp4",
           posterPath: "assets/media/telugu_corporate_aakasam_poster.jpg",
+          isPortrait: true
+        },
+        {
+          title: "Saranga dariya",
+          videoPath: "assets/media/telugu_corporate_sarangadariya.mp4",
+          posterPath: "assets/media/telugu_corporate_sarangadariya_poster.jpg",
           isPortrait: true
         }
       ]
