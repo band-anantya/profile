@@ -74,6 +74,7 @@
   const hindiSubsections = [
     { label: "Pubs, restaurants & others", href: "#hindi-pubs", section: "multi-lingual" },
     { label: "Private Events", href: "#hindi-private", section: "multi-lingual" },
+    { label: "Corporate events", href: "#hindi-corporate", section: "multi-lingual" },
     { label: "Jamming", href: "#hindi-jamming", section: "multi-lingual" }
   ];
   const desktopNav = [

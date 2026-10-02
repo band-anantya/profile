@@ -788,6 +788,25 @@ window.SITE_DATA = {
           isPortrait: true
         }
       ]
+    },
+    {
+      id: "hindi-corporate",
+      title: "Corporate events",
+      isMultiVideo: true,
+      videos: [
+        {
+          title: "Zarazara",
+          videoPath: "assets/media/hindi_corporate_zarazara.mp4",
+          posterPath: "assets/media/hindi_corporate_zarazara_poster.jpg",
+          isPortrait: true
+        },
+        {
+          title: "Kesariya",
+          videoPath: "assets/media/hindi_corporate_kesariya.mp4",
+          posterPath: "assets/media/hindi_corporate_kesariya_poster.jpg",
+          isPortrait: true
+        }
+      ]
     }
   ],
   otherLanguages: [
