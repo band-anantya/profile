@@ -1006,7 +1006,7 @@ window.SITE_DATA = {
           title: "Bommani geeste",
           videoPath: "assets/media/audience_interaction_bommani.mp4",
           posterPath: "assets/media/audience_interaction_bommani_poster.jpg",
-          isPortrait: false
+          isPortrait: true
         }
       ]
     }
