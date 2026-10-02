@@ -747,7 +747,7 @@ window.SITE_DATA = {
     {
       id: "hindi-pubs",
       title: "Pubs, restaurants & others",
-      description: "Live performance at HRC",
+
       isMultiVideo: true,
       videos: [
         {

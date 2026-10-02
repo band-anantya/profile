@@ -65,7 +65,7 @@
   ];
   const teluguSubsections = [
     { label: "TV Show Performances", href: "#playback", section: "music" },
-    { label: "Flea Market Shows", href: "#flea-market-shows", section: "music" },
+    { label: "Pubs, Restaurants & others", href: "#flea-market-shows", section: "music" },
     { label: "Private Events", href: "#cover-songs", section: "music" },
     { label: "Corporate Events", href: "#telugu-corporate", section: "music" },
     { label: "Jamming", href: "#telugu-jamming", section: "music" }
@@ -82,8 +82,8 @@
     { label: "TELUGU", href: "#music", section: "music", children: teluguSubsections },
     { label: "HINDI", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
     { label: "ENGLISH", href: "#english", section: "english" },
-    { label: "BHAJAN JAMMING", href: "#bhajan-jamming", section: "bhajan-jamming" },
-    { label: "AUDIENCE INTERACTION", href: "#audience-interaction", section: "audience-interaction" },
+    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">BHAJAN<br>JAMMING</span>", href: "#bhajan-jamming", section: "bhajan-jamming" },
+    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">AUDIENCE<br>INTERACTION</span>", href: "#audience-interaction", section: "audience-interaction" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">PHOTO<br>PORTFOLIO</span>", href: "#photo-portfolio", section: "photo-portfolio" },
     { label: "MEET THE BAND", href: "#story", section: "story" },
   ];
@@ -95,8 +95,8 @@
     { label: "Telugu", href: "#music", section: "music", children: teluguSubsections },
     { label: "Hindi", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
     { label: "English", href: "#english", section: "english" },
-    { label: "Bhajan jamming", href: "#bhajan-jamming", section: "bhajan-jamming" },
-    { label: "Audience Interaction", href: "#audience-interaction", section: "audience-interaction" },
+    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Bhajan<br>Jamming</span>", href: "#bhajan-jamming", section: "bhajan-jamming" },
+    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Audience<br>Interaction</span>", href: "#audience-interaction", section: "audience-interaction" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Photo<br>Portfolio</span>", href: "#photo-portfolio", section: "photo-portfolio" },
     { label: "Meet the Band", href: "#story", section: "story" },
     { label: "Highlights", href: "#highlights", section: "highlights" },
@@ -660,7 +660,7 @@
     return `
       <article id="flea-market-shows" class="music-topic-card music-topic-card--flea-market">
         <div class="music-topic-card__head" style="text-align: center;">
-          <p class="section-micro">Flea Markets</p>
+          <p class="section-micro">Pubs, Restaurants & others</p>
         </div>
         <div class="music-topic-card__body">
           ${items.length ? items.map(renderPlaybackFeature).join("") : '<p class="body-copy">Coming soon.</p>'}
