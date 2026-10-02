@@ -412,7 +412,7 @@ main {
 
 .hero-panel__bg {
   background-size: cover;
-  background-position: 20% 40%;
+  background-position: 40% 40%;
   transform: scale(1.085);
   transform-origin: center center;
   filter: saturate(0.88);
