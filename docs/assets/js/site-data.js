@@ -885,8 +885,15 @@ window.SITE_DATA = {
       isMultiVideo: true,
       videos: [
         {
+          title: "Yamaha",
           videoPath: "assets/media/Telugu_Yamaha_Corporate.mp4",
           posterPath: "assets/media/Telugu_Yamaha_Corporate_poster.jpg",
+          isPortrait: true
+        },
+        {
+          title: "Vayyaribhama",
+          videoPath: "assets/media/telugu_corporate_vayyaribhama.mp4",
+          posterPath: "assets/media/telugu_corporate_vayyaribhama_poster.jpg",
           isPortrait: true
         }
       ]
