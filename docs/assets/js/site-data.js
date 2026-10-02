@@ -893,22 +893,28 @@ window.SITE_DATA = {
   ],
   fleaMarkets: [
     {
-      title: "Priyathama",
-      videoPath: "assets/media/flea_priyathama.mp4",
-      posterPath: "assets/media/flea_priyathama_poster.jpg",
-      isPortrait: false
-    },
-    {
-      title: "Naalona Pongenu",
-      videoPath: "assets/media/flea_naalona.mp4",
-      posterPath: "assets/media/flea_naalona_poster.jpg",
-      isPortrait: false
-    },
-    {
-      title: "Chaleya",
-      videoPath: "assets/media/flea_chaleya.mp4",
-      posterPath: "assets/media/flea_chaleya_poster.jpg",
-      isPortrait: false
+      isMultiVideo: true,
+      columns: 3,
+      videos: [
+        {
+          title: "Priyathama",
+          videoPath: "assets/media/flea_priyathama.mp4",
+          posterPath: "assets/media/flea_priyathama_poster.jpg",
+          isPortrait: false
+        },
+        {
+          title: "Naalona Pongenu",
+          videoPath: "assets/media/flea_naalona.mp4",
+          posterPath: "assets/media/flea_naalona_poster.jpg",
+          isPortrait: false
+        },
+        {
+          title: "Chaleya",
+          videoPath: "assets/media/flea_chaleya.mp4",
+          posterPath: "assets/media/flea_chaleya_poster.jpg",
+          isPortrait: false
+        }
+      ]
     }
   ],
   teluguCorporate: [
