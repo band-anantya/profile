@@ -967,6 +967,11 @@ window.SITE_DATA = {
       isMultiVideo: true,
       videos: [
         {
+          videoPath: "assets/media/audience_interaction_priyathamaa.mp4",
+          posterPath: "assets/media/audience_interaction_priyathamaa_poster.jpg",
+          isPortrait: false
+        },
+        {
           videoPath: "assets/media/audience_interaction_5.mp4",
           posterPath: "assets/media/audience_interaction_5_poster.jpg",
           isPortrait: true
