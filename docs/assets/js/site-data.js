@@ -948,6 +948,12 @@ window.SITE_DATA = {
           videoPath: "assets/media/telugu_jamming_janillikosam.mp4",
           posterPath: "assets/media/telugu_jamming_janillikosam_poster.jpg",
           isPortrait: false
+        },
+        {
+          title: "Poovullodaagunna",
+          videoPath: "assets/media/telugu_jamming_poovullodaagunna.mp4",
+          posterPath: "assets/media/telugu_jamming_poovullodaagunna_poster.jpg",
+          isPortrait: false
         }
       ]
     }
