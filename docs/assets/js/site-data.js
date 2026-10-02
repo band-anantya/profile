@@ -993,6 +993,12 @@ window.SITE_DATA = {
           videoPath: "assets/media/english-baby.mp4",
           posterPath: "assets/media/english-baby-poster.jpg",
           isPortrait: false
+        },
+        {
+          title: "Bommani geeste",
+          videoPath: "assets/media/audience_interaction_bommani.mp4",
+          posterPath: "assets/media/audience_interaction_bommani_poster.jpg",
+          isPortrait: false
         }
       ]
     }
