@@ -1236,7 +1236,7 @@
                   <textarea name="message" rows="3" required></textarea>
                 </label>
                 <button class="button button--solid" type="submit">${site.contactForm.submitLabel}</button>
-                <p class="contact-form__email">or e-mail us at: <a href="mailto:preethiyagna@gmail.com">preethiyagna@gmail.com</a></p>
+                <p class="contact-form__email">or e-mail us at: <a href="mailto:bandanantya@gmail.com">bandanantya@gmail.com</a></p>
                 <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
               </form>
             </article>
