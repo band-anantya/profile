@@ -89,6 +89,7 @@
     { label: "HINDI", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
     { label: "ENGLISH", href: "#english", section: "english", children: englishSubsections },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">OTHER<br>LANGUAGES</span>", href: "#other-languages", section: "other-languages" },
+    { label: "SUFI", href: "#sufi", section: "sufi" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">FLEA<br>MARKETS</span>", href: "#flea-markets", section: "flea-markets" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">BHAJAN<br>JAMMING</span>", href: "#bhajan-jamming", section: "bhajan-jamming" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">AUDIENCE<br>INTERACTION</span>", href: "#audience-interaction", section: "audience-interaction" },
@@ -103,6 +104,7 @@
     { label: "Hindi", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
     { label: "English", href: "#english", section: "english", children: englishSubsections },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Other<br>Languages</span>", href: "#other-languages", section: "other-languages" },
+    { label: "Sufi", href: "#sufi", section: "sufi" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Flea<br>Markets</span>", href: "#flea-markets", section: "flea-markets" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Bhajan<br>Jamming</span>", href: "#bhajan-jamming", section: "bhajan-jamming" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Audience<br>Interaction</span>", href: "#audience-interaction", section: "audience-interaction" },
@@ -729,6 +731,23 @@
       </section>
     `;
   }
+  function renderSufiSection() {
+    if (!site.sufi || !site.sufi.length) return "";
+
+    return `
+      <section id="sufi" class="poster-section" style="padding-top: 4rem;">
+        <div class="section-head section-head--center">
+          <p class="section-label">Sufi</p>
+        </div>
+        <article class="music-topic-card">
+          <div class="music-topic-card__body">
+            ${site.sufi.map(renderPlaybackFeature).join("")}
+          </div>
+        </article>
+      </section>
+    `;
+  }
+
   function renderFleaMarketsSection() {
     if (!site.fleaMarkets || !site.fleaMarkets.length) return "";
 
@@ -1220,6 +1239,7 @@
         ${renderFleaMarketsSection()}
         ${renderBhajanJammingSection()}
         ${renderAudienceInteractionSection()}
+        ${renderSufiSection()}
 
         <section id="contact" class="contact-section">
           <div class="section-head section-head--center">

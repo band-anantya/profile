@@ -889,6 +889,20 @@ window.SITE_DATA = {
       ]
     }
   ],
+  sufi: [
+    {
+      isMultiVideo: true,
+      columns: 'auto',
+      videos: [
+        {
+          title: "Afreen Afreen",
+          videoPath: "assets/media/sufi_afreen.mp4",
+          posterPath: "assets/media/sufi_afreen_poster.jpg",
+          isPortrait: false
+        }
+      ]
+    }
+  ],
   fleaMarkets: [
     {
       isMultiVideo: true,
