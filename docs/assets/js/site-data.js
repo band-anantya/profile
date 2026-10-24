@@ -861,7 +861,7 @@ window.SITE_DATA = {
         {
           videoPath: "assets/media/english-onelove.mp4",
           posterPath: "assets/media/english-onelove-poster.jpg",
-          isPortrait: false
+          isPortrait: true
         },
         {
           videoPath: "assets/media/english_pubs_1.mp4",
