@@ -25,12 +25,6 @@ docs/.DS_Store
 *.njsproj
 *.sln
 *.sw?
-docs/assets/media/ETV_Jai_Ganesha.mp4
-assets/ETV Jai Ganesha show_ Kurraalloy.mp4
-*.mp4
 *.mov
 *.m4a
 *.MOV
-!docs/assets/media/ETV_Jai_Ganesha.mp4
-!docs/assets/media/Ravoi_chandamama.mp4
-!docs/assets/media/new-years-eve/*.mp4
