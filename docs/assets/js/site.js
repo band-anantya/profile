@@ -87,6 +87,7 @@
     { label: "HOME", href: "#home", section: "home" },
     { label: "TELUGU", href: "#music", section: "music", children: teluguSubsections },
     { label: "HINDI", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
+    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">NEW YEAR'S<br>EVE</span>", href: "#new-years-eve", section: "new-years-eve" },
     { label: "ENGLISH", href: "#english", section: "english", children: englishSubsections },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">OTHER<br>LANGUAGES</span>", href: "#other-languages", section: "other-languages" },
     { label: "SUFI", href: "#sufi", section: "sufi" },
@@ -102,6 +103,7 @@
     { label: "Home", href: "#home", section: "home" },
     { label: "Telugu", href: "#music", section: "music", children: teluguSubsections },
     { label: "Hindi", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
+    { label: "New Year's Eve", href: "#new-years-eve", section: "new-years-eve" },
     { label: "English", href: "#english", section: "english", children: englishSubsections },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Other<br>Languages</span>", href: "#other-languages", section: "other-languages" },
     { label: "Sufi", href: "#sufi", section: "sufi" },
@@ -715,6 +717,34 @@
     `;
   }
 
+  function renderNewYearsEveSection() {
+    const videos = site.newYearsEveVideos || [];
+    if (!videos.length) return "";
+
+    return `
+      <section id="new-years-eve" class="poster-section">
+        <div class="section-head section-head--center">
+          <p class="section-label">New Year's Eve</p>
+        </div>
+        <article class="music-topic-card">
+          <div class="new-years-eve__grid">
+            ${videos.map((video) => `
+              <figure class="new-years-eve__clip">
+                <video class="music-video-feature__player new-years-eve__player"
+                  controls playsinline preload="none"
+                  poster="${video.posterPath}" aria-label="${video.title}">
+                  <source src="${video.videoPath}" type="video/mp4">
+                  Your browser does not support video playback.
+                </video>
+                <figcaption>${video.title}</figcaption>
+              </figure>
+            `).join("")}
+          </div>
+        </article>
+      </section>
+    `;
+  }
+
   function renderOtherLanguagesSection() {
     if (!site.otherLanguages || !site.otherLanguages.length) return "";
 
@@ -1234,6 +1264,7 @@
         </section>
 
         ${renderMultiLingualSection()}
+        ${renderNewYearsEveSection()}
         ${renderOtherLanguagesSection()}
         ${renderEnglishSection()}
         ${renderFleaMarketsSection()}
