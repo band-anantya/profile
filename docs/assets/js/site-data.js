@@ -351,17 +351,17 @@ window.SITE_DATA = {
       "posterPath": "assets/media/new-years-eve/clip-01.jpg"
     },
     {
-      "title": "Happy New Year hands up audience exchange",
+      "title": "Happy New Year with audience",
       "videoPath": "assets/media/new-years-eve/clip-02.mp4",
       "posterPath": "assets/media/new-years-eve/clip-02.jpg"
     },
     {
-      "title": "Dum Maro Dum question into the song",
+      "title": "Dum Maro Dum",
       "videoPath": "assets/media/new-years-eve/clip-03.mp4",
       "posterPath": "assets/media/new-years-eve/clip-03.jpg"
     },
     {
-      "title": "Deva Deva opening fragment",
+      "title": "Zara si dil mei",
       "videoPath": "assets/media/new-years-eve/clip-04.mp4",
       "posterPath": "assets/media/new-years-eve/clip-04.jpg"
     },
@@ -371,17 +371,17 @@ window.SITE_DATA = {
       "posterPath": "assets/media/new-years-eve/clip-05.jpg"
     },
     {
-      "title": "Channa Mereya verse entry",
+      "title": "channa mereya",
       "videoPath": "assets/media/new-years-eve/clip-06.mp4",
       "posterPath": "assets/media/new-years-eve/clip-06.jpg"
     },
     {
-      "title": "Channa Mereya refrain late section",
+      "title": "Channa Mereya part 2",
       "videoPath": "assets/media/new-years-eve/clip-07.mp4",
       "posterPath": "assets/media/new-years-eve/clip-07.jpg"
     },
     {
-      "title": "Khaike Paan Banaraswala verse entry",
+      "title": "Khaike Paan Banaraswala",
       "videoPath": "assets/media/new-years-eve/clip-08.mp4",
       "posterPath": "assets/media/new-years-eve/clip-08.jpg"
     },
@@ -396,34 +396,24 @@ window.SITE_DATA = {
       "posterPath": "assets/media/new-years-eve/clip-10.jpg"
     },
     {
-      "title": "Unidentified dance section A",
+      "title": "Dancing with audience",
       "videoPath": "assets/media/new-years-eve/clip-11.mp4",
       "posterPath": "assets/media/new-years-eve/clip-11.jpg"
     },
     {
-      "title": "Unidentified dance section B",
+      "title": "Dancing with audience 2",
       "videoPath": "assets/media/new-years-eve/clip-12.mp4",
       "posterPath": "assets/media/new-years-eve/clip-12.jpg"
     },
     {
-      "title": "Yaaron O Yaara Mila Le (probable)",
+      "title": "Hawa hawa",
       "videoPath": "assets/media/new-years-eve/clip-13.mp4",
       "posterPath": "assets/media/new-years-eve/clip-13.jpg"
     },
     {
-      "title": "Unidentified song with counted entry",
+      "title": "ek do teen",
       "videoPath": "assets/media/new-years-eve/clip-14.mp4",
       "posterPath": "assets/media/new-years-eve/clip-14.jpg"
-    },
-    {
-      "title": "Dum Maro Dum audience question section",
-      "videoPath": "assets/media/new-years-eve/clip-15.mp4",
-      "posterPath": "assets/media/new-years-eve/clip-15.jpg"
-    },
-    {
-      "title": "Unresolved transition into Gajuvaka section",
-      "videoPath": "assets/media/new-years-eve/clip-16.mp4",
-      "posterPath": "assets/media/new-years-eve/clip-16.jpg"
     },
     {
       "title": "Gajuvaka Pilla",
@@ -431,42 +421,42 @@ window.SITE_DATA = {
       "posterPath": "assets/media/new-years-eve/clip-17.jpg"
     },
     {
-      "title": "Unidentified Telugu dance section",
+      "title": "Hayo rabba",
       "videoPath": "assets/media/new-years-eve/clip-18.mp4",
       "posterPath": "assets/media/new-years-eve/clip-18.jpg"
     },
     {
-      "title": "Balayya fan request and song title unresolved",
+      "title": "Ravayya muddula mama",
       "videoPath": "assets/media/new-years-eve/clip-19.mp4",
       "posterPath": "assets/media/new-years-eve/clip-19.jpg"
     },
     {
-      "title": "Sauda Khara Khara (probable)",
+      "title": "Sauda Khara Khara",
       "videoPath": "assets/media/new-years-eve/clip-20.mp4",
       "posterPath": "assets/media/new-years-eve/clip-20.jpg"
     },
     {
-      "title": "Unidentified Punjabi dance hook",
+      "title": "Ainvay Ainvay",
       "videoPath": "assets/media/new-years-eve/clip-21.mp4",
       "posterPath": "assets/media/new-years-eve/clip-21.jpg"
     },
     {
-      "title": "Ishq Tera Tadpave Oh Ho Ho Ho",
+      "title": "Ishq Tera Tadpave",
       "videoPath": "assets/media/new-years-eve/clip-22.mp4",
       "posterPath": "assets/media/new-years-eve/clip-22.jpg"
     },
     {
-      "title": "Unidentified closing dance refrain",
+      "title": "Ya ya jai balayya",
       "videoPath": "assets/media/new-years-eve/clip-23.mp4",
       "posterPath": "assets/media/new-years-eve/clip-23.jpg"
     },
     {
-      "title": "Can you repeat this singer visits the audience",
+      "title": "Engaging with audience",
       "videoPath": "assets/media/new-years-eve/clip-24.mp4",
       "posterPath": "assets/media/new-years-eve/clip-24.jpg"
     },
     {
-      "title": "Audience takes the microphone full participation arc",
+      "title": "Fun with audience",
       "videoPath": "assets/media/new-years-eve/clip-25.mp4",
       "posterPath": "assets/media/new-years-eve/clip-25.jpg"
     },
@@ -476,7 +466,7 @@ window.SITE_DATA = {
       "posterPath": "assets/media/new-years-eve/clip-26.jpg"
     },
     {
-      "title": "From audience guest back to the performance",
+      "title": "Going around",
       "videoPath": "assets/media/new-years-eve/clip-27.mp4",
       "posterPath": "assets/media/new-years-eve/clip-27.jpg"
     },
@@ -491,12 +481,12 @@ window.SITE_DATA = {
       "posterPath": "assets/media/new-years-eve/clip-29.jpg"
     },
     {
-      "title": "Performance excerpt A",
+      "title": "Pushpa",
       "videoPath": "assets/media/new-years-eve/clip-30.mp4",
       "posterPath": "assets/media/new-years-eve/clip-30.jpg"
     },
     {
-      "title": "Unidentified Telugu song section",
+      "title": "Yamaha nagari",
       "videoPath": "assets/media/new-years-eve/clip-31.mp4",
       "posterPath": "assets/media/new-years-eve/clip-31.jpg"
     },
@@ -506,12 +496,12 @@ window.SITE_DATA = {
       "posterPath": "assets/media/new-years-eve/clip-32.jpg"
     },
     {
-      "title": "London Thumakda verse entry",
+      "title": "London Thumakda",
       "videoPath": "assets/media/new-years-eve/clip-33.mp4",
       "posterPath": "assets/media/new-years-eve/clip-33.jpg"
     },
     {
-      "title": "London Thumakda refrain late section",
+      "title": "Zingaat",
       "videoPath": "assets/media/new-years-eve/clip-34.mp4",
       "posterPath": "assets/media/new-years-eve/clip-34.jpg"
     },
@@ -521,27 +511,17 @@ window.SITE_DATA = {
       "posterPath": "assets/media/new-years-eve/clip-35.jpg"
     },
     {
-      "title": "One Two Three Four Get on the Dance Floor (probable)",
-      "videoPath": "assets/media/new-years-eve/clip-36.mp4",
-      "posterPath": "assets/media/new-years-eve/clip-36.jpg"
-    },
-    {
-      "title": "Performance excerpt B",
+      "title": "1 2 3 4 get on the dance floor + Naatu",
       "videoPath": "assets/media/new-years-eve/clip-37.mp4",
       "posterPath": "assets/media/new-years-eve/clip-37.jpg"
     },
     {
-      "title": "Unidentified Telugu phone themed hook",
-      "videoPath": "assets/media/new-years-eve/clip-38.mp4",
-      "posterPath": "assets/media/new-years-eve/clip-38.jpg"
-    },
-    {
-      "title": "Performance excerpt C",
+      "title": "Choopultho guchi",
       "videoPath": "assets/media/new-years-eve/clip-39.mp4",
       "posterPath": "assets/media/new-years-eve/clip-39.jpg"
     },
     {
-      "title": "DJ Tillu (probable)",
+      "title": "DJ Tillu",
       "videoPath": "assets/media/new-years-eve/clip-40.mp4",
       "posterPath": "assets/media/new-years-eve/clip-40.jpg"
     },
@@ -551,7 +531,7 @@ window.SITE_DATA = {
       "posterPath": "assets/media/new-years-eve/clip-41.jpg"
     },
     {
-      "title": "Chaiyya Chaiyya (probable)",
+      "title": "Crowd dance",
       "videoPath": "assets/media/new-years-eve/clip-42.mp4",
       "posterPath": "assets/media/new-years-eve/clip-42.jpg"
     }
