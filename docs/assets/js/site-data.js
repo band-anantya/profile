@@ -346,7 +346,7 @@ window.SITE_DATA = {
   },
   newYearsEveVideos: [
     {
-      "title": "Meet the band then count with us",
+      "title": "Countdown with the band",
       "videoPath": "assets/media/new-years-eve/clip-01.mp4",
       "posterPath": "assets/media/new-years-eve/clip-01.jpg"
     },
@@ -386,7 +386,7 @@ window.SITE_DATA = {
       "posterPath": "assets/media/new-years-eve/clip-08.jpg"
     },
     {
-      "title": "Khaike Paan Banaraswala refrain late section",
+      "title": "Khayke Pan Banaras Wala",
       "videoPath": "assets/media/new-years-eve/clip-09.mp4",
       "posterPath": "assets/media/new-years-eve/clip-09.jpg"
     },
@@ -511,7 +511,7 @@ window.SITE_DATA = {
       "posterPath": "assets/media/new-years-eve/clip-35.jpg"
     },
     {
-      "title": "1 2 3 4 get on the dance floor + Naatu",
+      "title": "1234 get on the + Naatu",
       "videoPath": "assets/media/new-years-eve/clip-37.mp4",
       "posterPath": "assets/media/new-years-eve/clip-37.jpg"
     },
@@ -1083,17 +1083,30 @@ window.SITE_DATA = {
   ],
   sufi: [
     {
-      isMultiVideo: true,
-      columns: 'auto',
-      videos: [
-        {
-          title: "Afreen Afreen",
-          videoPath: "assets/media/sufi_afreen.mp4",
-          posterPath: "assets/media/sufi_afreen_poster.jpg",
-          isPortrait: false
-        }
-      ]
-    }
+      title: "Wahi Hota Hai",
+      videoPath: "assets/media/sufi/wahi-hota-hai.mp4",
+      posterPath: "assets/media/sufi/wahi-hota-hai.jpg",
+    },
+    {
+      title: "Mujhko Pahunchade Khuda",
+      videoPath: "assets/media/sufi/mujhko-pahunchade-khuda.mp4",
+      posterPath: "assets/media/sufi/mujhko-pahunchade-khuda.jpg",
+    },
+    {
+      title: "Piya Tu Se Nainaa Laagere",
+      videoPath: "assets/media/sufi/piya-tu-se-nainaa.mp4",
+      posterPath: "assets/media/sufi/piya-tu-se-nainaa.jpg",
+    },
+    {
+      title: "Lagjaa Gale",
+      videoPath: "assets/media/sufi/lagjaa-gale.mp4",
+      posterPath: "assets/media/sufi/lagjaa-gale.jpg",
+    },
+    {
+      title: "Albela Sajan - Fusion",
+      videoPath: "assets/media/sufi/albela-sajan.mp4",
+      posterPath: "assets/media/sufi/albela-sajan.jpg",
+    },
   ],
   fleaMarkets: [
     {

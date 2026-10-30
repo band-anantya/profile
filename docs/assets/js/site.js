@@ -87,9 +87,9 @@
     { label: "HOME", href: "#home", section: "home" },
     { label: "TELUGU", href: "#music", section: "music", children: teluguSubsections },
     { label: "HINDI", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
-    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">NEW YEAR'S<br>EVE</span>", href: "#new-years-eve", section: "new-years-eve" },
     { label: "ENGLISH", href: "#english", section: "english", children: englishSubsections },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">OTHER<br>LANGUAGES</span>", href: "#other-languages", section: "other-languages" },
+    { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">NEW YEAR'S<br>EVE</span>", href: "#new-years-eve", section: "new-years-eve" },
     { label: "SUFI", href: "#sufi", section: "sufi" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">FLEA<br>MARKETS</span>", href: "#flea-markets", section: "flea-markets" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">BHAJAN<br>JAMMING</span>", href: "#bhajan-jamming", section: "bhajan-jamming" },
@@ -103,9 +103,9 @@
     { label: "Home", href: "#home", section: "home" },
     { label: "Telugu", href: "#music", section: "music", children: teluguSubsections },
     { label: "Hindi", href: "#multi-lingual", section: "multi-lingual", children: hindiSubsections },
-    { label: "New Year's Eve", href: "#new-years-eve", section: "new-years-eve" },
     { label: "English", href: "#english", section: "english", children: englishSubsections },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Other<br>Languages</span>", href: "#other-languages", section: "other-languages" },
+    { label: "New Year's Eve", href: "#new-years-eve", section: "new-years-eve" },
     { label: "Sufi", href: "#sufi", section: "sufi" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Flea<br>Markets</span>", href: "#flea-markets", section: "flea-markets" },
     { label: "<span style=\"text-align: center; line-height: 1.2; letter-spacing: 0.24em;\">Bhajan<br>Jamming</span>", href: "#bhajan-jamming", section: "bhajan-jamming" },
@@ -771,7 +771,19 @@
         </div>
         <article class="music-topic-card">
           <div class="music-topic-card__body">
-            ${site.sufi.map(renderPlaybackFeature).join("")}
+            <div class="sufi-gallery__grid">
+              ${site.sufi.map((video) => `
+                <figure class="sufi-gallery__clip">
+                  <video class="music-video-feature__player sufi-gallery__player"
+                    controls playsinline preload="none"
+                    poster="${video.posterPath}" aria-label="${video.title}">
+                    <source src="${video.videoPath}" type="video/mp4">
+                    Your browser does not support video playback.
+                  </video>
+                  <figcaption>${video.title}</figcaption>
+                </figure>
+              `).join("")}
+            </div>
           </div>
         </article>
       </section>
