@@ -1735,7 +1735,8 @@ h1 {
   margin: 0;
 }
 
-.new-years-eve__grid {
+.new-years-eve__grid,
+.flea-market-gallery__grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1rem;
@@ -1748,7 +1749,8 @@ h1 {
 }
 
 .new-years-eve__clip,
-.sufi-gallery__clip {
+.sufi-gallery__clip,
+.flea-market-gallery__clip {
   min-width: 0;
   margin: 0;
   overflow: hidden;
@@ -1769,7 +1771,8 @@ h1 {
 }
 
 .new-years-eve__clip figcaption,
-.sufi-gallery__clip figcaption {
+.sufi-gallery__clip figcaption,
+.flea-market-gallery__clip figcaption {
   padding: 0.75rem;
   color: var(--muted-strong);
   font-size: 0.85rem;
@@ -1777,18 +1780,49 @@ h1 {
   overflow-wrap: anywhere;
 }
 
+.flea-market-gallery__media {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  isolation: isolate;
+  background: #000;
+}
+
+.flea-market-gallery__media::before {
+  content: "";
+  position: absolute;
+  inset: -24px;
+  z-index: -1;
+  background: var(--flea-poster) center / cover;
+  filter: blur(18px) brightness(0.55);
+}
+
+.flea-market-gallery__grid .flea-market-gallery__player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  border-radius: 0;
+  background: transparent;
+}
+
 @media (max-width: 1000px) {
-  .new-years-eve__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .new-years-eve__grid,
+  .flea-market-gallery__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .sufi-gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 600px) {
-  .new-years-eve__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.65rem; }
+  .new-years-eve__grid,
+  .flea-market-gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.65rem; }
   .sufi-gallery__grid { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 360px) {
-  .new-years-eve__grid { grid-template-columns: minmax(0, 1fr); }
+  .new-years-eve__grid,
+  .flea-market-gallery__grid { grid-template-columns: minmax(0, 1fr); }
 }
 
 .music-video-feature__art,

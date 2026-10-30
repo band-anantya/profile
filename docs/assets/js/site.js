@@ -792,6 +792,7 @@
 
   function renderFleaMarketsSection() {
     if (!site.fleaMarkets || !site.fleaMarkets.length) return "";
+    const videos = site.fleaMarkets.flatMap((feature) => feature.videos || [feature]);
 
     return `
       <section id="flea-markets" class="poster-section" style="padding-top: 4rem;">
@@ -800,7 +801,21 @@
         </div>
         <article class="music-topic-card">
           <div class="music-topic-card__body">
-            ${site.fleaMarkets.map(renderPlaybackFeature).join("")}
+            <div class="flea-market-gallery__grid">
+              ${videos.map((video) => `
+                <figure class="flea-market-gallery__clip">
+                  <div class="flea-market-gallery__media" style="--flea-poster: url('${new URL(video.posterPath, document.baseURI).href}')">
+                    <video class="music-video-feature__player flea-market-gallery__player"
+                      controls playsinline preload="none"
+                      poster="${video.posterPath}" aria-label="${video.title}">
+                      <source src="${video.videoPath}" type="video/mp4">
+                      Your browser does not support video playback.
+                    </video>
+                  </div>
+                  <figcaption>${video.title}</figcaption>
+                </figure>
+              `).join("")}
+            </div>
           </div>
         </article>
       </section>
