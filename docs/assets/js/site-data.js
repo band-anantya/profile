@@ -1338,7 +1338,7 @@ window.SITE_DATA = {
           title: "Garuda Gamana",
           videoPath: "assets/media/bhajan_garuda_gamana.mp4",
           posterPath: "assets/media/bhajan_garuda_gamana_poster.jpg",
-          isPortrait: true
+          isPortrait: false
         },
         {
           title: "Om jai jagdish hare",
