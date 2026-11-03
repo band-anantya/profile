@@ -967,6 +967,11 @@ window.SITE_DATA = {
           videoPath: "assets/media/hindi_pubs_insta2.mp4",
           posterPath: "assets/media/hindi_pubs_insta2_poster.jpg",
           isPortrait: true
+        },
+        {
+          videoPath: "assets/media/hindi-pubs-94878.mp4",
+          posterPath: "assets/media/hindi-pubs-94878.jpg",
+          isPortrait: true
         }
       ]
     },
@@ -1123,6 +1128,12 @@ window.SITE_DATA = {
       isMultiVideo: true,
       columns: 5,
       videos: [
+        {
+          title: "Yeshanagula",
+          videoPath: "assets/media/flea-markets/yeshanagula.mp4",
+          posterPath: "assets/media/flea-markets/yeshanagula.jpg",
+          isPortrait: true
+        },
         {
           "title": "Live performance 1",
           "videoPath": "assets/media/flea-markets/img-3082.mp4",
