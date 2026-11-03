@@ -945,8 +945,8 @@ window.SITE_DATA = {
     {
       id: "hindi-pubs",
       title: "Pubs, restaurants & others",
-
       isMultiVideo: true,
+      columns: 'auto',
       videos: [
         {
           videoPath: "assets/media/hrc-reel-1.mp4",
@@ -959,7 +959,13 @@ window.SITE_DATA = {
           isPortrait: true
         },
         {
-          instagramUrl: "https://www.instagram.com/p/DOzxypBCTjN/",
+          videoPath: "assets/media/hindi_pubs_insta1.mp4",
+          posterPath: "assets/media/hindi_pubs_insta1_poster.jpg",
+          isPortrait: true
+        },
+        {
+          videoPath: "assets/media/hindi_pubs_insta2.mp4",
+          posterPath: "assets/media/hindi_pubs_insta2_poster.jpg",
           isPortrait: true
         }
       ]
