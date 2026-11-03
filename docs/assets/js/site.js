@@ -549,7 +549,15 @@
             <div class="music-video-feature__media" style="${isThreeMixed && v.isPortrait ? 'grid-row: span 2; height: 100%;' : ''}">
               ${v.title ? `<p style="font-family: var(--font-primary); font-size: 1.1rem; font-weight: 500; margin-bottom: 0.25rem;">${v.title}</p>` : ''}
               ${v.description ? `<p class="body-copy" style="opacity: 0.7; margin-bottom: 0.75rem; font-size: 0.9rem;">${v.description}</p>` : ''}
-              <video
+              ${v.instagramUrl
+                ? `<div style="min-width:200px; max-width:340px; margin: 0 auto;">
+                    <blockquote class="instagram-media"
+                      data-instgrm-permalink="${v.instagramUrl}"
+                      data-instgrm-version="14"
+                      style="background:#000; border:0; border-radius:12px; margin:0; max-width:100%; min-width:200px; width:calc(100% - 2px);"
+                    ></blockquote>
+                  </div>`
+                : `<video
                 class="music-video-feature__player ${v.isPortrait ? 'music-video-feature__player--portrait' : ''}"
                 style="${isThreeMixed && v.isPortrait ? 'height: 100%; object-fit: cover;' : ''}"
                 controls
@@ -559,7 +567,7 @@
                 data-reset-poster
               >
                 <source src="${v.videoPath}" type="video/mp4">
-              </video>
+              </video>`}
             </div>
           `).join("")}
          </div>`
@@ -1941,6 +1949,14 @@
   wireVideoTimestamps();
   wireStoryCarousel();
   wireHighlightCarousels();
+  // Trigger Instagram embed processing after dynamic render
+  if (window.instgrm) {
+    window.instgrm.Embeds.process();
+  } else {
+    window.addEventListener('load', function() {
+      if (window.instgrm) window.instgrm.Embeds.process();
+    });
+  }
   scrollToHash(window.location.hash, "auto");
   window.addEventListener("hashchange", function () {
     scrollToHash(window.location.hash, "smooth");

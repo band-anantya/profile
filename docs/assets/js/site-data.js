@@ -957,6 +957,10 @@ window.SITE_DATA = {
           videoPath: "assets/media/hrc-reel-2.mp4",
           posterPath: "assets/media/hrc-reel-2-poster.jpg?v=2",
           isPortrait: true
+        },
+        {
+          instagramUrl: "https://www.instagram.com/p/DOzxypBCTjN/",
+          isPortrait: true
         }
       ]
     },
