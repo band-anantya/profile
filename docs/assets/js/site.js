@@ -550,12 +550,16 @@
               ${v.title ? `<p style="font-family: var(--font-primary); font-size: 1.1rem; font-weight: 500; margin-bottom: 0.25rem;">${v.title}</p>` : ''}
               ${v.description ? `<p class="body-copy" style="opacity: 0.7; margin-bottom: 0.75rem; font-size: 0.9rem;">${v.description}</p>` : ''}
               ${v.instagramUrl
-                ? `<div style="min-width:200px; max-width:340px; margin: 0 auto;">
-                    <blockquote class="instagram-media"
-                      data-instgrm-permalink="${v.instagramUrl}"
-                      data-instgrm-version="14"
-                      style="background:#000; border:0; border-radius:12px; margin:0; max-width:100%; min-width:200px; width:calc(100% - 2px);"
-                    ></blockquote>
+                ? `<div style="display:flex; justify-content:center;">
+                    <iframe
+                      src="${v.instagramUrl}embed"
+                      width="320"
+                      height="560"
+                      frameborder="0"
+                      scrolling="no"
+                      allowtransparency="true"
+                      style="border-radius:12px; max-width:100%;"
+                    ></iframe>
                   </div>`
                 : `<video
                 class="music-video-feature__player ${v.isPortrait ? 'music-video-feature__player--portrait' : ''}"
