@@ -1036,9 +1036,9 @@ window.SITE_DATA = {
       videos: [
         {
           title: "Malayalam",
-          videoPath: "assets/media/Malayalam_1.mp4",
-          posterPath: "assets/media/Malayalam_1_poster.jpg",
-          isPortrait: false
+          videoPath: "assets/media/malayalam-portrait.mp4",
+          posterPath: "assets/media/malayalam-portrait.jpg",
+          isPortrait: true
         },
         {
           title: "Tamil",
@@ -1050,7 +1050,7 @@ window.SITE_DATA = {
           title: "Malare (Malayalam)",
           videoPath: "assets/media/hindi_malayalam_malare.mp4",
           posterPath: "assets/media/hindi_malayalam_malare_poster.jpg",
-          isPortrait: false
+          isPortrait: true
         }
       ]
     }

@@ -1894,6 +1894,13 @@ h1 {
   margin: 0 auto;
 }
 
+#other-languages .music-video-feature__player--portrait {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+}
+
 .music-video-feature__frame {
   width: 100%;
   min-height: 0;
